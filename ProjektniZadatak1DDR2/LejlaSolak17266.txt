@@ -1,8 +1,0 @@
-1. Lejla Solak
-<<<<<<< HEAD
-2. Berina Smajoviæ 
-3.
-=======
-2. Berina Smajoviæ
-3. Džejlan Šabiæ
->>>>>>> master
