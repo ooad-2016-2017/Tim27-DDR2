@@ -12,7 +12,7 @@
 
 
 
-OPIS TEME: E-Hotel
+##OPIS TEME: E-Hotel
 
 Odlučili ste za godišnji odmor, ali niste još sasvim sigurni koji je najbolji način rezerviranja smještaja?
 
