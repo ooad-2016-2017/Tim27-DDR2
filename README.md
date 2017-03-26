@@ -53,3 +53,40 @@ Evidencija osoblja je također jako bitna u slučaju zahtjeva korisnika koji se 
 Prijava/Odjava iz hotela
 
 Check-in/out obavlja recepcionar prilikom dolaska/odlaska gosta u/iz hotela.
+
+## FUNKCIONALNOSTI
+•	Mogućnost online rezervacije hotelskih soba
+•	Izbor tipa sobe (jednokrevetne ili dvokrevetne)
+•	Usluge koje uključuje boravak u hotelu (pansion ili polupansion)
+•	Mogućnost izbora dodatnih pogodnosti kao što su korištenje bazena ili parkinga
+•	Mogućnost izmjene ili otkazivanja postojeće rezervacije
+•	Mogućnost evidencije soba i osoblja od strane menadžera hotela
+•	Mogućnost posluge u sobu koju obavlja osoblje za to zaduženo
+•	Mogućnost spremanja sobe od strane spremačica hotela
+•	Mogućnost plaćanja korištenjem kreditne kartice
+
+## AKTERI
+
+Gost hotela
+
+Potencijalni gost hotela ima mogućnost prijave na sistem putem kreiranja novog account-a ili aktiviranjem onog ranije napravljenog da bi izabrao novu, otkazivanje ili izmjenu stare rezervacije.
+Prilikom nove rezervacije gost bira tip sobe, usluge koje nudi hotel kao što su pansion ili polupansion, korištenje bazena i/ili parkinga itd.
+Nakon izbora detalja rezervacije, gost hotela plaćanje vrši korištenjem kreditnih kartica.
+
+Recepcionar
+
+Recepcionar ima zadatak prijave gosta pri dolasku u hotel, kao i odjavu prilikom odlaska iz hotela.
+
+Menadžer hotela
+
+Menadžer vodi evidenciju soba(zauzetih i slobodnih) i osoblja hotela. 
+
+Spremačica
+
+Zadatak spremačice hotela je spremiti sobe po odlasku gosta iz hotela, kao i spremiti je za dolazak novih gostiju.
+
+Sistem za autorizaciju kartica
+
+Uloga sistema za autorizaciju kartica je efikasan i pouzdan način plaćanja usluga.
+
+
