@@ -105,6 +105,12 @@
     <Compile Include="View\AdminReservations.xaml.cs">
       <DependentUpon>AdminReservations.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Guests.xaml.cs">
+      <DependentUpon>Guests.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MonthlyReport.xaml.cs">
+      <DependentUpon>MonthlyReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ReservationInfo.xaml.cs">
       <DependentUpon>ReservationInfo.xaml</DependentUpon>
     </Compile>
@@ -137,6 +143,9 @@
     </Compile>
     <Compile Include="View\Staff.xaml.cs">
       <DependentUpon>Staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Statistics.xaml.cs">
+      <DependentUpon>Statistics.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewProfile.xaml.cs">
       <DependentUpon>ViewProfile.xaml</DependentUpon>
@@ -172,6 +181,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AdminReservations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Guests.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MonthlyReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -216,6 +233,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Statistics.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

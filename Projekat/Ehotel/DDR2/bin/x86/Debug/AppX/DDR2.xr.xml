@@ -113,6 +113,8 @@
       <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="DDR2.View.AdminReservations" />
+    <RootType FullName="DDR2.View.Guests" />
+    <RootType FullName="DDR2.View.MonthlyReport" />
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
@@ -230,6 +232,7 @@
     <RootType FullName="DDR2.View.RoomCleaning" />
     <RootType FullName="DDR2.View.Rooms" />
     <RootType FullName="DDR2.View.Staff" />
+    <RootType FullName="DDR2.View.Statistics" />
     <RootType FullName="DDR2.View.ViewProfile" />
   </Roots.RootTypes>
 </Roots>

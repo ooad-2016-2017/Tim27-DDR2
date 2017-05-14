@@ -44,17 +44,17 @@ namespace DDR2.View
 
         private void btnGuests_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(Guests), e);
         }
 
         private void btnStatistics_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(Statistics), e);
         }
 
         private void btnMonthly_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(MonthlyReport), e);
         }
 
         private void btnProfile_Click_1(object sender, RoutedEventArgs e)

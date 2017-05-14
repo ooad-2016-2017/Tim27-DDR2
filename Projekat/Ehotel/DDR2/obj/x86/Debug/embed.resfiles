@@ -3,6 +3,8 @@ MainPage.xbf
 View\AdminPanel.xbf
 View\AdminReservations.xbf
 View\GuestPanel.xbf
+View\Guests.xbf
+View\MonthlyReport.xbf
 View\NewAccount.xbf
 View\NewReservation.xbf
 View\payment.xbf
@@ -13,4 +15,5 @@ View\RoomCleaning.xbf
 View\Rooms.xbf
 View\ShowAllReservations.xbf
 View\Staff.xbf
+View\Statistics.xbf
 View\ViewProfile.xbf
