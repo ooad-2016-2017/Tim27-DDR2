@@ -26,5 +26,18 @@ namespace DDR2.View
         {
             this.InitializeComponent();
         }
+
+        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void gridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
+        private void btnGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AdminPanel), e);
+        }
     }
 }

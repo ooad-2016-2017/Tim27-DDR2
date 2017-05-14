@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\User\Desktop\TIM-DDR2\Tim27-DDR2\Projekat\Ehotel\DDR2\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T13:00:15.195</Modified>
+      <Modified>2017-05-14T20:33:49.912</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\User\Desktop\TIM-DDR2\Tim27-DDR2\Projekat\Ehotel\DDR2\bin\x86\Debug\DDR2.exe">
       <PackagePath>entrypoint\DDR2.exe</PackagePath>
-      <Modified>2017-05-14T13:00:14.013</Modified>
+      <Modified>2017-05-14T20:33:48.658</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -488,7 +488,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Desktop\TIM-DDR2\Tim27-DDR2\Projekat\Ehotel\DDR2\bin\x86\Debug\DDR2.xr.xml">
       <PackagePath>DDR2.xr.xml</PackagePath>
-      <Modified>2017-05-14T13:00:13.706</Modified>
+      <Modified>2017-05-14T20:28:26.339</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -497,11 +497,11 @@
     <AppxPackagedFile Include="C:\Users\User\Desktop\TIM-DDR2\Tim27-DDR2\Projekat\Ehotel\DDR2\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T13:00:14.722</Modified>
+      <Modified>2017-05-14T20:33:49.534</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Desktop\TIM-DDR2\Tim27-DDR2\Projekat\Ehotel\DDR2\bin\x86\Debug\Core\DDR2.exe">
       <PackagePath>DDR2.exe</PackagePath>
-      <Modified>2017-05-14T13:00:15.187</Modified>
+      <Modified>2017-05-14T20:33:49.906</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

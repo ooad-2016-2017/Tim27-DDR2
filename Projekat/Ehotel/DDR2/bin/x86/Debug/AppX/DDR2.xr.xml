@@ -50,11 +50,11 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Inlines" />
-      <RootProperty Name="Foreground" />
       <RootProperty Name="Width" />
+      <RootProperty Name="RenderTransformOrigin" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="FontStyle" />
       <RootProperty Name="FontWeight" />
-      <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="Visibility" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
@@ -77,6 +77,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="RenderTransformOrigin" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="DDR2.View.AdminPanel" />
@@ -114,6 +115,12 @@
     </RootType>
     <RootType FullName="DDR2.View.AdminReservations" />
     <RootType FullName="DDR2.View.Guests" />
+    <RootType FullName="Windows.UI.Xaml.Documents.Run">
+      <RootProperty Name="Text" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="FontStyle" />
+    </RootType>
     <RootType FullName="DDR2.View.MonthlyReport" />
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="BorderBrush" />
@@ -125,12 +132,6 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Background" />
       <RootProperty Name="Child" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Documents.Run">
-      <RootProperty Name="Text" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="FontWeight" />
-      <RootProperty Name="FontStyle" />
     </RootType>
     <RootType FullName="DDR2.View.ReservationInfo" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListBox">
