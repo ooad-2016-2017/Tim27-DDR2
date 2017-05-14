@@ -5,21 +5,21 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Height="1653.333" Width="1822.45">
+    mc:Ignorable="d" Height="770" Width="1440">
     <ScrollViewer x:ConnectionId='1' HorizontalAlignment="Left" Height="807" Margin="10,10,0,0" VerticalAlignment="Top" Width="1420"                                       >
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1701" Height="1870" RenderTransformOrigin="0.522,0.502">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1230" Height="571" RenderTransformOrigin="0.522,0.502">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Grid HorizontalAlignment="Left" Height="1196" Margin="42,90,0,0" VerticalAlignment="Top" Width="1218" Grid.RowSpan="2">
+            <Grid HorizontalAlignment="Left" Height="1196" VerticalAlignment="Top" Width="1218" Grid.RowSpan="2" Margin="0,0,0,-637">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0*"/>
                     <RowDefinition Height="0*"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Grid HorizontalAlignment="Left" Height="1184" Margin="10,46,0,-34" VerticalAlignment="Top" Width="1168" Grid.Row="2">
+                <Grid HorizontalAlignment="Left" Height="486" Margin="0,42,0,0" VerticalAlignment="Top" Width="1175" Grid.Row="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0*"/>
                         <RowDefinition/>
@@ -29,22 +29,18 @@
                         <ColumnDefinition Width="483*"/>
                         <ColumnDefinition Width="73*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock x:ConnectionId='8' x:Name="textBlock1" HorizontalAlignment="Left" Margin="36,-86,0,0" FontWeight="Bold" TextWrapping="Wrap" Text="Reservation details" VerticalAlignment="Top" Height="76" Width="600" FontSize="40" Grid.ColumnSpan="2"/>
-                    <ComboBox x:ConnectionId='9' x:Name="comboBox" HorizontalAlignment="Left" Margin="210,-10,0,0" VerticalAlignment="Top" Width="308" Height="60" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch"                                              FontSize="25" PlaceholderText="Choose type" BorderBrush="{ThemeResource AppBarButtonForeground}" FontWeight="Light" FontStyle="Italic" Background="{ThemeResource ButtonDisabledBackgroundThemeBrush}" Grid.RowSpan="2">
+                    <TextBlock x:ConnectionId='9' x:Name="textBlock1" HorizontalAlignment="Left" Margin="36,-106,0,0" FontWeight="Bold" TextWrapping="Wrap" Text="Reservation details" VerticalAlignment="Top" Height="65" Width="566" FontSize="40"/>
+                    <ComboBox x:ConnectionId='10' x:Name="boardType" HorizontalAlignment="Left" Margin="210,-10,0,0" VerticalAlignment="Top" Width="308" Height="60" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch"                                              FontSize="22" PlaceholderText="Choose type" BorderBrush="{ThemeResource AppBarButtonForeground}" FontWeight="Light" Grid.RowSpan="2">
                         <ComboBoxItem Content="Half board" FontWeight="Normal" FontStyle="Normal"/>
                         <ComboBoxItem Content="Full board" FontStyle="Normal" FontWeight="Normal"/>
                     </ComboBox>
-                    <ComboBox x:ConnectionId='10' x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="210,67,0,0" VerticalAlignment="Top" Width="308" Height="60" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch"                                              FontSize="25" PlaceholderText="Choose type" BorderBrush="{ThemeResource AppBarButtonForeground}" FontWeight="Light" FontStyle="Italic" Background="{ThemeResource ButtonDisabledBackgroundThemeBrush}" Grid.RowSpan="2">
+                    <ComboBox x:ConnectionId='11' x:Name="roomType" HorizontalAlignment="Left" Margin="210,67,0,0" VerticalAlignment="Top" Width="308" Height="60" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch"                                              FontSize="22" PlaceholderText="Choose type" BorderBrush="{ThemeResource AppBarButtonForeground}" FontWeight="Light" Grid.RowSpan="2">
                         <ComboBoxItem Content="Single" FontWeight="Normal" FontStyle="Normal"/>
                         <ComboBoxItem Content="Double" FontWeight="Normal" FontStyle="Normal"/>
                     </ComboBox>
-                    <ComboBox x:ConnectionId='11' x:Name="comboBox_Copy1" HorizontalAlignment="Left" Margin="210,152,0,0" VerticalAlignment="Top" Width="308" Height="58" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch"                                              FontSize="25" FontWeight="Light" PlaceholderText="Choose option" BorderBrush="{ThemeResource AppBarButtonForeground}" FontStyle="Italic" Background="{ThemeResource ButtonDisabledBackgroundThemeBrush}" Grid.RowSpan="2">
-                        <ComboBoxItem Content="Yes" FontWeight="Normal" FontStyle="Normal"/>
-                        <ComboBoxItem Content="No" FontWeight="Normal" FontStyle="Normal"/>
-                    </ComboBox>
                     <TextBlock x:ConnectionId='12' x:Name="textBlock2" HorizontalAlignment="Left" Margin="36,0,0,0" TextWrapping="Wrap" Text="Board:" VerticalAlignment="Top" Height="52" Width="138"                                                  FontSize="30" FontWeight="Medium" RenderTransformOrigin="0.471,-0.003" Grid.RowSpan="2"/>
                     <TextBlock x:ConnectionId='13' x:Name="textBlock2_Copy" HorizontalAlignment="Left" Margin="36,76,0,0" TextWrapping="Wrap" Text="Room:" VerticalAlignment="Top" Height="52" Width="138"                                                  FontSize="30" FontWeight="Medium" RenderTransformOrigin="0.471,-1.208" Grid.RowSpan="2"/>
-                    <TextBlock x:ConnectionId='14' x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="36,158,0,0" TextWrapping="Wrap" Text="Parking:" VerticalAlignment="Top" Height="52" Width="138"                                                  FontSize="30" FontWeight="Medium" Grid.RowSpan="2"/>
+                    <TextBlock x:ConnectionId='14' x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="19,402,0,0" TextWrapping="Wrap" Text="Parking:" VerticalAlignment="Top" Height="52" Width="138"                                                  FontSize="30" FontWeight="Medium" Grid.RowSpan="2" RenderTransformOrigin="4.58,4.692" Grid.Column="1"/>
                     <TextBlock x:ConnectionId='15' x:Name="textBlock2_Copy2" HorizontalAlignment="Left" Margin="19,-10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="262"                                                  FontSize="30" FontWeight="Medium" Grid.Column="1" Grid.RowSpan="2">
                     <Run Text="No. of adults"/>
                     <Run Text=":"/>
@@ -74,32 +70,32 @@
                         </SplitView.Pane>
                         <Grid HorizontalAlignment="Left" Height="275" VerticalAlignment="Top" Width="576" BorderThickness="2" Margin="-974,-802,0,0" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}"/>
                     </SplitView>
-                    <TextBlock x:ConnectionId='23' x:Name="textBlock2_Copy8" HorizontalAlignment="Left" Margin="36,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="282"                                                  FontSize="30" FontWeight="Medium" Grid.RowSpan="2">
+                    <TextBlock x:ConnectionId='23' x:Name="textBlock2_Copy8" HorizontalAlignment="Left" Margin="36,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="233"                                                  FontSize="30" FontWeight="Medium" Grid.RowSpan="2">
                     <Run Text="Check-"/>
                     <Run Text="out"/>
                     <Run Text=" date:"/>
                     </TextBlock>
-                    <DatePicker HorizontalAlignment="Left" Margin="306,266,0,0" VerticalAlignment="Top" Height="34" Width="296" Grid.RowSpan="2"/>
-                    <DatePicker HorizontalAlignment="Left" Margin="306,324,0,0" VerticalAlignment="Top" Height="52" Width="296" Grid.RowSpan="2" RenderTransformOrigin="1.105,0.426"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="274,179,0,0" VerticalAlignment="Top" Height="34" Width="296" Grid.RowSpan="2"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="274,261,0,0" VerticalAlignment="Top" Height="52" Width="296" Grid.RowSpan="2" RenderTransformOrigin="1.105,0.426"/>
+                    <TextBlock x:ConnectionId='24' x:Name="txtTotal" HorizontalAlignment="Left" Margin="36,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="184"                                                  FontSize="40" FontWeight="Medium" Grid.RowSpan="2" Text="TOTAL:"/>
+                    <TextBox x:ConnectionId='25' x:Name="ispisTotalaTxt" HorizontalAlignment="Left" Margin="274,340,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="296" IsReadOnly="True"/>
 
 
                 </Grid>
-                <TextBlock x:ConnectionId='4' x:Name="textBlock" HorizontalAlignment="Stretch" Margin="146,-84,146,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" FontSize="30" TextAlignment="Center" Foreground="#FF292626"                                              >
-                <Run Foreground="#FF837C7C" FontWeight="Bold" FontStyle="Italic" Text="Welcome to eHotel Entrada"/>
+                <TextBlock x:ConnectionId='6' x:Name="textBlock" HorizontalAlignment="Stretch" Margin="0,-108,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" FontSize="40" TextAlignment="Center" Foreground="#FF292626"                                              >
+                <Run Foreground="#FF837C7C" FontWeight="Bold" Text="Welcome to eHotel Entrada"/>
                 </TextBlock>
-                <Grid HorizontalAlignment="Left" Height="518" VerticalAlignment="Top" Width="594" BorderThickness="2" Margin="624,10,0,0" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Grid.Row="2">
-                    <TextBlock x:ConnectionId='6' x:Name="textBlock2_Copy6" HorizontalAlignment="Left" Margin="23,362,0,0" TextWrapping="Wrap" Text="Pool:" VerticalAlignment="Top" Height="51" Width="143"                                                  FontSize="30" FontWeight="Medium"/>
-                    <ComboBox x:ConnectionId='7' x:Name="comboBox_Copy2" HorizontalAlignment="Left" Margin="169,360,0,0" VerticalAlignment="Top" Width="308" Height="58" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch"                                              FontSize="25" FontWeight="Light" PlaceholderText="Choose option" BorderBrush="{ThemeResource AppBarButtonForeground}" FontStyle="Italic" Background="{ThemeResource ButtonDisabledBackgroundThemeBrush}">
-                        <ComboBoxItem Content="Yes" FontWeight="Normal" FontStyle="Normal"/>
-                        <ComboBoxItem Content="No" FontWeight="Normal" FontStyle="Normal"/>
-                    </ComboBox>
+                <Grid HorizontalAlignment="Left" Height="518" VerticalAlignment="Top" Width="594" BorderThickness="2" Margin="614,10,0,0" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Grid.Row="2">
+                    <TextBlock x:ConnectionId='8' x:Name="textBlock2_Copy6" HorizontalAlignment="Left" Margin="10,354,0,0" TextWrapping="Wrap" Text="Pool:" VerticalAlignment="Top" Height="51" Width="178"                                                  FontSize="30" FontWeight="Medium"/>
                 </Grid>
-                <TextBlock x:ConnectionId='5' x:Name="textBlock2_Copy7" HorizontalAlignment="Left" Margin="45,303,0,0" TextWrapping="Wrap" Text="Check-in date:" VerticalAlignment="Top" Height="52" Width="243"                                                  FontSize="30" FontWeight="Medium" Grid.Row="2"/>
+                <TextBlock x:ConnectionId='7' x:Name="textBlock2_Copy7" HorizontalAlignment="Left" Margin="40,220,0,0" TextWrapping="Wrap" Text="Check-in date:" VerticalAlignment="Top" Height="52" Width="230"                                                  FontSize="30" FontWeight="Medium" Grid.Row="2"/>
             </Grid>
             <DatePicker HorizontalAlignment="Left" Margin="1525,483,-492,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-            <Button x:ConnectionId='2' x:Name="button" Content="Search available rooms" Background="LightGreen" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="337,533,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="86" Width="309"/>
-            <Button x:ConnectionId='3' x:Name="button1" Content="Cancel" BorderBrush="Black" Background="LightCoral" FontSize="25" HorizontalAlignment="Left" Margin="89,533,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="86" Width="182"                      />
-
+            <Button x:ConnectionId='2' x:Name="button" Content="Search available rooms" Background="LightGreen" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="275,453,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="295"                     />
+            <Button x:ConnectionId='3' x:Name="button1" Content="Cancel" BorderBrush="Black" Background="LightCoral" FontSize="25" HorizontalAlignment="Left" Margin="43,453,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="62" Width="182"                      />
+            <ToggleSwitch x:ConnectionId='4' x:Name="poolSwitch" HorizontalAlignment="Left" Margin="885,365,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="60" Width="205" FontSize="20">
+            </ToggleSwitch>
+            <ToggleSwitch x:ConnectionId='5' x:Name="poolSwitch_Copy" HorizontalAlignment="Left" Margin="885,453,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="60" Width="205" FontSize="20"/>
         </Grid>
     </ScrollViewer>
 </Page>

@@ -11,13 +11,11 @@
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,10,0,0" Height="128" Width="633" FontSize="85" SelectionChanged="textBlock_SelectionChanged" RenderTransformOrigin="0.504,0.558">
             <Run Text="Monthly Report"/>
         </TextBlock>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="41,223,0,0" TextWrapping="Wrap" Text="Ukupan broj gostiju: " VerticalAlignment="Top" Height="60" Width="408" FontSize="40"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="41,223,0,0" TextWrapping="Wrap" Text="Utility bills:" VerticalAlignment="Top" Height="60" Width="408" FontSize="40"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="41,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="57" Width="438" FontSize="40">
-            <Run Text="Ukupn broj "/>
-            <Run Text="rezervacija"/>
-            <Run Text=":"/>
+            <Run Text="Phone bills:"/>
         </TextBlock>
-        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Prihod: " VerticalAlignment="Top" Margin="41,429,0,0" Height="51" Width="408" FontSize="40"/>
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Profit:" VerticalAlignment="Top" Margin="41,429,0,0" Height="51" Width="408" FontSize="40"/>
         <Button Name="btnGoBack" BorderBrush="Gray" Background="LightCoral" FontSize="30" Click="btnGoBack_Click" Height="70" HorizontalAlignment="Center" Margin="1009,599,91,51" RenderTransformOrigin="0.548,0.547" Width="180">Go Back</Button>
 
     </Grid>

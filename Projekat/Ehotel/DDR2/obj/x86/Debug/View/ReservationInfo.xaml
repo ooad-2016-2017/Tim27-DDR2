@@ -7,43 +7,49 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Height="1461">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="68,0,144,687.333">
-        <TextBlock x:ConnectionId='1' x:Name="textBlock" HorizontalAlignment="Stretch" Margin="360,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" FontSize="30" TextAlignment="Center" Foreground="#FF292626" >
-            <Run Foreground="#FF837C7C" FontWeight="Bold" FontStyle="Italic" Text="Reservation info"/>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="68,0,0,736">
+        <TextBlock x:ConnectionId='1' x:Name="textBlock" HorizontalAlignment="Stretch" Margin="37,10,55,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="80" FontSize="50" TextAlignment="Center" Foreground="#FF292626" >
+            <Run Foreground="#FF837C7C" FontWeight="Bold" Text="Reservation Info"/>
         </TextBlock>
-        <Grid Margin="50,10,-479,0" Height="620" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1657" RenderTransformOrigin="0.501,0.533">
+        <Grid Margin="-20,45,-425,0" Height="680" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1657" RenderTransformOrigin="0.501,0.533">
             <Grid HorizontalAlignment="Left" Height="100" Margin="713,10,0,0" VerticalAlignment="Top" Width="100"/>
-            <TextBlock x:ConnectionId='2' x:Name="textBlock1" HorizontalAlignment="Left" Margin="51,94,0,0" TextWrapping="Wrap" Text="Reservation ID:" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium"/>
-            <TextBlock x:ConnectionId='3' x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="51,162,0,0" TextWrapping="Wrap" Text="Room type:" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium"/>
-            <TextBlock x:ConnectionId='4' x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="51,228,0,0" TextWrapping="Wrap" Text="Board type:" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium"/>
-            <TextBlock x:ConnectionId='5' x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="793,94,0,0" TextWrapping="Wrap" Text="No. of rooms:" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium"/>
-            <TextBlock x:ConnectionId='6' x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="793,162,0,0" TextWrapping="Wrap" Text="No. of nights:" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium"/>
-            <TextBlock x:ConnectionId='7' x:Name="textBlock1_Copy4" HorizontalAlignment="Left" Margin="403,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium">
+            <TextBlock x:ConnectionId='3' x:Name="textBlock1" HorizontalAlignment="Left" Margin="51,94,0,0" TextWrapping="Wrap" Text="Reservation ID:" VerticalAlignment="Top" Height="36" Width="181"                                                FontSize="25" FontWeight="Medium"/>
+            <TextBlock x:ConnectionId='4' x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="51,162,0,0" TextWrapping="Wrap" Text="Room type:" VerticalAlignment="Top" Height="36" Width="181"                                                FontSize="25" FontWeight="Medium"/>
+            <TextBlock x:ConnectionId='5' x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="51,228,0,0" TextWrapping="Wrap" Text="Board type:" VerticalAlignment="Top" Height="36" Width="181"                                                FontSize="25" FontWeight="Medium"/>
+            <TextBlock x:ConnectionId='6' x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="637,98,0,0" TextWrapping="Wrap" Text="No. of rooms:" VerticalAlignment="Top" Height="36" Width="169"                                                FontSize="25" FontWeight="Medium"/>
+            <TextBlock x:ConnectionId='7' x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="637,162,0,0" TextWrapping="Wrap" Text="No. of nights:" VerticalAlignment="Top" Height="36" Width="169"                                                FontSize="25" FontWeight="Medium"/>
+            <TextBlock x:ConnectionId='8' x:Name="textBlock1_Copy4" HorizontalAlignment="Left" Margin="641,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="199"                                                FontSize="25" FontWeight="Medium">
                 <Run Text="No. of "/>
                 <Run Text="adults"/>
                 <Run Text=":"/>
             </TextBlock>
-            <TextBlock x:ConnectionId='8' x:Name="textBlock1_Copy5" HorizontalAlignment="Left" Margin="403,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium">
+            <TextBlock x:ConnectionId='9' x:Name="textBlock1_Copy5" HorizontalAlignment="Left" Margin="637,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="199"                                                FontSize="25" FontWeight="Medium">
                 <Run Text="No. of "/>
                 <Run Text="children:"/>
             </TextBlock>
-            <TextBlock x:ConnectionId='9' x:Name="textBlock1_Copy6" HorizontalAlignment="Left" Margin="51,306,0,0" TextWrapping="Wrap" Text="Parking:" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium"/>
-            <TextBlock x:ConnectionId='10' x:Name="textBlock1_Copy7" HorizontalAlignment="Left" Margin="51,370,0,0" TextWrapping="Wrap" Text="Pool:" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium"/>
-            <TextBlock x:ConnectionId='11' x:Name="textBlock1_Copy8" HorizontalAlignment="Left" Margin="403,306,0,0" TextWrapping="Wrap" Text="Check-in date:" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium"/>
-            <TextBlock x:ConnectionId='12' x:Name="textBlock1_Copy9" HorizontalAlignment="Left" Margin="403,370,0,0" TextWrapping="Wrap" Text="Check-out date:" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium"/>
-            <Button x:ConnectionId='13' x:Name="button" Content="Change reservation" Background="LemonChiffon" BorderBrush="Black" HorizontalAlignment="Left" Margin="10,499,0,0" VerticalAlignment="Top" Height="79" Width="279" FontSize="25
-                    "/>
-            <Button x:ConnectionId='14' x:Name="button_Copy" Content="Cancel reservation" Background="LightGray" BorderBrush="Black" HorizontalAlignment="Left" Margin="403,499,0,0" VerticalAlignment="Top" Height="79" Width="289" FontSize="25                     "/>
-            <Button x:ConnectionId='15' x:Name="button_Copy1" Content="Go back" Background="LightCoral" BorderBrush="Black" HorizontalAlignment="Left" Margin="793,499,0,0" VerticalAlignment="Top" Height="79" Width="279" FontSize="25                     "                           />
-            <TextBlock x:ConnectionId='16' x:Name="textBlock1_Copy10" HorizontalAlignment="Left" Margin="793,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="25" FontStyle="Italic" FontWeight="Medium" Text="Guest info"/>
-            <Border BorderBrush="{ThemeResource AppBarToggleButtonBackgroundCheckedPointerOver}" BorderThickness="1" HorizontalAlignment="Left" Height="157" Margin="793,306,0,0" VerticalAlignment="Top" Width="341" Background="{ThemeResource ComboBoxDropDownBorderBrush}">
-                <TextBlock x:ConnectionId='18' x:Name="textBlock1_Copy11" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="251"                                                FontSize="20" FontStyle="Italic" FontWeight="Medium" Text="Name:" Margin="8.667,8.667,0,0"/>
-            </Border>
-            <TextBlock x:ConnectionId='17' x:Name="textBlock1_Copy12" HorizontalAlignment="Left" Margin="793,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="253"                                                FontSize="20" FontWeight="Medium" FontStyle="Italic">
-                <Run Text=" "/>
-                <Run Text="Surname:"/>
-            </TextBlock>
+            <TextBlock x:ConnectionId='10' x:Name="textBlock1_Copy6" HorizontalAlignment="Left" Margin="51,306,0,0" TextWrapping="Wrap" Text="Parking:" VerticalAlignment="Top" Height="36" Width="181"                                                FontSize="25" FontWeight="Medium"/>
+            <TextBlock x:ConnectionId='11' x:Name="textBlock1_Copy7" HorizontalAlignment="Left" Margin="51,370,0,0" TextWrapping="Wrap" Text="Pool:" VerticalAlignment="Top" Height="36" Width="181"                                                FontSize="25" FontWeight="Medium"/>
+            <TextBlock x:ConnectionId='12' x:Name="textBlock1_Copy8" HorizontalAlignment="Left" Margin="51,440,0,0" TextWrapping="Wrap" Text="Check-in date:" VerticalAlignment="Top" Height="36" Width="199"                                                FontSize="25" FontWeight="Medium"/>
+            <TextBlock x:ConnectionId='13' x:Name="textBlock1_Copy9" HorizontalAlignment="Left" Margin="51,504,0,0" TextWrapping="Wrap" Text="Check-out date:" VerticalAlignment="Top" Height="36" Width="199"                                                FontSize="25" FontWeight="Medium"/>
+            <Button x:ConnectionId='14' x:Name="button" Content="Modify Reservation" Background="LightGreen" BorderBrush="Black" HorizontalAlignment="Left" Margin="269,580,0,-19" VerticalAlignment="Top" Height="59" Width="333" FontSize="25"/>
+            <Button x:ConnectionId='15' x:Name="button_Copy" Content="Cancel Reservation" Background="LightCoral" BorderBrush="Black" HorizontalAlignment="Left" Margin="641,580,0,-19" VerticalAlignment="Top" Height="59" Width="291" FontSize="25"/>
+            <Button x:ConnectionId='16' x:Name="button_Copy1" Content="Go Back" Background="LightCoral" BorderBrush="Black" HorizontalAlignment="Left" Margin="978,580,0,-19" VerticalAlignment="Top" Height="59" Width="200" FontSize="25"                           />
+            <TextBox x:ConnectionId='17' x:Name="textBox" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="269,98,0,0" Width="333"/>
+            <TextBox x:ConnectionId='18' x:Name="textBox_Copy" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="269,162,0,0" Width="333"/>
+            <TextBox x:ConnectionId='19' x:Name="textBox_Copy1" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="269,232,0,0" Width="333"/>
+            <TextBox x:ConnectionId='20' x:Name="textBox_Copy2" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="269,306,0,0" Width="333"/>
+            <TextBox x:ConnectionId='21' x:Name="textBox_Copy3" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="269,374,0,0" Width="333"/>
+            <TextBox x:ConnectionId='22' x:Name="textBox_Copy4" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="269,444,0,0" Width="333"/>
+            <TextBox x:ConnectionId='23' x:Name="textBox_Copy5" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="269,508,0,0" Width="333"/>
+            <TextBox x:ConnectionId='24' x:Name="textBox_Copy6" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="845,98,0,0" Width="333"/>
+            <TextBox x:ConnectionId='25' x:Name="textBox_Copy7" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="845,166,0,0" Width="333"/>
+            <TextBox x:ConnectionId='26' x:Name="textBox_Copy8" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="845,232,0,0" Width="333"/>
+            <TextBox x:ConnectionId='27' x:Name="textBox_Copy9" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="845,306,0,0" Width="333"/>
+            <TextBox x:ConnectionId='28' x:Name="textBox_Copy10" IsReadOnly="True" Text="€  " FontSize="50" HorizontalAlignment="Left" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="672,440,0,0" Width="480" Height="80"/>
         </Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="165" Margin="622,415,0,0" VerticalAlignment="Top" Width="535">
+            <TextBlock x:ConnectionId='2' x:Name="textBlock2"  FontSize="40" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TOTAL:"/>
+        </Border>
 
     </Grid>
 </Page>
