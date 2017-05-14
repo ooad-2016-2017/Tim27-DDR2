@@ -1,0 +1,16 @@
+App.xbf
+MainPage.xbf
+View\AdminPanel.xbf
+View\AdminReservations.xbf
+View\GuestPanel.xbf
+View\NewAccount.xbf
+View\NewReservation.xbf
+View\payment.xbf
+View\Prijava.xbf
+View\Reception.xbf
+View\ReservationInfo.xbf
+View\RoomCleaning.xbf
+View\Rooms.xbf
+View\ShowAllReservations.xbf
+View\Staff.xbf
+View\ViewProfile.xbf
