@@ -86,7 +86,10 @@
                 <Run Foreground="#FF837C7C" FontWeight="Bold" Text="Welcome to eHotel Entrada"/>
                 </TextBlock>
                 <Grid HorizontalAlignment="Left" Height="518" VerticalAlignment="Top" Width="594" BorderThickness="2" Margin="614,10,0,0" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Grid.Row="2">
-                    <TextBlock x:Name="textBlock2_Copy6" HorizontalAlignment="Left" Margin="10,354,0,0" TextWrapping="Wrap" Text="Pool:" VerticalAlignment="Top" Height="51" Width="178" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium"/>
+                    <TextBlock x:Name="textBlock2_Copy6" HorizontalAlignment="Left" Margin="10,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="178" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium">
+                        <Run Text=" "/>
+                        <Run Text="Pool:"/>
+                    </TextBlock>
                 </Grid>
                 <TextBlock x:Name="textBlock2_Copy7" HorizontalAlignment="Left" Margin="40,220,0,0" TextWrapping="Wrap" Text="Check-in date:" VerticalAlignment="Top" Height="52" Width="230" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" Grid.Row="2"/>
             </Grid>

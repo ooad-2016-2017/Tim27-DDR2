@@ -237,6 +237,7 @@
     <RootType FullName="DDR2.View.Reception" />
     <RootType FullName="DDR2.View.RoomCleaning" />
     <RootType FullName="DDR2.View.Rooms" />
+    <RootType FullName="DDR2.View.ShowMap" />
     <RootType FullName="DDR2.View.Staff" />
     <RootType FullName="DDR2.View.Statistics" />
     <RootType FullName="DDR2.View.ViewProfile" />

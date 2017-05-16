@@ -141,6 +141,9 @@
     <Compile Include="View\Rooms.xaml.cs">
       <DependentUpon>Rooms.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ShowMap.xaml.cs">
+      <DependentUpon>ShowMap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Staff.xaml.cs">
       <DependentUpon>Staff.xaml</DependentUpon>
     </Compile>
@@ -229,6 +232,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Rooms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ShowMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

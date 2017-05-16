@@ -26,5 +26,10 @@ namespace DDR2.View
         {
             this.InitializeComponent();
         }
+
+        private void button1_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AdminPanel), e);
+        }
     }
 }

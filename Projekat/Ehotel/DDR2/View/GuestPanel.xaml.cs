@@ -44,7 +44,7 @@ namespace DDR2.View
 
         private void btnShowMap_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(ShowMap), e);
         }
 
         private void btnViewProfile_Click(object sender, RoutedEventArgs e)
