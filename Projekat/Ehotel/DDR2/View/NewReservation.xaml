@@ -30,7 +30,7 @@
                         <ColumnDefinition Width="73*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="36,-106,0,0" FontWeight="Bold" TextWrapping="Wrap" Text="Reservation details" VerticalAlignment="Top" Height="65" Width="566" FontSize="40"/>
-                    <ComboBox x:Name="boardType" HorizontalAlignment="Left" Margin="210,-10,0,0" VerticalAlignment="Top" Width="308" Height="60" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch" SelectionChanged="comboBox_SelectionChanged" FontSize="22" PlaceholderText="Choose type" BorderBrush="{ThemeResource AppBarButtonForeground}" FontWeight="Light" Grid.RowSpan="2">
+                    <ComboBox x:Name="boardType" HorizontalAlignment="Left" Margin="210,-8,0,0" VerticalAlignment="Top" Width="308" Height="60" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch" SelectionChanged="comboBox_SelectionChanged" FontSize="22" PlaceholderText="Choose type" BorderBrush="{ThemeResource AppBarButtonForeground}" FontWeight="Light" Grid.RowSpan="2">
                         <ComboBoxItem Content="Half board" FontWeight="Normal" FontStyle="Normal"/>
                         <ComboBoxItem Content="Full board" FontStyle="Normal" FontWeight="Normal"/>
                     </ComboBox>
@@ -38,6 +38,10 @@
                         <ComboBoxItem Content="Single" FontWeight="Normal" FontStyle="Normal"/>
                         <ComboBoxItem Content="Double" FontWeight="Normal" FontStyle="Normal"/>
                     </ComboBox>
+                    <local:numericUpDown Margin="253,233,108,206" Grid.RowSpan="2" Grid.Column="1"/>
+                    <local:numericUpDown Margin="253,151,108,288" Grid.RowSpan="2" Grid.Column="1"/>
+                    <local:numericUpDown Margin="253,63,108,376" Grid.RowSpan="2" Grid.Column="1"/>
+                    <local:numericUpDown Margin="253,-8,108,447" Grid.RowSpan="2" Grid.Column="1"/>
                     <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="36,0,0,0" TextWrapping="Wrap" Text="Board:" VerticalAlignment="Top" Height="52" Width="138" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" RenderTransformOrigin="0.471,-0.003" Grid.RowSpan="2"/>
                     <TextBlock x:Name="textBlock2_Copy" HorizontalAlignment="Left" Margin="36,76,0,0" TextWrapping="Wrap" Text="Room:" VerticalAlignment="Top" Height="52" Width="138" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" RenderTransformOrigin="0.471,-1.208" Grid.RowSpan="2"/>
                     <TextBlock x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="19,402,0,0" TextWrapping="Wrap" Text="Parking:" VerticalAlignment="Top" Height="52" Width="138" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" Grid.RowSpan="2" RenderTransformOrigin="4.58,4.692" Grid.Column="1"/>
@@ -60,10 +64,6 @@
                     <Run Text="rooms"/>
                     <Run Text=":"/>
                     </TextBlock>
-                    <TextBox x:Name="textBox" Grid.Column="1" HorizontalAlignment="Left" Margin="272,-10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="44" Width="129" Grid.RowSpan="2" RenderTransformOrigin="0.109,0.545"/>
-                    <TextBox x:Name="textBox_Copy" Grid.Column="1" HorizontalAlignment="Left" Margin="272,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="44" Width="129" RenderTransformOrigin="0.525,0.652" Grid.RowSpan="2"/>
-                    <TextBox x:Name="textBox_Copy1" Grid.Column="1" HorizontalAlignment="Left" Margin="272,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="44" Width="129" RenderTransformOrigin="0.481,-0.621" Grid.RowSpan="2"/>
-                    <TextBox x:Name="textBox_Copy2" Grid.Column="1" HorizontalAlignment="Left" Margin="272,235,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="44" Width="129" Grid.RowSpan="2"/>
                     <SplitView HorizontalAlignment="Left" Height="546" Margin="378,768,-326,-130" VerticalAlignment="Top" Width="504" BorderThickness="3" Grid.Column="1" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Grid.ColumnSpan="2" Grid.RowSpan="2">
                         <SplitView.Pane>
                             <Grid/>
@@ -82,10 +82,11 @@
 
 
                 </Grid>
-                <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch" Margin="0,-108,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" FontSize="40" TextAlignment="Center" Foreground="#FF292626" SelectionChanged="textBlock_SelectionChanged">
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch" Margin="0,-128,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="55" FontSize="40" TextAlignment="Center" Foreground="#FF292626" SelectionChanged="textBlock_SelectionChanged">
                 <Run Foreground="#FF837C7C" FontWeight="Bold" Text="Welcome to eHotel Entrada"/>
                 </TextBlock>
                 <Grid HorizontalAlignment="Left" Height="518" VerticalAlignment="Top" Width="594" BorderThickness="2" Margin="614,10,0,0" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Grid.Row="2">
+
                     <TextBlock x:Name="textBlock2_Copy6" HorizontalAlignment="Left" Margin="10,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="178" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium">
                         <Run Text=" "/>
                         <Run Text="Pool:"/>

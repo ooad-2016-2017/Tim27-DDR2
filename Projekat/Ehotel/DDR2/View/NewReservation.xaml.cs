@@ -66,5 +66,15 @@ namespace DDR2.View
         {
 
         }
+
+        private void btnDown_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnUp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

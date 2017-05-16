@@ -1,10 +1,15 @@
 WinMetadata\Windows.winmd
+Assets\down.png
 Assets\LockScreenLogo.scale-200.png
+Assets\reception.png
+Assets\reservation.jpg
+Assets\rounded-512.png
 Assets\SplashScreen.scale-200.png
 Assets\Square150x150Logo.scale-200.png
 Assets\Square44x44Logo.scale-200.png
 Assets\Square44x44Logo.targetsize-24_altform-unplated.png
 Assets\StoreLogo.png
+Assets\up.png
 Assets\Wide310x150Logo.scale-200.png
 DDR2.xr.xml
 Properties\Default.rd.xml

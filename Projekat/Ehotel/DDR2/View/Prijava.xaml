@@ -28,5 +28,6 @@
             </TextBlock.Foreground>Create New Account</TextBlock>
 
         <Button Name="btnNewAcc" Click="btnNewAcc_Click" Width="200" Height="50" BorderBrush="Black" FontSize="20" Background="LightGreen" Margin="28,223,0,27">Create Account</Button>
+        <Image x:Name="image" Source="/Assets/rounded-512.png" HorizontalAlignment="Left" Height="50" Margin="264,223,0,0" VerticalAlignment="Top" Width="55"/>
     </Grid>
 </Page>

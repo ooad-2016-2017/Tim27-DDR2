@@ -20,9 +20,9 @@ namespace DDR2.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class BlankPage1 : Page //slucajno nazvan BlankPage1 umjesto ShowAllReservations
+    public sealed partial class ShowAllReservations : Page //slucajno nazvan BlankPage1 umjesto ShowAllReservations
     {
-        public BlankPage1()
+        public ShowAllReservations()
         {
             this.InitializeComponent();
         }

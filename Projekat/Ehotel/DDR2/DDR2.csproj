@@ -111,6 +111,9 @@
     <Compile Include="View\MonthlyReport.xaml.cs">
       <DependentUpon>MonthlyReport.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\numericUpDown.xaml.cs">
+      <DependentUpon>numericUpDown.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ReservationInfo.xaml.cs">
       <DependentUpon>ReservationInfo.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,11 @@
     <None Include="DDR2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\down.png" />
+    <Content Include="Assets\reservation.jpg" />
+    <Content Include="Assets\rounded-512.png" />
+    <Content Include="Assets\reception.png" />
+    <Content Include="Assets\up.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -192,6 +200,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MonthlyReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\numericUpDown.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
