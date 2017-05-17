@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>cdb36374-c81b-4cfd-bc3e-25d2dc66fabb</PackageIdentityName>
     <PackageIdentityPublisher>CN=mirsad</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -25,16 +25,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-16T20:44:22.657</Modified>
+      <Modified>2017-05-17T02:49:27.162</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\bin\x86\Debug\DDR2.exe">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\bin\x86\Debug\DDR2.exe">
       <PackagePath>entrypoint\DDR2.exe</PackagePath>
-      <Modified>2017-05-16T20:44:21.474</Modified>
+      <Modified>2017-05-17T02:49:23.062</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -448,80 +448,68 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-07-22T21:11:12.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\down.png">
-      <PackagePath>Assets\down.png</PackagePath>
-      <Modified>2017-05-16T19:22:42.262</Modified>
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\Assets\reservation.jpg">
+      <PackagePath>Assets\reservation.jpg</PackagePath>
+      <Modified>2017-05-17T02:30:19.737</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\rounded-512.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\Assets\rounded-512.png">
       <PackagePath>Assets\rounded-512.png</PackagePath>
-      <Modified>2017-05-16T18:42:43.511</Modified>
+      <Modified>2017-05-17T02:30:19.739</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\reception.png">
-      <PackagePath>Assets\reception.png</PackagePath>
-      <Modified>2017-05-16T18:43:04.476</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\up.png">
-      <PackagePath>Assets\up.png</PackagePath>
-      <Modified>2017-05-16T19:22:42.254</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2017-05-16T00:07:46.000</Modified>
+      <Modified>2017-05-17T02:30:19.720</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-16T00:07:46.000</Modified>
+      <Modified>2017-05-17T02:30:19.723</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-16T00:07:46.000</Modified>
+      <Modified>2017-05-17T02:30:19.725</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-16T00:07:46.000</Modified>
+      <Modified>2017-05-17T02:30:19.726</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-16T00:07:46.000</Modified>
+      <Modified>2017-05-17T02:30:19.728</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-16T00:07:46.000</Modified>
+      <Modified>2017-05-17T02:30:19.729</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-16T00:07:46.000</Modified>
+      <Modified>2017-05-17T02:30:19.731</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Assets\reservation.jpg">
-      <PackagePath>Assets\reservation.jpg</PackagePath>
-      <Modified>2017-05-16T18:43:04.469</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2017-05-16T00:07:46.000</Modified>
+      <Modified>2017-05-17T02:30:19.780</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\bin\x86\Debug\DDR2.xr.xml">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\bin\x86\Debug\DDR2.xr.xml">
       <PackagePath>DDR2.xr.xml</PackagePath>
-      <Modified>2017-05-16T20:41:08.581</Modified>
+      <Modified>2017-05-17T02:49:22.097</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2016-10-23T17:42:52.835</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-16T20:41:13.636</Modified>
+      <Modified>2017-05-17T02:49:26.149</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2-master\Projekat\Ehotel\DDR2\bin\x86\Debug\Core\DDR2.exe">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Tim27-DDR2\Projekat\Ehotel\DDR2\bin\x86\Debug\Core\DDR2.exe">
       <PackagePath>DDR2.exe</PackagePath>
-      <Modified>2017-05-16T20:44:22.614</Modified>
+      <Modified>2017-05-17T02:49:27.136</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -20,36 +20,16 @@ namespace DDR2.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Rooms : Page
+    public sealed partial class NewRoom : Page
     {
-        public Rooms()
+        public NewRoom()
         {
             this.InitializeComponent();
         }
 
-        private void btnAddRoom_Click(object sender, RoutedEventArgs e)
+        private void cancel_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(NewRoom), e);
-        }
-
-        private void btnRemoveRoom_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnEditRoom_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AdminPanel), e);
+            this.Frame.Navigate(typeof(Rooms), e);
         }
     }
 }
