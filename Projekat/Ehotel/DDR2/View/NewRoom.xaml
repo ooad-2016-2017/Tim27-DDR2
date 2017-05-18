@@ -36,6 +36,7 @@
         <ComboBox x:Name="comboBox" BorderBrush="Black" HorizontalAlignment="Left" Margin="225,235,0,0" VerticalAlignment="Top" Width="326">
             <ComboBoxItem FontSize="20" Content="Single"></ComboBoxItem>
             <ComboBoxItem FontSize="20" Content="Double"></ComboBoxItem>
+            <ComboBoxItem FontSize="20" Content="Tripple"></ComboBoxItem>
             <ComboBoxItem FontSize="20" Content="Family"></ComboBoxItem>
         </ComboBox>
         <TextBlock x:Name="textBlock_Copy3" FontSize="20" HorizontalAlignment="Left" Margin="38,418,0,0" TextWrapping="Wrap" Text="Maximum Number Of Adults: " VerticalAlignment="Top" Height="49" Width="342"/>

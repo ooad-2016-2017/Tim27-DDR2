@@ -50,6 +50,7 @@ namespace DDR2.View
             labelCurrent.Visibility = Visibility.Visible;
             labelNew.Visibility = Visibility.Visible;
             labelRetype.Visibility = Visibility.Visible;
+            btnSavePass.Visibility = Visibility.Visible;
         }
     }
 }

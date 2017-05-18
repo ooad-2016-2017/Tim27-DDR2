@@ -1,14 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
+  <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="CheckOutDate" />
+    <RootPropertyPathName Name="CheckINDate" />
+    <RootPropertyPathName Name="Guest" />
+    <RootPropertyPathName Name="RoomNumber" />
+    <RootPropertyPathName Name="ReservationID" />
+  </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
       <RootProperty Name="RequestedTheme" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
-      <RootProperty Name="Content" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Content" />
       <RootProperty Name="HorizontalContentAlignment" />
+      <RootEvent Name="Loaded" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
@@ -35,7 +43,6 @@
       <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
-    <RootType FullName="DDR2.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
     </RootType>
@@ -62,6 +69,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Orientation" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarView">
       <RootProperty Name="VerticalAlignment" />
@@ -82,6 +90,7 @@
       <RootProperty Name="FontWeight" />
       <RootProperty Name="VerticalContentAlignment" />
       <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="Visibility" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="DDR2.View.AdminPanel" />
@@ -108,6 +117,8 @@
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="Template" />
       <RootProperty Name="ItemContainerStyle" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="ItemTemplate" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ControlTemplate">
       <RootProperty Name="Template" />
@@ -121,12 +132,16 @@
       <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="DDR2.View.AdminReservations" />
+    <RootType FullName="Windows.UI.Xaml.DataTemplate">
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
+    <RootType FullName="DDR2.View.GuestReservations" />
     <RootType FullName="DDR2.View.Guests" />
     <RootType FullName="Windows.UI.Xaml.Documents.Run">
       <RootProperty Name="Text" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="FontWeight" />
-      <RootProperty Name="FontStyle" />
     </RootType>
     <RootType FullName="DDR2.View.MonthlyReport" />
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
@@ -205,28 +220,13 @@
       <RootProperty Name="Child" />
     </RootType>
     <RootType FullName="DDR2.View.ReservationInfo" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ListBox">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Items" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ListBoxItem">
-      <RootProperty Name="Content" />
-      <RootProperty Name="Height" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Primitives.ScrollBar">
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-    </RootType>
+    <RootType FullName="DDR2.View.GuestPanel" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
       <RootProperty Name="Content" />
       <RootProperty Name="HorizontalScrollBarVisibility" />
       <RootProperty Name="HorizontalContentAlignment" />
@@ -237,8 +237,6 @@
       <RootMethod Name="GetVerticalScrollMode" />
       <RootMethod Name="SetVerticalScrollMode" />
     </RootType>
-    <RootType FullName="DDR2.View.ShowAllReservations" />
-    <RootType FullName="DDR2.View.GuestPanel" />
     <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
       <RootProperty Name="Width" />
       <RootProperty Name="Margin" />

@@ -34,7 +34,7 @@ namespace DDR2.View
 
         private void button_Copy1_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(ShowAllReservations), e);//otvara formu ShowAllReservations
+            this.Frame.Navigate(typeof(GuestReservations), e);//otvara formu ShowAllReservations
         }
     }
 }

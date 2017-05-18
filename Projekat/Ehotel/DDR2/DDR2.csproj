@@ -95,12 +95,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Gost.cs" />
-    <Compile Include="Model\Hotel.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\OsobljeAdmin.cs" />
@@ -118,6 +114,9 @@
     <Compile Include="View\AdminReservations.xaml.cs">
       <DependentUpon>AdminReservations.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\GuestReservations.xaml.cs">
+      <DependentUpon>GuestReservations.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Guests.xaml.cs">
       <DependentUpon>Guests.xaml</DependentUpon>
     </Compile>
@@ -132,9 +131,6 @@
     </Compile>
     <Compile Include="View\ReservationInfo.xaml.cs">
       <DependentUpon>ReservationInfo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ShowAllReservations.xaml.cs">
-      <DependentUpon>ShowAllReservations.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GuestPanel.xaml.cs">
       <DependentUpon>GuestPanel.xaml</DependentUpon>
@@ -196,15 +192,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\AdminPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AdminReservations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GuestReservations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,10 +221,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ReservationInfo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ShowAllReservations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

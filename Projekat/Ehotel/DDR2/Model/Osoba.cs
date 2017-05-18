@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace DDR2.Model
     {
         string ime, prezime, adresa, drzava, email, grad, telefon;
         DateTime dat_rodjenja;
-
+        
         public Osoba(string ime, string prezime, string adresa, string drzava, string email, string grad, string telefon, DateTime dat_rodjenja)
         {
             this.ime = ime;
@@ -22,7 +23,7 @@ namespace DDR2.Model
             this.telefon = telefon;
             this.dat_rodjenja = dat_rodjenja;
         }
-
+     
         public string Ime
         {
             get

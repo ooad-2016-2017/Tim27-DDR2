@@ -37,6 +37,8 @@
                     <ComboBox x:Name="roomType" HorizontalAlignment="Left" Margin="210,67,0,0" VerticalAlignment="Top" Width="308" Height="60" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch" SelectionChanged="comboBox_SelectionChanged" FontSize="22" PlaceholderText="Choose type" BorderBrush="{ThemeResource AppBarButtonForeground}" FontWeight="Light" Grid.RowSpan="2">
                         <ComboBoxItem Content="Single" FontWeight="Normal" FontStyle="Normal"/>
                         <ComboBoxItem Content="Double" FontWeight="Normal" FontStyle="Normal"/>
+                        <ComboBoxItem Content="Tripple" FontWeight="Normal" FontStyle="Normal"/>
+                        <ComboBoxItem Content="Family" FontWeight="Normal" FontStyle="Normal"/>
                     </ComboBox>
                     <local:numericUpDown Margin="253,233,108,206" Grid.RowSpan="2" Grid.Column="1"/>
                     <local:numericUpDown Margin="253,151,108,288" Grid.RowSpan="2" Grid.Column="1"/>
@@ -95,11 +97,12 @@
                 <TextBlock x:Name="textBlock2_Copy7" HorizontalAlignment="Left" Margin="40,220,0,0" TextWrapping="Wrap" Text="Check-in date:" VerticalAlignment="Top" Height="52" Width="230" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" Grid.Row="2"/>
             </Grid>
             <DatePicker HorizontalAlignment="Left" Margin="1525,483,-492,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-            <Button x:Name="button" Content="Search available rooms" Background="LightGreen" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="275,453,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="295" Click="button_Click"/>
-            <Button x:Name="button1" Content="Cancel" BorderBrush="Black" Background="LightCoral" FontSize="25" HorizontalAlignment="Left" Margin="43,453,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="62" Width="182" Click="button1_Click"/>
+            <Button x:Name="button" Content="Search available rooms" Background="LightGreen" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="160,459,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="300" Click="button_Click"/>
+            <Button x:Name="button1" Content="Cancel" BorderBrush="Black" Background="LightCoral" FontSize="25" HorizontalAlignment="Left" Margin="30,460,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="62" Width="110" Click="button1_Click"/>
             <ToggleSwitch x:Name="poolSwitch" HorizontalAlignment="Left" Margin="885,365,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="60" Width="205" FontSize="20">
             </ToggleSwitch>
             <ToggleSwitch x:Name="poolSwitch_Copy" HorizontalAlignment="Left" Margin="885,453,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="60" Width="205" FontSize="20"/>
+            <Button x:Name="button_Copy" Content="Next" Background="LightBlue" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="485,459,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="110" Click="button_Click"/>
         </Grid>
     </ScrollViewer>
 </Page>

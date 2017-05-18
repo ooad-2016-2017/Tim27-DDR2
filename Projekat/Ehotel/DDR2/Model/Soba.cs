@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,14 +9,15 @@ namespace DDR2.Model
 {
     public class Soba
     {
-        string naziv;
-        int broj;
+     
+        string naziv, opis;
+        int broj, max_djece, max_odraslih;
         double cijena;
         bool slobodna, ociscena;
         public enum tip_sobe { single, _double, family };
         tip_sobe tip;
 
-        public Soba(string ime, int broj, double cijena, bool slobodna, bool cista, tip_sobe tip)
+        public Soba(string ime, int broj, int maxd, int maxo, double cijena, bool slobodna, bool cista, tip_sobe tip, string opis)
         {
             Naziv = ime;
             Broj = broj;
@@ -23,6 +25,9 @@ namespace DDR2.Model
             Slobodna = slobodna;
             Ociscena = cista;
             Tip = tip;
+            Max_djece = maxd;
+            Max_odraslih = maxo;
+            Opis = opis;
         }
         public string Naziv
         {
@@ -62,7 +67,7 @@ namespace DDR2.Model
                 cijena = value;
             }
         }
-
+     
         public bool Slobodna
         {
             get
@@ -99,6 +104,45 @@ namespace DDR2.Model
             set
             {
                 tip = value;
+            }
+        }
+
+        public int Max_djece
+        {
+            get
+            {
+                return max_djece;
+            }
+
+            set
+            {
+                max_djece = value;
+            }
+        }
+
+        public int Max_odraslih
+        {
+            get
+            {
+                return max_odraslih;
+            }
+
+            set
+            {
+                max_odraslih = value;
+            }
+        }
+
+        public string Opis
+        {
+            get
+            {
+                return opis;
+            }
+
+            set
+            {
+                opis = value;
             }
         }
     }

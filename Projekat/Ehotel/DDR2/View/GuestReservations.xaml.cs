@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,36 +21,33 @@ namespace DDR2.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ShowAllReservations : Page //slucajno nazvan BlankPage1 umjesto ShowAllReservations
+    public sealed partial class GuestReservations : Page
     {
-        public ShowAllReservations()
+        public GuestReservations()
         {
             this.InitializeComponent();
         }
-
-        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-
+            /*using (var db = new rezervacijaDbContext())
+            {
+                ReservationsListView.ItemsSource = db.Rezervacije.OrderBy(c => c.check_in).ToList();
+            }*/
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void btnRezInfo_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(ReservationInfo), e);
         }
 
-        private void textBlock1_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button1_Copy_Click(object sender, RoutedEventArgs e)
+        private void btnGoBack_Click_1(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(GuestPanel), e);
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(ReservationInfo), e);
+
         }
     }
 }

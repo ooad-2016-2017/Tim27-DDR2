@@ -64,12 +64,12 @@ namespace DDR2.View
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(payment), e);
         }
 
         private void btnDown_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btnUp_Click(object sender, RoutedEventArgs e)
