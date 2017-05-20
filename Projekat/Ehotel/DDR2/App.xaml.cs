@@ -15,9 +15,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using DDR2.View;
-using Microsoft.Data.Entity;
-
-
 namespace DDR2
 {
     /// <summary>
@@ -32,7 +29,7 @@ namespace DDR2
         public App()
         {
             this.InitializeComponent();
-           
+            this.Suspending += OnSuspending;
         }
 
         /// <summary>

@@ -30,4 +30,5 @@
         </StackPanel>
         <CalendarView Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></CalendarView>
     </Grid>
+    
 </Page>

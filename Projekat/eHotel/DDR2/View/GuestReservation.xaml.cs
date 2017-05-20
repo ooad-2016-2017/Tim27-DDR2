@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,18 +20,11 @@ namespace DDR2.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class GuestReservations : Page
+    public sealed partial class GuestReservation : Page
     {
-        public GuestReservations()
+        public GuestReservation()
         {
             this.InitializeComponent();
-        }
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            /*using (var db = new rezervacijaDbContext())
-            {
-                ReservationsListView.ItemsSource = db.Rezervacije.OrderBy(c => c.check_in).ToList();
-            }*/
         }
 
         private void btnRezInfo_Click(object sender, RoutedEventArgs e)

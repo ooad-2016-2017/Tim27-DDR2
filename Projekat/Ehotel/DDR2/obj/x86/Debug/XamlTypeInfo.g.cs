@@ -132,53 +132,55 @@ namespace DDR2.DDR2_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[22];
-            _typeNameTable[0] = "DDR2.View.AdminPanel";
+            _typeNameTable = new string[23];
+            _typeNameTable[0] = "DDR2.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "DDR2.View.AdminReservations";
-            _typeNameTable[4] = "DDR2.View.GuestReservations";
-            _typeNameTable[5] = "DDR2.View.Guests";
-            _typeNameTable[6] = "DDR2.View.MonthlyReport";
-            _typeNameTable[7] = "DDR2.View.numericUpDown";
-            _typeNameTable[8] = "DDR2.View.NewRoom";
-            _typeNameTable[9] = "DDR2.View.ReservationInfo";
-            _typeNameTable[10] = "DDR2.View.GuestPanel";
-            _typeNameTable[11] = "DDR2.View.NewAccount";
-            _typeNameTable[12] = "DDR2.View.NewReservation";
-            _typeNameTable[13] = "DDR2.View.payment";
-            _typeNameTable[14] = "DDR2.View.Prijava";
-            _typeNameTable[15] = "DDR2.View.Reception";
-            _typeNameTable[16] = "DDR2.View.RoomCleaning";
-            _typeNameTable[17] = "DDR2.View.Rooms";
-            _typeNameTable[18] = "DDR2.View.ShowMap";
-            _typeNameTable[19] = "DDR2.View.Staff";
-            _typeNameTable[20] = "DDR2.View.Statistics";
-            _typeNameTable[21] = "DDR2.View.ViewProfile";
+            _typeNameTable[3] = "DDR2.View.AdminPanel";
+            _typeNameTable[4] = "DDR2.View.AdminReservations";
+            _typeNameTable[5] = "DDR2.View.GuestReservation";
+            _typeNameTable[6] = "DDR2.View.Guests";
+            _typeNameTable[7] = "DDR2.View.MonthlyReport";
+            _typeNameTable[8] = "DDR2.View.numericUpDown";
+            _typeNameTable[9] = "DDR2.View.NewRoom";
+            _typeNameTable[10] = "DDR2.View.ReservationInfo";
+            _typeNameTable[11] = "DDR2.View.GuestPanel";
+            _typeNameTable[12] = "DDR2.View.NewAccount";
+            _typeNameTable[13] = "DDR2.View.NewReservation";
+            _typeNameTable[14] = "DDR2.View.payment";
+            _typeNameTable[15] = "DDR2.View.Prijava";
+            _typeNameTable[16] = "DDR2.View.Reception";
+            _typeNameTable[17] = "DDR2.View.RoomCleaning";
+            _typeNameTable[18] = "DDR2.View.Rooms";
+            _typeNameTable[19] = "DDR2.View.ShowMap";
+            _typeNameTable[20] = "DDR2.View.Staff";
+            _typeNameTable[21] = "DDR2.View.Statistics";
+            _typeNameTable[22] = "DDR2.View.ViewProfile";
 
-            _typeTable = new global::System.Type[22];
-            _typeTable[0] = typeof(global::DDR2.View.AdminPanel);
+            _typeTable = new global::System.Type[23];
+            _typeTable[0] = typeof(global::DDR2.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::DDR2.View.AdminReservations);
-            _typeTable[4] = typeof(global::DDR2.View.GuestReservations);
-            _typeTable[5] = typeof(global::DDR2.View.Guests);
-            _typeTable[6] = typeof(global::DDR2.View.MonthlyReport);
-            _typeTable[7] = typeof(global::DDR2.View.numericUpDown);
-            _typeTable[8] = typeof(global::DDR2.View.NewRoom);
-            _typeTable[9] = typeof(global::DDR2.View.ReservationInfo);
-            _typeTable[10] = typeof(global::DDR2.View.GuestPanel);
-            _typeTable[11] = typeof(global::DDR2.View.NewAccount);
-            _typeTable[12] = typeof(global::DDR2.View.NewReservation);
-            _typeTable[13] = typeof(global::DDR2.View.payment);
-            _typeTable[14] = typeof(global::DDR2.View.Prijava);
-            _typeTable[15] = typeof(global::DDR2.View.Reception);
-            _typeTable[16] = typeof(global::DDR2.View.RoomCleaning);
-            _typeTable[17] = typeof(global::DDR2.View.Rooms);
-            _typeTable[18] = typeof(global::DDR2.View.ShowMap);
-            _typeTable[19] = typeof(global::DDR2.View.Staff);
-            _typeTable[20] = typeof(global::DDR2.View.Statistics);
-            _typeTable[21] = typeof(global::DDR2.View.ViewProfile);
+            _typeTable[3] = typeof(global::DDR2.View.AdminPanel);
+            _typeTable[4] = typeof(global::DDR2.View.AdminReservations);
+            _typeTable[5] = typeof(global::DDR2.View.GuestReservation);
+            _typeTable[6] = typeof(global::DDR2.View.Guests);
+            _typeTable[7] = typeof(global::DDR2.View.MonthlyReport);
+            _typeTable[8] = typeof(global::DDR2.View.numericUpDown);
+            _typeTable[9] = typeof(global::DDR2.View.NewRoom);
+            _typeTable[10] = typeof(global::DDR2.View.ReservationInfo);
+            _typeTable[11] = typeof(global::DDR2.View.GuestPanel);
+            _typeTable[12] = typeof(global::DDR2.View.NewAccount);
+            _typeTable[13] = typeof(global::DDR2.View.NewReservation);
+            _typeTable[14] = typeof(global::DDR2.View.payment);
+            _typeTable[15] = typeof(global::DDR2.View.Prijava);
+            _typeTable[16] = typeof(global::DDR2.View.Reception);
+            _typeTable[17] = typeof(global::DDR2.View.RoomCleaning);
+            _typeTable[18] = typeof(global::DDR2.View.Rooms);
+            _typeTable[19] = typeof(global::DDR2.View.ShowMap);
+            _typeTable[20] = typeof(global::DDR2.View.Staff);
+            _typeTable[21] = typeof(global::DDR2.View.Statistics);
+            _typeTable[22] = typeof(global::DDR2.View.ViewProfile);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -213,26 +215,27 @@ namespace DDR2.DDR2_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_AdminPanel() { return new global::DDR2.View.AdminPanel(); }
-        private object Activate_3_AdminReservations() { return new global::DDR2.View.AdminReservations(); }
-        private object Activate_4_GuestReservations() { return new global::DDR2.View.GuestReservations(); }
-        private object Activate_5_Guests() { return new global::DDR2.View.Guests(); }
-        private object Activate_6_MonthlyReport() { return new global::DDR2.View.MonthlyReport(); }
-        private object Activate_7_numericUpDown() { return new global::DDR2.View.numericUpDown(); }
-        private object Activate_8_NewRoom() { return new global::DDR2.View.NewRoom(); }
-        private object Activate_9_ReservationInfo() { return new global::DDR2.View.ReservationInfo(); }
-        private object Activate_10_GuestPanel() { return new global::DDR2.View.GuestPanel(); }
-        private object Activate_11_NewAccount() { return new global::DDR2.View.NewAccount(); }
-        private object Activate_12_NewReservation() { return new global::DDR2.View.NewReservation(); }
-        private object Activate_13_payment() { return new global::DDR2.View.payment(); }
-        private object Activate_14_Prijava() { return new global::DDR2.View.Prijava(); }
-        private object Activate_15_Reception() { return new global::DDR2.View.Reception(); }
-        private object Activate_16_RoomCleaning() { return new global::DDR2.View.RoomCleaning(); }
-        private object Activate_17_Rooms() { return new global::DDR2.View.Rooms(); }
-        private object Activate_18_ShowMap() { return new global::DDR2.View.ShowMap(); }
-        private object Activate_19_Staff() { return new global::DDR2.View.Staff(); }
-        private object Activate_20_Statistics() { return new global::DDR2.View.Statistics(); }
-        private object Activate_21_ViewProfile() { return new global::DDR2.View.ViewProfile(); }
+        private object Activate_0_MainPage() { return new global::DDR2.MainPage(); }
+        private object Activate_3_AdminPanel() { return new global::DDR2.View.AdminPanel(); }
+        private object Activate_4_AdminReservations() { return new global::DDR2.View.AdminReservations(); }
+        private object Activate_5_GuestReservation() { return new global::DDR2.View.GuestReservation(); }
+        private object Activate_6_Guests() { return new global::DDR2.View.Guests(); }
+        private object Activate_7_MonthlyReport() { return new global::DDR2.View.MonthlyReport(); }
+        private object Activate_8_numericUpDown() { return new global::DDR2.View.numericUpDown(); }
+        private object Activate_9_NewRoom() { return new global::DDR2.View.NewRoom(); }
+        private object Activate_10_ReservationInfo() { return new global::DDR2.View.ReservationInfo(); }
+        private object Activate_11_GuestPanel() { return new global::DDR2.View.GuestPanel(); }
+        private object Activate_12_NewAccount() { return new global::DDR2.View.NewAccount(); }
+        private object Activate_13_NewReservation() { return new global::DDR2.View.NewReservation(); }
+        private object Activate_14_payment() { return new global::DDR2.View.payment(); }
+        private object Activate_15_Prijava() { return new global::DDR2.View.Prijava(); }
+        private object Activate_16_Reception() { return new global::DDR2.View.Reception(); }
+        private object Activate_17_RoomCleaning() { return new global::DDR2.View.RoomCleaning(); }
+        private object Activate_18_Rooms() { return new global::DDR2.View.Rooms(); }
+        private object Activate_19_ShowMap() { return new global::DDR2.View.ShowMap(); }
+        private object Activate_20_Staff() { return new global::DDR2.View.Staff(); }
+        private object Activate_21_Statistics() { return new global::DDR2.View.Statistics(); }
+        private object Activate_22_ViewProfile() { return new global::DDR2.View.ViewProfile(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -244,9 +247,9 @@ namespace DDR2.DDR2_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  DDR2.View.AdminPanel
+            case 0:   //  DDR2.MainPage
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_AdminPanel;
+                userType.Activator = Activate_0_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -259,135 +262,142 @@ namespace DDR2.DDR2_XamlTypeInfo
                 xamlType = new global::DDR2.DDR2_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  DDR2.View.AdminReservations
+            case 3:   //  DDR2.View.AdminPanel
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_AdminReservations;
+                userType.Activator = Activate_3_AdminPanel;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  DDR2.View.GuestReservations
+            case 4:   //  DDR2.View.AdminReservations
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_GuestReservations;
+                userType.Activator = Activate_4_AdminReservations;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  DDR2.View.Guests
+            case 5:   //  DDR2.View.GuestReservation
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_Guests;
+                userType.Activator = Activate_5_GuestReservation;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  DDR2.View.MonthlyReport
+            case 6:   //  DDR2.View.Guests
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_MonthlyReport;
+                userType.Activator = Activate_6_Guests;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  DDR2.View.numericUpDown
+            case 7:   //  DDR2.View.MonthlyReport
+                userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_7_MonthlyReport;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  DDR2.View.numericUpDown
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_7_numericUpDown;
+                userType.Activator = Activate_8_numericUpDown;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  DDR2.View.NewRoom
+            case 9:   //  DDR2.View.NewRoom
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_NewRoom;
+                userType.Activator = Activate_9_NewRoom;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  DDR2.View.ReservationInfo
+            case 10:   //  DDR2.View.ReservationInfo
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_ReservationInfo;
+                userType.Activator = Activate_10_ReservationInfo;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  DDR2.View.GuestPanel
+            case 11:   //  DDR2.View.GuestPanel
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_GuestPanel;
+                userType.Activator = Activate_11_GuestPanel;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  DDR2.View.NewAccount
+            case 12:   //  DDR2.View.NewAccount
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_NewAccount;
+                userType.Activator = Activate_12_NewAccount;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  DDR2.View.NewReservation
+            case 13:   //  DDR2.View.NewReservation
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_NewReservation;
+                userType.Activator = Activate_13_NewReservation;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 13:   //  DDR2.View.payment
+            case 14:   //  DDR2.View.payment
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_13_payment;
+                userType.Activator = Activate_14_payment;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 14:   //  DDR2.View.Prijava
+            case 15:   //  DDR2.View.Prijava
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_14_Prijava;
+                userType.Activator = Activate_15_Prijava;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 15:   //  DDR2.View.Reception
+            case 16:   //  DDR2.View.Reception
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_15_Reception;
+                userType.Activator = Activate_16_Reception;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 16:   //  DDR2.View.RoomCleaning
+            case 17:   //  DDR2.View.RoomCleaning
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_16_RoomCleaning;
+                userType.Activator = Activate_17_RoomCleaning;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 17:   //  DDR2.View.Rooms
+            case 18:   //  DDR2.View.Rooms
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_17_Rooms;
+                userType.Activator = Activate_18_Rooms;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 18:   //  DDR2.View.ShowMap
+            case 19:   //  DDR2.View.ShowMap
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_18_ShowMap;
+                userType.Activator = Activate_19_ShowMap;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 19:   //  DDR2.View.Staff
+            case 20:   //  DDR2.View.Staff
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_19_Staff;
+                userType.Activator = Activate_20_Staff;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 20:   //  DDR2.View.Statistics
+            case 21:   //  DDR2.View.Statistics
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_20_Statistics;
+                userType.Activator = Activate_21_Statistics;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 21:   //  DDR2.View.ViewProfile
+            case 22:   //  DDR2.View.ViewProfile
                 userType = new global::DDR2.DDR2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_21_ViewProfile;
+                userType.Activator = Activate_22_ViewProfile;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

@@ -95,8 +95,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Gost.cs" />
+    <Compile Include="Model\Hotel.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\OsobljeAdmin.cs" />
@@ -114,8 +118,8 @@
     <Compile Include="View\AdminReservations.xaml.cs">
       <DependentUpon>AdminReservations.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\GuestReservations.xaml.cs">
-      <DependentUpon>GuestReservations.xaml</DependentUpon>
+    <Compile Include="View\GuestReservation.xaml.cs">
+      <DependentUpon>GuestReservation.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Guests.xaml.cs">
       <DependentUpon>Guests.xaml</DependentUpon>
@@ -192,6 +196,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\AdminPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -200,7 +208,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\GuestReservations.xaml">
+    <Page Include="View\GuestReservation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

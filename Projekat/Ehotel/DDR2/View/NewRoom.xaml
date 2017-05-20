@@ -23,7 +23,7 @@
                     </Image.RenderTransform>
                 </Image>
                 <Frame x:Name="frame1" HorizontalAlignment="Left" Margin="100,460,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="textBox" BorderBrush="Black" HorizontalAlignment="Left" Margin="35,395,0,0" TextWrapping="Wrap" Text="Write Description" FontSize="20" VerticalAlignment="Top" Height="300" Width="590"/>
+                <TextBox x:Name="textBox" BorderBrush="Black" HorizontalAlignment="Left" Margin="35,395,0,0" TextWrapping="Wrap" PlaceholderText="Write Description" FontSize="20" VerticalAlignment="Top" Height="300" Width="590"/>
             </Grid>
         </SplitView>
         <TextBlock x:Name="textBlock" FontSize="20" HorizontalAlignment="Left" Margin="38,55,0,0" TextWrapping="Wrap" Text="TexRoom Name: " VerticalAlignment="Top" Height="45" Width="212"/>

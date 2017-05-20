@@ -51,7 +51,7 @@
             <TextBox Grid.Row="3" Height="30" Width="300" Margin="223,85,762,83"></TextBox>
             <Button Name="btnSave" Background="LightGreen" Click="btnSave_Click" Width="230" FontSize="20" Height="65" Grid.Row="3" Margin="840,370,0,-235">Save Changes</Button>
             <Button Name="btnBack" Background="LightCoral" Click="btnBack_Click" Width="160" FontSize="20" Height="65" Grid.Row="3" Margin="1100,370,0,-235">Go Back</Button>
-            <Button Name="btnSavePass" Background="LightGreen" Click="btnSavePass_Click" Width="220" FontSize="20" Height="65" Grid.Row="3" Margin="590,370,0,-235" Visibility="Collapsed" >Save Password</Button>
+            <Button Name="btnSavePass" Background="LightGreen" Click="btnSavePass_Click" Width="220" FontSize="20" Height="65" Grid.Row="3" Margin="590,370,0,-235" Visibility="Collapsed">Save Password</Button>
         </Grid>
     </ScrollViewer>
 </Page>

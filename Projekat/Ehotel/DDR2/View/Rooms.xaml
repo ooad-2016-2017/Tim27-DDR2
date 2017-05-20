@@ -40,10 +40,10 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <TextBlock HorizontalAlignment="Center" FontSize="25" Grid.Column="0">Room Name</TextBlock>
-                            <TextBlock HorizontalAlignment="Center" FontSize="25" Grid.Column="3">Status</TextBlock>
-                            <TextBlock HorizontalAlignment="Center" FontSize="25" Grid.Column="1">Room Number</TextBlock>
-                            <TextBlock HorizontalAlignment="Center" FontSize="25" Grid.Column="2">Room Type</TextBlock>
+                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="0">Room Name</TextBlock>
+                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Status</TextBlock>
+                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Room Number</TextBlock>
+                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">Room Type</TextBlock>
                         </Grid>
                     </Grid>
                 </ControlTemplate>

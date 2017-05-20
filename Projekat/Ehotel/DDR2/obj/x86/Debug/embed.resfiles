@@ -1,8 +1,9 @@
 App.xbf
+MainPage.xbf
 View\AdminPanel.xbf
 View\AdminReservations.xbf
 View\GuestPanel.xbf
-View\GuestReservations.xbf
+View\GuestReservation.xbf
 View\Guests.xbf
 View\MonthlyReport.xbf
 View\NewAccount.xbf

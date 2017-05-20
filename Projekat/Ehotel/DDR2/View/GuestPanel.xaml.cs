@@ -39,7 +39,7 @@ namespace DDR2.View
 
         private void btnShowRez_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(GuestReservations), e);//otvara ShowAllReservations
+            this.Frame.Navigate(typeof(GuestReservation), e);
         }
 
         private void btnShowMap_Click(object sender, RoutedEventArgs e)

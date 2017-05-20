@@ -8,16 +8,6 @@ namespace DDR2.Model
 {
     public abstract class Korisnik:Osoba
     {
-        private string adresa;
-        private DateTime dat_rodjenja;
-        private string drzava;
-        private string email;
-        private string grad;
-        private string ime;
-        private string pass;
-        private string prezime;
-        private string telefon;
-        private string us;
         string username, password;
 
         public Korisnik(string us, string pass, string ime, string prezime, string adresa, string drzava, string email, string grad, string telefon, DateTime dat_rodjenja) : base(ime, prezime, adresa, drzava, email, grad, telefon, dat_rodjenja)

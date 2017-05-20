@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>cdb36374-c81b-4cfd-bc3e-25d2dc66fabb</PackageIdentityName>
     <PackageIdentityPublisher>CN=mirsad</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\mirsad\Desktop\Ehotel\DDR2\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -25,92 +25,20 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-18T23:16:16.698</Modified>
+      <Modified>2017-05-20T22:18:07.253</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\bin\x86\Debug\DDR2.exe">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\bin\x86\Debug\DDR2.exe">
       <PackagePath>entrypoint\DDR2.exe</PackagePath>
-      <Modified>2017-05-18T23:16:14.203</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\EntityFramework.Core\7.0.0-beta6\lib\dotnet\EntityFramework.Core.dll">
-      <PackagePath>EntityFramework.Core.dll</PackagePath>
-      <Modified>2015-07-21T17:12:58.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\EntityFramework.Relational\7.0.0-beta6\lib\dotnet\EntityFramework.Relational.dll">
-      <PackagePath>EntityFramework.Relational.dll</PackagePath>
-      <Modified>2015-07-21T17:12:58.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\EntityFramework.SQLite\7.0.0-beta6\lib\dotnet\EntityFramework.Sqlite.dll">
-      <PackagePath>EntityFramework.Sqlite.dll</PackagePath>
-      <Modified>2015-07-21T17:12:58.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Ix-Async\1.2.4\lib\portable-windows8+net45+wp8\System.Interactive.Async.dll">
-      <PackagePath>System.Interactive.Async.dll</PackagePath>
-      <Modified>2015-07-16T23:43:54.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.CodeAnalysis.Common\1.0.0\lib\portable-net45+win8\Microsoft.CodeAnalysis.dll">
-      <PackagePath>Microsoft.CodeAnalysis.dll</PackagePath>
-      <Modified>2015-06-18T18:18:34.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.CodeAnalysis.CSharp\1.0.0\lib\portable-net45+win8\Microsoft.CodeAnalysis.CSharp.dll">
-      <PackagePath>Microsoft.CodeAnalysis.CSharp.dll</PackagePath>
-      <Modified>2015-06-18T18:18:40.000</Modified>
+      <Modified>2017-05-20T22:18:04.495</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
       <Modified>2015-07-22T21:06:34.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Data.Sqlite\1.0.0-beta6\runtimes\win10-x86\native\sqlite3.dll">
-      <PackagePath>sqlite3.dll</PackagePath>
-      <Modified>2015-07-20T12:35:02.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Data.Sqlite\1.0.0-beta6\lib\dotnet\Microsoft.Data.Sqlite.dll">
-      <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
-      <Modified>2015-07-21T17:12:58.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Framework.Caching.Abstractions\1.0.0-beta6\lib\dotnet\Microsoft.Framework.Caching.Abstractions.dll">
-      <PackagePath>Microsoft.Framework.Caching.Abstractions.dll</PackagePath>
-      <Modified>2015-07-21T17:12:58.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Framework.Caching.Memory\1.0.0-beta6\lib\dotnet\Microsoft.Framework.Caching.Memory.dll">
-      <PackagePath>Microsoft.Framework.Caching.Memory.dll</PackagePath>
-      <Modified>2015-07-21T17:12:58.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Framework.Configuration\1.0.0-beta6\lib\dotnet\Microsoft.Framework.Configuration.dll">
-      <PackagePath>Microsoft.Framework.Configuration.dll</PackagePath>
-      <Modified>2015-07-21T17:13:00.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Framework.Configuration.Abstractions\1.0.0-beta6\lib\dotnet\Microsoft.Framework.Configuration.Abstractions.dll">
-      <PackagePath>Microsoft.Framework.Configuration.Abstractions.dll</PackagePath>
-      <Modified>2015-07-21T17:13:00.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Framework.Configuration.Binder\1.0.0-beta6\lib\dotnet\Microsoft.Framework.Configuration.Binder.dll">
-      <PackagePath>Microsoft.Framework.Configuration.Binder.dll</PackagePath>
-      <Modified>2015-07-21T17:13:00.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Framework.DependencyInjection\1.0.0-beta6\lib\dotnet\Microsoft.Framework.DependencyInjection.dll">
-      <PackagePath>Microsoft.Framework.DependencyInjection.dll</PackagePath>
-      <Modified>2015-07-21T17:13:00.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Framework.DependencyInjection.Abstractions\1.0.0-beta6\lib\dotnet\Microsoft.Framework.DependencyInjection.Abstractions.dll">
-      <PackagePath>Microsoft.Framework.DependencyInjection.Abstractions.dll</PackagePath>
-      <Modified>2015-07-21T17:13:00.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Framework.Logging\1.0.0-beta6\lib\dotnet\Microsoft.Framework.Logging.dll">
-      <PackagePath>Microsoft.Framework.Logging.dll</PackagePath>
-      <Modified>2015-07-21T17:13:00.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Framework.Logging.Abstractions\1.0.0-beta6\lib\dotnet\Microsoft.Framework.Logging.Abstractions.dll">
-      <PackagePath>Microsoft.Framework.Logging.Abstractions.dll</PackagePath>
-      <Modified>2015-07-21T17:13:00.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Framework.OptionsModel\1.0.0-beta6\lib\dotnet\Microsoft.Framework.OptionsModel.dll">
-      <PackagePath>Microsoft.Framework.OptionsModel.dll</PackagePath>
-      <Modified>2015-07-21T17:13:00.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.NETCore.Portable.Compatibility\1.0.0\lib\netcore50\System.ComponentModel.DataAnnotations.dll">
       <PackagePath>System.ComponentModel.DataAnnotations.dll</PackagePath>
@@ -167,10 +95,6 @@
     <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Microsoft.Win32.Primitives\4.0.0\lib\dotnet\Microsoft.Win32.Primitives.dll">
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
       <Modified>2015-07-22T21:07:10.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\Remotion.Linq\2.0.0-alpha-004\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll">
-      <PackagePath>Remotion.Linq.dll</PackagePath>
-      <Modified>2015-05-17T15:25:24.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\runtime.any.System.Private.DataContractSerialization\4.1.0\lib\netcore50\System.Private.DataContractSerialization.dll">
       <PackagePath>System.Private.DataContractSerialization.dll</PackagePath>
@@ -524,76 +448,68 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-07-22T21:11:12.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\Assets\reservation.jpg">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\Assets\reservation.jpg">
       <PackagePath>Assets\reservation.jpg</PackagePath>
-      <Modified>2017-05-18T08:40:45.744</Modified>
+      <Modified>2017-05-18T23:45:51.572</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\Assets\rounded-512.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\Assets\rounded-512.png">
       <PackagePath>Assets\rounded-512.png</PackagePath>
-      <Modified>2017-05-18T08:40:45.746</Modified>
+      <Modified>2017-05-18T23:45:51.574</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2017-05-18T08:40:45.726</Modified>
+      <Modified>2017-05-18T23:45:51.560</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-18T08:40:45.728</Modified>
+      <Modified>2017-05-18T23:45:51.562</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-18T08:40:45.730</Modified>
+      <Modified>2017-05-18T23:45:51.563</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-18T08:40:45.731</Modified>
+      <Modified>2017-05-18T23:45:51.565</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-18T08:40:45.733</Modified>
+      <Modified>2017-05-18T23:45:51.566</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-18T08:40:45.734</Modified>
+      <Modified>2017-05-18T23:45:51.569</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-18T08:40:45.736</Modified>
+      <Modified>2017-05-18T23:45:51.570</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2017-05-18T08:40:46.145</Modified>
+      <Modified>2017-05-18T23:45:51.614</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\EntityFramework.Commands\7.0.0-beta6\lib\net45\EntityFramework.Commands.xml">
-      <PackagePath>EntityFramework.Commands.xml</PackagePath>
-      <Modified>2015-07-21T15:24:16.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\.nuget\packages\EntityFramework.Commands\7.0.0-beta6\lib\net45\EntityFramework.Commands.dll">
-      <PackagePath>EntityFramework.Commands.dll</PackagePath>
-      <Modified>2015-07-21T17:12:58.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\bin\x86\Debug\DDR2.xr.xml">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\bin\x86\Debug\DDR2.xr.xml">
       <PackagePath>DDR2.xr.xml</PackagePath>
-      <Modified>2017-05-18T23:07:00.966</Modified>
+      <Modified>2017-05-20T22:18:03.637</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2016-10-23T17:42:52.835</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-18T23:16:16.144</Modified>
+      <Modified>2017-05-20T22:18:06.521</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Ehotel\DDR2\bin\x86\Debug\Core\DDR2.exe">
+    <AppxPackagedFile Include="C:\Users\mirsad\Desktop\Projekat\VERZIJA SA GITHUBA PRIJE BAZE\DDR2\bin\x86\Debug\Core\DDR2.exe">
       <PackagePath>DDR2.exe</PackagePath>
-      <Modified>2017-05-18T23:16:16.676</Modified>
+      <Modified>2017-05-20T22:18:07.232</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
