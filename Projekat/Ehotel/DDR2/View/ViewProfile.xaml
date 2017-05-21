@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="DDR2.View.ViewProfile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DDR2.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="3025" Width="1320">
+    <ScrollViewer HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Stretch" VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" Margin="0,10,0,2350.333" RenderTransformOrigin="0.5,0.5">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="1320" Width="1285">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="344"></RowDefinition>
+                <RowDefinition Height="126"/>
+                <RowDefinition Height="350"></RowDefinition>
+                <RowDefinition Height="200" ></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBox HorizontalAlignment="Stretch" Grid.Row="0" Background="LightGreen" IsReadOnly="True" Text="Welcome" VerticalAlignment="Top" FontSize="40" Height="75" Margin="0,0,-1,0"></TextBox>
+            <TextBox HorizontalAlignment="Stretch" Grid.Row="0" Background="LightGray" IsReadOnly="True" Text="Contact Information"  FontSize="25" Height="40" Margin="0,75,-1,229"></TextBox>
+            <TextBox HorizontalAlignment="Stretch" Grid.Row="2" Background="LightGray" IsReadOnly="True" Text="Basic Information" VerticalAlignment="Top" FontSize="25" Height="40" Margin="0,0,-1,0"></TextBox>
+            <TextBox HorizontalAlignment="Stretch" Grid.Row="3" Background="LightGray" IsReadOnly="True" Text="Username And Password" VerticalAlignment="Top" FontSize="25" Height="40" Margin="0,0,-1,0"></TextBox>
+            <TextBlock Grid.Row="0" FontSize="20" Height="30" Width="100" HorizontalAlignment="Left" Margin="10,165,0,149">Address</TextBlock>
+            <TextBlock Grid.Row="0" FontSize="20" Height="30" Width="100" HorizontalAlignment="Left" Margin="10,225,0,89">Country</TextBlock>
+            <TextBlock Grid.Row="0" FontSize="20" Height="30" Width="100" HorizontalAlignment="Left" Margin="10,290,0,24">City</TextBlock>
+            <TextBlock Grid.Row="1" FontSize="20" Height="30" Width="100" HorizontalAlignment="Left" Margin="10,8,0,88">Email</TextBlock>
+            <TextBlock Grid.Row="1" FontSize="20" Height="30" Width="150" HorizontalAlignment="Left" Margin="10,61,0,35">Phone number</TextBlock>
+            <TextBox Height="30" Margin="223,163,764,149"/>
+            <TextBox Height="30" Margin="223,225,764,87"/>
+            <TextBox Height="30" Margin="223,6,764,88" Grid.Row="1"/>
+            <TextBox Height="30" Margin="223,288,764,24"/>
+            <TextBox Height="30" Margin="223,61,764,33" Grid.Row="1"/>
+
+            <TextBlock Grid.Row="2" Height="30" FontSize="20" Width="100" Margin="13,95,1172,225">First Name</TextBlock>
+            <TextBlock Grid.Row="2" Height="30" FontSize="20" Width="100" Margin="13,160,1172,160">Last Name</TextBlock>
+            <TextBlock Grid.Row="2" Height="30" FontSize="20" Width="100" Margin="13,225,1172,95">Gender</TextBlock>
+            <TextBlock Grid.Row="2" Height="30" FontSize="20" Width="100" Margin="13,285,1172,35">Birth Date</TextBlock>
+            <TextBox Grid.Row="2" Height="30" Width="300" Margin="223,283,762,35"></TextBox>
+            <TextBox Grid.Row="2" Height="30" Width="300" Margin="223,158,762,160"></TextBox>
+            <TextBox Grid.Row="2" Height="30" Width="300" Margin="223,95,762,223"></TextBox>
+            <RadioButton Grid.Row="2" Margin="225,219,0,99">Male</RadioButton>
+            <RadioButton Grid.Row="2" Margin="400,219,0,99">Female</RadioButton>
+
+            <TextBlock Grid.Row="3" Height="30" FontSize="20" Width="100" Margin="13,87,1172,83">Username</TextBlock>
+            <TextBox x:Name="txtReNew" Grid.Row="3" Height="30" Width="300" Margin="223,389,762,-221" Visibility="Collapsed"></TextBox>
+            <Button Name="btnChangePass" Click="btnChangePass_Click" Width="515" FontSize="20" Height="40" Grid.Row="3" Margin="10,160,0,0">Change Password</Button>
+            <TextBlock x:Name="labelCurrent" Grid.Row="3" Height="30" FontSize="20" Width="100" Margin="13,250,1172,-80" Visibility="Collapsed">Current</TextBlock>
+            <TextBlock x:Name="labelNew" Grid.Row="3" Height="30" FontSize="20" Width="100" Margin="13,323,1172,-153" Visibility="Collapsed">New</TextBlock>
+            <TextBlock x:Name="labelRetype" Grid.Row="3" Height="30" FontSize="20" Width="100" Margin="13,389,1172,-219" Visibility="Collapsed">Retype New</TextBlock>
+            <TextBox x:Name="txtNew" Grid.Row="3" Height="30" Width="300" Margin="223,323,762,-155" Visibility="Collapsed"></TextBox>
+            <TextBox x:Name="CurrentPass" Grid.Row="3" Height="30" Width="300" Margin="223,250,762,-82" Visibility="Collapsed"></TextBox>
+            <TextBox Grid.Row="3" Height="30" Width="300" Margin="223,85,762,83"></TextBox>
+            <Button Name="btnSave" Background="LightGreen" Click="btnSave_Click" Width="230" FontSize="20" Height="65" Grid.Row="3" Margin="840,370,0,-235">Save Changes</Button>
+            <Button Name="btnBack" Background="LightCoral" Click="btnBack_Click" Width="160" FontSize="20" Height="65" Grid.Row="3" Margin="1100,370,0,-235">Go Back</Button>
+            <Button Name="btnSavePass" Background="LightGreen" Click="btnSavePass_Click" Width="220" FontSize="20" Height="65" Grid.Row="3" Margin="590,370,0,-235" Visibility="Collapsed">Save Password</Button>
+        </Grid>
+    </ScrollViewer>
+</Page>
