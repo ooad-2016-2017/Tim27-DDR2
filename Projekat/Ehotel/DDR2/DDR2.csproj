@@ -180,7 +180,6 @@
     <None Include="DDR2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\reservation.jpg" />
     <Content Include="Assets\rounded-512.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
