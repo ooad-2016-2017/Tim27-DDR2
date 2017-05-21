@@ -15,6 +15,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using DDR2.View;
+using DDR2.EHotelBaza.Models;
+using Microsoft.Data.Entity;
+
 namespace DDR2
 {
     /// <summary>
@@ -28,6 +31,11 @@ namespace DDR2
         /// </summary>
         public App()
         {
+            using (var db = new KorisnikDBContext())
+            {
+                db.Database.ApplyMigrations();
+                DefaultPodaci.Initialize(db);
+            }
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
