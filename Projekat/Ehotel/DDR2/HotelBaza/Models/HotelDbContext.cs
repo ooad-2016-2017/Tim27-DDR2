@@ -7,24 +7,28 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 
-namespace DDR2.EHotelBaza.Models
+namespace DDR2.HotelBaza.Models
 {
-    class SobaDbContext: DbContext
+    class HotelDbContext:DbContext
     {
-        //Svi restorani koji su u tabeli se dobijaju iz ovog seta
         public DbSet<Soba> Sobe { get; set; }
+        public DbSet<Gost> Gosti { get; set; }
+        public DbSet<Rezervacija> Rezervacije { get; set; }
+        public DbSet<Recepcionar> Recepcionari { get; set; }
+        public DbSet<Sobarica> Sobarice { get; set; }
+
         //Metoda koja će promijeniti konfiguraciju i odrediti gdje se spašava klasa i kako se zove.
         //Ovisno od uređaja spasiti će se na različite lokacije, za desktop se kreira poseban folder
         //u AppData/Local Folderu od korisnika
         //Svaki korisnik koji pokrene aplikaciju će imati kreiranu bazu lokalno kod sebe
-protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string databaseFilePath = "NovaBaza.db";
+            string databaseFilePath = "HotelEntradaBaza.db";
             try
             {
                 //za tačnu putanju gdje se nalazi baza uraditi ovdje debug i procitati Path
-                databaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                databaseFilePath);
+                databaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, databaseFilePath);
             }
             catch (InvalidOperationException) { }
             //Sqlite baza
@@ -34,7 +38,10 @@ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //jedno od polja je image da se zna šta je zapravo predstavlja byte[]
             modelBuilder.Entity<Soba>().Property(p => p.Slika).HasColumnType("image");
+            modelBuilder.Entity<Gost>().Property(p => p.Slika).HasColumnType("image");
+            modelBuilder.Entity<Recepcionar>().Property(p => p.Slika).HasColumnType("image");
+            modelBuilder.Entity<Sobarica>().Property(p => p.Slika).HasColumnType("image");
         }
+
     }
 }
-

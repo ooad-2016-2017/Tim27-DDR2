@@ -7,9 +7,9 @@ using Windows.Storage.Streams;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace DDR2.EHotelBaza.Views
+namespace DDR2.HotelBaza.Views
 {
-    class PictureConverter : IValueConverter
+    class PictureConverter:IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {

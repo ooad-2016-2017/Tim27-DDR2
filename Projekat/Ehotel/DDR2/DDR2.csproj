@@ -95,21 +95,24 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EHotelBaza\Models\DefaultPodaci.cs" />
-    <Compile Include="EHotelBaza\Models\Soba.cs" />
-    <Compile Include="EHotelBaza\Models\SobaDbContext.cs" />
-    <Compile Include="EHotelBaza\Views\PictureConverter.cs" />
+    <Compile Include="HotelBaza\Models\DefaultPodaci.cs" />
+    <Compile Include="HotelBaza\Models\Gost.cs" />
+    <Compile Include="HotelBaza\Models\HotelDbContext.cs" />
+    <Compile Include="HotelBaza\Models\Recepcionar.cs" />
+    <Compile Include="HotelBaza\Models\Rezervacija.cs" />
+    <Compile Include="HotelBaza\Models\Soba.cs" />
+    <Compile Include="HotelBaza\Models\Sobarica.cs" />
+    <Compile Include="HotelBaza\Views\PictureConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20170522080545_InitialMigration.cs" />
-    <Compile Include="Migrations\20170522080545_InitialMigration.designer.cs">
-      <DependentUpon>20170522080545_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20170522213343_InitialMigration.cs" />
+    <Compile Include="Migrations\20170522213343_InitialMigration.designer.cs">
+      <DependentUpon>20170522213343_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\SobaDbContextModelSnapshot.cs" />
+    <Compile Include="Migrations\HotelDbContextModelSnapshot.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Gost.cs" />
-    <Compile Include="Model\Hotel.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\OsobljeAdmin.cs" />

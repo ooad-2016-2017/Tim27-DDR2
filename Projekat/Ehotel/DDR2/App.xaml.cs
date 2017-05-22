@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using DDR2.View;
-using DDR2.EHotelBaza.Models;
+using DDR2.HotelBaza.Models;
 using Microsoft.Data.Entity;
 
 namespace DDR2
@@ -31,10 +31,9 @@ namespace DDR2
         /// </summary>
         public App()
         {
-
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            using (var db = new SobaDbContext())
+            using (var db = new HotelDbContext())
             {
                 db.Database.ApplyMigrations();
                 DefaultPodaci.Initialize(db);
