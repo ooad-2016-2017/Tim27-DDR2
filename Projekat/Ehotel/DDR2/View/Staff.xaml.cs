@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDR2.HotelBaza.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,16 +33,6 @@ namespace DDR2.View
 
         }
 
-        private void btnRemoveStaff_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnEditStaff_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -50,6 +41,15 @@ namespace DDR2.View
         private void btnGoBack_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AdminPanel), e);
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (var db = new HotelDbContext())
+            {
+                StaffListView.ItemsSource = db.Recepcionari.OrderBy(c => c.Plata).ToList();
+                StaffListView.ItemsSource = db.Sobarice.OrderBy(c => c.Plata).ToList();
+            }
         }
     }
 }
