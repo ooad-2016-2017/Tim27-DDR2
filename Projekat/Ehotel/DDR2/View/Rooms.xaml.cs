@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDR2.EHotelBaza.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,6 +28,13 @@ namespace DDR2.View
             this.InitializeComponent();
         }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (var db = new SobaDbContext())
+            {
+                RoomListView.ItemsSource = db.Sobe.OrderBy(c => c.Naziv).ToList();
+            }
+        }
         private void btnAddRoom_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(NewRoom), e);
