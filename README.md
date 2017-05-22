@@ -1,4 +1,4 @@
-﻿![img](https://github.com/ooad-2016-2017/Tim27-DDR2/blob/master/Projekat/Ehotel/DDR2/Assets/logo%20eHotel%20konacno.jpg)
+﻿![img](https://github.com/ooad-2016-2017/Tim27-DDR2/blob/master/LOGO/logo_verzija1.jpg)
 
 
 
