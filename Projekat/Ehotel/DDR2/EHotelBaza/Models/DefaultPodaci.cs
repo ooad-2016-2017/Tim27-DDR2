@@ -3,28 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DDR2.Model.Soba;
 
 namespace DDR2.EHotelBaza.Models
 {
     class DefaultPodaci
     {
-        public static void Initialize(KorisnikDBContext context)
+        public static void Initialize(SobaDbContext context)
         {
-            if (!context.Korisnici.Any())
+            if (!context.Sobe.Any())
             {
-                context.Korisnici.AddRange(
-                new Korisnik()
+                context.Sobe.AddRange(
+                new Soba()
                 {
-                   ime="Dzejlan",
-                   prezime="Sabic",
-                   adresa="Ive Andrica 2",
-                   drzava="Bosna i Hercegovina",
-                   email="dzejlan.sabic@hotmail.com",
-                   grad="Sarajevo",
-                   telefon="062/297-999",
-                   username="dzejlan",
-                   password="dzejlan",
-                   dat_rodjenja=new DateTime (2017,12,12),
+                    Naziv = "Soba pomirenja",
+                    Broj = 1,
+                    Cijena = 50,
+                    Slobodna = true,
+                    Ociscena = true,
+                    Tip = tip_sobe.family,
                 }
                 );
                 context.SaveChanges();

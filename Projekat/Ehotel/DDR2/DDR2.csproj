@@ -96,16 +96,17 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="EHotelBaza\Models\DefaultPodaci.cs" />
-    <Compile Include="EHotelBaza\Models\Korisnik.cs" />
-    <Compile Include="EHotelBaza\Models\KorisnikDBContext.cs" />
+    <Compile Include="EHotelBaza\Models\Soba.cs" />
+    <Compile Include="EHotelBaza\Models\SobaDbContext.cs" />
+    <Compile Include="EHotelBaza\Views\PictureConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20170521185927_InitialMigration.cs" />
-    <Compile Include="Migrations\20170521185927_InitialMigration.designer.cs">
-      <DependentUpon>20170521185927_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20170522080545_InitialMigration.cs" />
+    <Compile Include="Migrations\20170522080545_InitialMigration.designer.cs">
+      <DependentUpon>20170522080545_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\KorisnikDBContexModelSnapshot.cs" />
+    <Compile Include="Migrations\SobaDbContextModelSnapshot.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Gost.cs" />
     <Compile Include="Model\Hotel.cs" />
@@ -188,7 +189,6 @@
     <None Include="DDR2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\reservation.jpg" />
     <Content Include="Assets\rounded-512.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -290,7 +290,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EHotelBaza\Views\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

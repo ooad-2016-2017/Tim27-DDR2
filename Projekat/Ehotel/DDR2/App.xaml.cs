@@ -31,13 +31,14 @@ namespace DDR2
         /// </summary>
         public App()
         {
-            using (var db = new KorisnikDBContext())
+
+            this.InitializeComponent();
+            this.Suspending += OnSuspending;
+            using (var db = new SobaDbContext())
             {
                 db.Database.ApplyMigrations();
                 DefaultPodaci.Initialize(db);
             }
-            this.InitializeComponent();
-            this.Suspending += OnSuspending;
         }
 
         /// <summary>
