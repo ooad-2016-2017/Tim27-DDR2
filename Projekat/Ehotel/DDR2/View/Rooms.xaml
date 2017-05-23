@@ -45,13 +45,13 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" >
-                        <TextBlock Text="{Binding Naziv}" Width="100"/>
-                        <TextBlock Text="{Binding Broj}" Width="100"/>
-                        <TextBlock Text="{Binding Tip}" Width="100"/>
-                        <TextBlock Text="{Binding Cijena}" Width="100"/>
-                        <Button Width="100">Edit</Button>
-                        <Button Width="100">Details</Button>
-                        <Button Width="100">Delete</Button>
+                        <TextBlock Text="{Binding Naziv}" FontSize="25" Width="300"/>
+                        <TextBlock Text="{Binding Broj}" FontSize="25" Width="300"/>
+                        <TextBlock Text="{Binding Tip}" FontSize="25" Width="300"/>
+                        <TextBlock Text="{Binding Cijena}" FontSize="25" Width="300"/>
+                        <Button Width="200" FontSize="25">Edit</Button>
+                        <Button Width="200" FontSize="25">Details</Button>
+                        <Button Width="200" FontSize="25">Delete</Button>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

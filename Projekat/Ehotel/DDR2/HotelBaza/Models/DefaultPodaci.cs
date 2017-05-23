@@ -135,6 +135,7 @@ namespace DDR2.HotelBaza.Models
                 }
                 );
             }
+            context.SaveChanges();
         }
     }
 }

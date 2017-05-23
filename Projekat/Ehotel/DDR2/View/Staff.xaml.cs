@@ -48,7 +48,7 @@ namespace DDR2.View
             using (var db = new HotelDbContext())
             {
                 StaffListView.ItemsSource = db.Recepcionari.OrderBy(c => c.Plata).ToList();
-                StaffListView.ItemsSource = db.Sobarice.OrderBy(c => c.Plata).ToList();
+                StaffListView2.ItemsSource = db.Sobarice.OrderBy(c => c.Plata).ToList();
             }
         }
     }

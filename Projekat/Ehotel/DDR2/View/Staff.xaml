@@ -36,21 +36,46 @@
             <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Last Name</TextBlock>
             <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">Phone Number</TextBlock>
         </Grid>
-        <ListView Margin="0,125,-970,-770" Grid.Row="2"
+        <ListView Margin="0,125,-970,-400" Grid.Row="2"
             x:Name="StaffListView"
             IsItemClickEnabled="True">
 
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Ime}"/>
-                        <TextBlock Text="{Binding Prezime}"/>
-                        <TextBlock Text="{Binding Telefon}"/>
-                        <TextBlock Text="{Binding Posao}"/>
-                        <TextBlock Text="{Binding Datum_zaposlenja}"/>
-                        <Button>Edit</Button>
-                        <Button>Delete</Button>
-                        <Button>Details</Button>
+                        <TextBlock Text="{Binding Ime}" Width="300" FontSize="25"/>
+                        <TextBlock Text="{Binding Prezime}" Width="300" FontSize="25"/>
+                        <TextBlock Text="{Binding Telefon}" Width="300" FontSize="25"/>
+                        <TextBlock Text="{Binding Posao}" Width="300" FontSize="25"/>
+                        <TextBlock Text="{Binding Datum_zaposlenja}" Width="300" FontSize="25"/>
+                        <Button FontSize="25" Width="200">Edit</Button>
+                        <Button FontSize="25" Width="200">Delete</Button>
+                        <Button FontSize="25" Width="200">Details</Button>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        <ListView Margin="0,450,-970,-774" Grid.Row="2"
+            x:Name="StaffListView2"
+            IsItemClickEnabled="True">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Ime}" Width="300" FontSize="25"/>
+                        <TextBlock Text="{Binding Prezime}" Width="300" FontSize="25"/>
+                        <TextBlock Text="{Binding Telefon}" Width="300" FontSize="25"/>
+                        <TextBlock Text="{Binding Posao}" Width="300" FontSize="25"/>
+                        <TextBlock Text="{Binding Datum_zaposlenja}" Width="300" FontSize="25"/>
+                        <Button FontSize="25" Width="200" Content="Edit"/>
+                        <Button FontSize="25" Width="200" Content="Delete"/>
+                        <Button FontSize="25" Width="200" Content="Details"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

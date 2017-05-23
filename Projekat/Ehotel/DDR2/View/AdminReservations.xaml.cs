@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDR2.HotelBaza.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,12 +28,6 @@ namespace DDR2.View
             this.InitializeComponent();
         }
 
-       
-        private void btnEditRez_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -43,9 +38,12 @@ namespace DDR2.View
             this.Frame.Navigate(typeof(AdminPanel), e);
         }
 
-        private void btnCancelRez_Click(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-
+            using (var db = new HotelDbContext())
+            {
+                ReservationsListView.ItemsSource = db.Rezervacije.OrderBy(c => c.Cijena).ToList();
+            }
         }
     }
 }
