@@ -30,7 +30,7 @@ namespace DDR2.View
 
         private void btnAddStuff_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AddStaff), e);
+            this.Frame.Navigate(typeof(AddStuff), e);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -52,8 +52,21 @@ namespace DDR2.View
             }
         }
 
-        private void btnAddStuff_Click(System.Object sender, RoutedEventArgs e)
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+            //Dobavljanje objekta iz liste koji je korišten da se popuni red u listview 
+            DependencyObject dep = (DependencyObject)e.OriginalSource;
+            while ((dep != null) && !(dep is ListViewItem)) {
+                dep = VisualTreeHelper.GetParent(dep);
+            }
+            if (dep == null) return;
+            using (var db = new HotelDbContext()) {
+                db.Recepcionari.Remove((Recepcionar) 
+                    StaffListView.ItemFromContainer(dep));
+                db.SaveChanges();
+                //Refresh liste recepcionara 
+                StaffListView.ItemsSource = db.Recepcionari.OrderBy(c => c.Plata).ToList();
+            }
 
         }
     }

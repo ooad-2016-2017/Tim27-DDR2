@@ -36,7 +36,7 @@
             <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Last Name</TextBlock>
             <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">Phone Number</TextBlock>
         </Grid>
-        <ListView Margin="0,125,-970,-400" Grid.Row="2"
+        <ListView Margin="0,125,-970,-200" Grid.Row="2"
             x:Name="StaffListView"
             IsItemClickEnabled="True">
 
@@ -49,7 +49,7 @@
                         <TextBlock Text="{Binding Posao}" Width="300" FontSize="25"/>
                         <TextBlock Text="{Binding Datum_zaposlenja}" Width="300" FontSize="25"/>
                         <Button FontSize="25" Width="200">Edit</Button>
-                        <Button FontSize="25" Width="200">Delete</Button>
+                        <Button  Name="btnDelete"  FontSize="25" Width="200" Click="btnDelete_Click">Delete</Button>
                         <Button FontSize="25" Width="200">Details</Button>
                     </StackPanel>
                 </DataTemplate>
@@ -61,7 +61,7 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <ListView Margin="0,450,-970,-774" Grid.Row="2"
+        <ListView Margin="0,255,-970,-774" Grid.Row="2"
             x:Name="StaffListView2"
             IsItemClickEnabled="True">
 
