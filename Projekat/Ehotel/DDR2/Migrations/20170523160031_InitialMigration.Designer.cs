@@ -11,7 +11,7 @@ namespace DDR2Migrations
     {
         public override string Id
         {
-            get { return "20170522213343_InitialMigration"; }
+            get { return "20170523160031_InitialMigration"; }
         }
 
         public override string ProductVersion
@@ -24,7 +24,7 @@ namespace DDR2Migrations
             builder
                 .Annotation("ProductVersion", "7.0.0-beta6-13815");
 
-            builder.Entity("DDR2.HotelBaza.Models.Gost", b =>
+            builder.Entity("DDR2.Model.Gost", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -45,8 +45,7 @@ namespace DDR2Migrations
 
                     b.Property<string>("Prezime");
 
-                    b.Property<byte[]>("Slika")
-                        .Annotation("Relational:ColumnType", "image");
+                    b.Property<int>("Spol_osobe");
 
                     b.Property<string>("Telefon");
 
@@ -55,7 +54,37 @@ namespace DDR2Migrations
                     b.Key("Id");
                 });
 
-            builder.Entity("DDR2.HotelBaza.Models.Recepcionar", b =>
+            builder.Entity("DDR2.Model.Korisnik", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Adresa");
+
+                    b.Property<DateTime>("Dat_rodjenja");
+
+                    b.Property<string>("Drzava");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Grad");
+
+                    b.Property<string>("Ime");
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Prezime");
+
+                    b.Property<int>("Spol_osobe");
+
+                    b.Property<string>("Telefon");
+
+                    b.Property<string>("Username");
+
+                    b.Key("Id");
+                });
+
+            builder.Entity("DDR2.Model.Recepcionar", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -74,7 +103,7 @@ namespace DDR2Migrations
 
                     b.Property<string>("Ime");
 
-                    b.Property<string>("JMBG");
+                    b.Property<string>("Jmbg");
 
                     b.Property<string>("Password");
 
@@ -82,8 +111,7 @@ namespace DDR2Migrations
 
                     b.Property<string>("Prezime");
 
-                    b.Property<byte[]>("Slika")
-                        .Annotation("Relational:ColumnType", "image");
+                    b.Property<int>("Spol_osobe");
 
                     b.Property<string>("Telefon");
 
@@ -92,7 +120,7 @@ namespace DDR2Migrations
                     b.Key("Id");
                 });
 
-            builder.Entity("DDR2.HotelBaza.Models.Rezervacija", b =>
+            builder.Entity("DDR2.Model.Rezervacija", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -113,31 +141,31 @@ namespace DDR2Migrations
 
                     b.Property<double>("Cijena");
 
-                    b.Property<int?>("GostRezervacijeId");
-
-                    b.Property<string>("IdRezervacije");
+                    b.Property<int?>("GostId");
 
                     b.Property<bool>("Parking");
 
+                    b.Property<string>("Rezervacija_id");
+
                     b.Property<int>("Smjestaj");
 
-                    b.Property<int?>("SobaRezervacijeSobaId");
+                    b.Property<int?>("SobaId");
 
                     b.Key("Id");
                 });
 
-            builder.Entity("DDR2.HotelBaza.Models.Soba", b =>
+            builder.Entity("DDR2.Model.Soba", b =>
                 {
-                    b.Property<int>("SobaId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("Broj");
 
                     b.Property<double>("Cijena");
 
-                    b.Property<int>("Max_broj_djece");
+                    b.Property<int>("Max_djece");
 
-                    b.Property<int>("Max_broj_odraslih");
+                    b.Property<int>("Max_odraslih");
 
                     b.Property<string>("Naziv");
 
@@ -152,10 +180,10 @@ namespace DDR2Migrations
 
                     b.Property<int>("Tip");
 
-                    b.Key("SobaId");
+                    b.Key("Id");
                 });
 
-            builder.Entity("DDR2.HotelBaza.Models.Sobarica", b =>
+            builder.Entity("DDR2.Model.Sobarica", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -174,7 +202,7 @@ namespace DDR2Migrations
 
                     b.Property<string>("Ime");
 
-                    b.Property<string>("JMBG");
+                    b.Property<string>("Jmbg");
 
                     b.Property<string>("Password");
 
@@ -182,8 +210,7 @@ namespace DDR2Migrations
 
                     b.Property<string>("Prezime");
 
-                    b.Property<byte[]>("Slika")
-                        .Annotation("Relational:ColumnType", "image");
+                    b.Property<int>("Spol_osobe");
 
                     b.Property<string>("Telefon");
 
@@ -192,15 +219,51 @@ namespace DDR2Migrations
                     b.Key("Id");
                 });
 
-            builder.Entity("DDR2.HotelBaza.Models.Rezervacija", b =>
+            builder.Entity("DDR2.Model.Uposlenik", b =>
                 {
-                    b.Reference("DDR2.HotelBaza.Models.Gost")
-                        .InverseCollection()
-                        .ForeignKey("GostRezervacijeId");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
 
-                    b.Reference("DDR2.HotelBaza.Models.Soba")
+                    b.Property<string>("Adresa");
+
+                    b.Property<DateTime>("Dat_rodjenja");
+
+                    b.Property<DateTime>("Dat_zaposlenja");
+
+                    b.Property<string>("Drzava");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Grad");
+
+                    b.Property<string>("Ime");
+
+                    b.Property<string>("Jmbg");
+
+                    b.Property<string>("Password");
+
+                    b.Property<double>("Plata");
+
+                    b.Property<string>("Prezime");
+
+                    b.Property<int>("Spol_osobe");
+
+                    b.Property<string>("Telefon");
+
+                    b.Property<string>("Username");
+
+                    b.Key("Id");
+                });
+
+            builder.Entity("DDR2.Model.Rezervacija", b =>
+                {
+                    b.Reference("DDR2.Model.Gost")
                         .InverseCollection()
-                        .ForeignKey("SobaRezervacijeSobaId");
+                        .ForeignKey("GostId");
+
+                    b.Reference("DDR2.Model.Soba")
+                        .InverseCollection()
+                        .ForeignKey("SobaId");
                 });
         }
     }

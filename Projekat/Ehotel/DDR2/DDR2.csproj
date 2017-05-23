@@ -96,23 +96,19 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="HotelBaza\Models\DefaultPodaci.cs" />
-    <Compile Include="HotelBaza\Models\Gost.cs" />
     <Compile Include="HotelBaza\Models\HotelDbContext.cs" />
-    <Compile Include="HotelBaza\Models\Recepcionar.cs" />
-    <Compile Include="HotelBaza\Models\Rezervacija.cs" />
-    <Compile Include="HotelBaza\Models\Soba.cs" />
-    <Compile Include="HotelBaza\Models\Sobarica.cs" />
     <Compile Include="HotelBaza\Views\PictureConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20170522213343_InitialMigration.cs" />
-    <Compile Include="Migrations\20170522213343_InitialMigration.designer.cs">
-      <DependentUpon>20170522213343_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20170523160031_InitialMigration.cs" />
+    <Compile Include="Migrations\20170523160031_InitialMigration.designer.cs">
+      <DependentUpon>20170523160031_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\HotelDbContextModelSnapshot.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Gost.cs" />
+    <Compile Include="Model\GostiAdmin.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\OsobljeAdmin.cs" />
@@ -124,7 +120,9 @@
     <Compile Include="Model\SobeAdmin.cs" />
     <Compile Include="Model\Uposlenik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\OsobljeVM.cs" />
+    <Compile Include="ViewModel\RegistracijaVM.cs" />
     <Compile Include="View\AddStuff.xaml.cs">
       <DependentUpon>AddStuff.xaml</DependentUpon>
     </Compile>

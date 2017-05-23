@@ -61,13 +61,8 @@ namespace DDR2.View
             }
             if (dep == null) return;
             using (var db = new HotelDbContext()) {
-                db.Recepcionari.Remove((Recepcionar) 
-                    StaffListView.ItemFromContainer(dep));
-                db.SaveChanges();
-                //Refresh liste recepcionara 
                 StaffListView.ItemsSource = db.Recepcionari.OrderBy(c => c.Plata).ToList();
             }
-
         }
     }
 }

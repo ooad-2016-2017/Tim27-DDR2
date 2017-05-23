@@ -1,4 +1,5 @@
 ﻿using DDR2.HotelBaza.Models;
+using DDR2.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -43,7 +44,7 @@ namespace DDR2.View
                         Drzava = CountrySelector.SelectedItem.ToString(),
                         Grad = txtCity.Text,
                         Email = txtEmail.Text,
-                        JMBG = txtJmbg.Text,
+                        Jmbg = txtJmbg.Text,
                         // Dat_rodjenja =datumRodjenja,
                         // Dat_zaposlenja=datumZaposlenja,
                         Username = txtUsername.Text,
@@ -64,7 +65,7 @@ namespace DDR2.View
                         Drzava = CountrySelector.SelectedItem.ToString(),
                         Grad = txtCity.Text,
                         Email = txtEmail.Text,
-                        JMBG = txtJmbg.Text,
+                        Jmbg = txtJmbg.Text,
                         // Dat_rodjenja =datumRodjenja,
                         // Dat_zaposlenja=datumZaposlenja,
                         Username = txtUsername.Text,

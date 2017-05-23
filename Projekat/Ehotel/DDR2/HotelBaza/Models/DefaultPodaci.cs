@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDR2.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,8 +23,8 @@ namespace DDR2.HotelBaza.Models
                     Cijena = 50,
                     Slobodna = true,
                     Ociscena = true,
-                    Max_broj_djece = 1,
-                    Max_broj_odraslih = 2,
+                    Max_djece = 1,
+                    Max_odraslih = 2,
                     Opis = "neka probna sobica",
                     Tip = tip_sobe.family,
                 }
@@ -35,7 +36,7 @@ namespace DDR2.HotelBaza.Models
                 context.Rezervacije.AddRange(
                 new Rezervacija()
                 {
-                    GostRezervacije = new Gost()
+                    Gost = new Gost()
                     {
                         Ime = "Rahman",
                         Prezime = "Rahmanovic",
@@ -48,19 +49,19 @@ namespace DDR2.HotelBaza.Models
                         Password = "password",
                         Dat_rodjenja = new DateTime(2013, 12, 12),
                     },
-                    SobaRezervacije = new Soba()
+                    Soba = new Soba()
                     {
                         Naziv = "Soba pomirenja",
                         Broj = 1,
                         Cijena = 50,
                         Slobodna = true,
                         Ociscena = true,
-                        Max_broj_djece = 1,
-                        Max_broj_odraslih = 2,
+                        Max_djece = 1,
+                        Max_odraslih = 2,
                         Opis = "neka probna sobica",
                         Tip = tip_sobe.family,
                     },
-                    IdRezervacije = "skfvi8g69furigz",
+                    Rezervacija_id = "skfvi8g69furigz",
                     Cijena = 500,
                     Br_djece = 1,
                     Br_odraslih = 2,
@@ -68,7 +69,7 @@ namespace DDR2.HotelBaza.Models
                     Br_soba = 1,
                     Bazen = false,
                     Parking = true,
-                    Smjestaj = TipSmjestaja.halfboard,
+                    Smjestaj = Tip_smjestaja.halfboard,
                     Check_in = new DateTime(2014, 12, 12),
                     Check_out = new DateTime(2014, 12, 17)
                 }
@@ -109,7 +110,7 @@ namespace DDR2.HotelBaza.Models
                     Password = "password",
                     Dat_rodjenja = new DateTime(1996, 12, 12),
                     Dat_zaposlenja = new DateTime(2013, 12, 12),
-                    JMBG = "92838392948",
+                    Jmbg = "92838392948",
                     Plata = 213,
                 }
                 );
@@ -130,7 +131,7 @@ namespace DDR2.HotelBaza.Models
                     Password = "password",
                     Dat_rodjenja = new DateTime(1996, 12, 12),
                     Dat_zaposlenja = new DateTime(2013, 12, 12),
-                    JMBG = "92838392948",
+                    Jmbg = "92838392948",
                     Plata = 213,
                 }
                 );

@@ -8,34 +8,13 @@ namespace DDR2.Model
 {
     public class OsobljeAdmin:Admin
     {
-        List<Uposlenik> uposleni;
+        List<Uposlenik> uposlenici;
 
-        public OsobljeAdmin(string us, string pass, string ime, string prezime, string adresa, string drzava, string email, string grad, string telefon, DateTime dat_rodjenja) : base(us, pass, ime, prezime, adresa, drzava, email, grad, telefon, dat_rodjenja)
+        public OsobljeAdmin(string us, string pass, string ime, string prezime, string adresa, string drzava, string email, string grad, string telefon, DateTime dat_rodjenja, gender spol) : base(us, pass, ime, prezime, adresa, drzava, email, grad, telefon, dat_rodjenja, spol)
         {
-            Uposleni = new List<Uposlenik>();
+            Uposlenici = new List<Uposlenik>();
         }
 
-        public void ObrisiUposlenika(Uposlenik up)
-        {
-            Uposleni.Remove(up);
-        }
-
-        public void DodajUposlenika(Uposlenik up)
-        {
-            Uposleni.Add(up);
-        }
-
-        public List<Uposlenik> Uposleni
-        {
-            get
-            {
-                return uposleni;
-            }
-
-            set
-            {
-                uposleni = value;
-            }
-        }
+        public List<Uposlenik> Uposlenici { get => uposlenici; set => uposlenici = value; }
     }
 }

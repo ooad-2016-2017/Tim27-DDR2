@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.Entity;
+﻿using DDR2.Model;
+using Microsoft.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,6 +17,8 @@ namespace DDR2.HotelBaza.Models
         public DbSet<Rezervacija> Rezervacije { get; set; }
         public DbSet<Recepcionar> Recepcionari { get; set; }
         public DbSet<Sobarica> Sobarice { get; set; }
+        public DbSet<Korisnik> Korisnici { get; set; }
+        public DbSet<Uposlenik> Uposlenici { get; set; }
 
         //Metoda koja će promijeniti konfiguraciju i odrediti gdje se spašava klasa i kako se zove.
         //Ovisno od uređaja spasiti će se na različite lokacije, za desktop se kreira poseban folder
@@ -24,7 +27,7 @@ namespace DDR2.HotelBaza.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string databaseFilePath = "HotelEntradaBaza.db";
+            string databaseFilePath = "ProjekatEHotelBaza.db";
             try
             {
                 //za tačnu putanju gdje se nalazi baza uraditi ovdje debug i procitati Path
@@ -38,9 +41,6 @@ namespace DDR2.HotelBaza.Models
         {
             //jedno od polja je image da se zna šta je zapravo predstavlja byte[]
             modelBuilder.Entity<Soba>().Property(p => p.Slika).HasColumnType("image");
-            modelBuilder.Entity<Gost>().Property(p => p.Slika).HasColumnType("image");
-            modelBuilder.Entity<Recepcionar>().Property(p => p.Slika).HasColumnType("image");
-            modelBuilder.Entity<Sobarica>().Property(p => p.Slika).HasColumnType("image");
         }
 
     }
