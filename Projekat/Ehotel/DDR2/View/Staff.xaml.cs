@@ -30,7 +30,7 @@ namespace DDR2.View
 
         private void btnAddStuff_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(AddStaff), e);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -50,6 +50,11 @@ namespace DDR2.View
                 StaffListView.ItemsSource = db.Recepcionari.OrderBy(c => c.Plata).ToList();
                 StaffListView2.ItemsSource = db.Sobarice.OrderBy(c => c.Plata).ToList();
             }
+        }
+
+        private void btnAddStuff_Click(System.Object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
