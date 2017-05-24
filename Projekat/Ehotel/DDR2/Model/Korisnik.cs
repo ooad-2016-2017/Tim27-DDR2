@@ -21,7 +21,30 @@ namespace DDR2.Model
             Password = pass;
         }
 
-        public string Username { get => username; set => username = value; }
-        public string Password { get => password; set => password = value; }
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+
+            set
+            {
+                password = value;
+            }
+        }
+
+        public string Username
+        {
+            get
+            {
+                return username;
+            }
+
+            set
+            {
+                username = value;
+            }
+        }
     }
 }

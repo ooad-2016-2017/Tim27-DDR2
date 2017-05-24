@@ -12,6 +12,123 @@ namespace DDR2.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        public string Ime
+        {
+            get
+            {
+                return ime;
+            }
+
+            set
+            {
+                ime = value;
+            }
+        }
+
+        public string Prezime
+        {
+            get
+            {
+                return prezime;
+            }
+
+            set
+            {
+                prezime = value;
+            }
+        }
+
+        public string Adresa
+        {
+            get
+            {
+                return adresa;
+            }
+
+            set
+            {
+                adresa = value;
+            }
+        }
+
+        public string Drzava
+        {
+            get
+            {
+                return drzava;
+            }
+
+            set
+            {
+                drzava = value;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+
+            set
+            {
+                email = value;
+            }
+        }
+
+        public string Grad
+        {
+            get
+            {
+                return grad;
+            }
+
+            set
+            {
+                grad = value;
+            }
+        }
+
+        public string Telefon
+        {
+            get
+            {
+                return telefon;
+            }
+
+            set
+            {
+                telefon = value;
+            }
+        }
+
+        public DateTime Dat_rodjenja
+        {
+            get
+            {
+                return dat_rodjenja;
+            }
+
+            set
+            {
+                dat_rodjenja = value;
+            }
+        }
+
+        public gender Spol_osobe
+        {
+            get
+            {
+                return spol_osobe;
+            }
+
+            set
+            {
+                spol_osobe = value;
+            }
+        }
+
         string ime, prezime, adresa, drzava, email, grad, telefon;
         DateTime dat_rodjenja;
         public enum gender { male, female };
@@ -34,14 +151,5 @@ namespace DDR2.Model
             this.Spol_osobe = spol;
         }
 
-        public gender Spol_osobe { get => spol_osobe; set => spol_osobe = value; }
-        public string Ime { get => ime; set => ime = value; }
-        public string Prezime { get => prezime; set => prezime = value; }
-        public string Adresa { get => adresa; set => adresa = value; }
-        public string Drzava { get => drzava; set => drzava = value; }
-        public string Email { get => email; set => email = value; }
-        public string Grad { get => grad; set => grad = value; }
-        public string Telefon { get => telefon; set => telefon = value; }
-        public DateTime Dat_rodjenja { get => dat_rodjenja; set => dat_rodjenja = value; }
     }
 }

@@ -15,6 +15,17 @@ namespace DDR2.Model
             Gosti = new List<Gost>();
         }
 
-        public List<Gost> Gosti { get => gosti; set => gosti = value; }
+        public List<Gost> Gosti
+        {
+            get
+            {
+                return gosti;
+            }
+
+            set
+            {
+                gosti = value;
+            }
+        }
     }
 }

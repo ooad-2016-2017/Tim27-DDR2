@@ -15,6 +15,17 @@ namespace DDR2.Model
             Uposlenici = new List<Uposlenik>();
         }
 
-        public List<Uposlenik> Uposlenici { get => uposlenici; set => uposlenici = value; }
+        public List<Uposlenik> Uposlenici
+        {
+            get
+            {
+                return uposlenici;
+            }
+
+            set
+            {
+                uposlenici = value;
+            }
+        }
     }
 }

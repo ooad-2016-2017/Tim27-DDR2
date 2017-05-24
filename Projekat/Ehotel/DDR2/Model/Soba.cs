@@ -12,6 +12,136 @@ namespace DDR2.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        public string Naziv
+        {
+            get
+            {
+                return naziv;
+            }
+
+            set
+            {
+                naziv = value;
+            }
+        }
+
+        public string Opis
+        {
+            get
+            {
+                return opis;
+            }
+
+            set
+            {
+                opis = value;
+            }
+        }
+
+        public int Broj
+        {
+            get
+            {
+                return broj;
+            }
+
+            set
+            {
+                broj = value;
+            }
+        }
+
+        public int Max_djece
+        {
+            get
+            {
+                return max_djece;
+            }
+
+            set
+            {
+                max_djece = value;
+            }
+        }
+
+        public int Max_odraslih
+        {
+            get
+            {
+                return max_odraslih;
+            }
+
+            set
+            {
+                max_odraslih = value;
+            }
+        }
+
+        public double Cijena
+        {
+            get
+            {
+                return cijena;
+            }
+
+            set
+            {
+                cijena = value;
+            }
+        }
+
+        public bool Slobodna
+        {
+            get
+            {
+                return slobodna;
+            }
+
+            set
+            {
+                slobodna = value;
+            }
+        }
+
+        public bool Ociscena
+        {
+            get
+            {
+                return ociscena;
+            }
+
+            set
+            {
+                ociscena = value;
+            }
+        }
+
+        public tip_sobe Tip
+        {
+            get
+            {
+                return tip;
+            }
+
+            set
+            {
+                tip = value;
+            }
+        }
+
+        public byte[] Slika
+        {
+            get
+            {
+                return slika;
+            }
+
+            set
+            {
+                slika = value;
+            }
+        }
+
         public enum tip_sobe { single, _double, triple, family };
         string naziv, opis;
         int broj, max_djece, max_odraslih;
@@ -37,15 +167,6 @@ namespace DDR2.Model
         {
         }
 
-        public string Naziv { get => naziv; set => naziv = value; }
-        public int Broj { get => broj; set => broj = value; }
-        public double Cijena { get => cijena; set => cijena = value; }
-        public bool Slobodna { get => slobodna; set => slobodna = value; }
-        public bool Ociscena { get => ociscena; set => ociscena = value; }
-        public tip_sobe Tip { get => tip; set => tip = value; }
-        public string Opis { get => opis; set => opis = value; }
-        public int Max_djece { get => max_djece; set => max_djece = value; }
-        public int Max_odraslih { get => max_odraslih; set => max_odraslih = value; }
-        public byte[] Slika { get => slika; set => slika = value; }
+      
     }
 }

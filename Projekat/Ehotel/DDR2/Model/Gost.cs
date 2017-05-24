@@ -17,9 +17,20 @@ namespace DDR2.Model
 
         public Gost(string us, string pass, string ime, string prezime, string adresa, string drzava, string email, string grad, string telefon, DateTime dat_rodjenja, gender spol) : base(us, pass, ime, prezime, adresa, drzava, email, grad, telefon, dat_rodjenja, spol)
         {
-            lista_rezervacija = new List<Rezervacija>();
+            Lista_rezervacija = new List<Rezervacija>();
         }
 
-        public List<Rezervacija> Lista_rezervacija { get => lista_rezervacija; set => lista_rezervacija = value; }
+        public List<Rezervacija> Lista_rezervacija
+        {
+            get
+            {
+                return lista_rezervacija;
+            }
+
+            set
+            {
+                lista_rezervacija = value;
+            }
+        }
     }
 }

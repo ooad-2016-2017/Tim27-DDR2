@@ -15,6 +15,17 @@ namespace DDR2.Model
             Sobe = new List<Soba>();
         }
 
-        public List<Soba> Sobe { get => sobe; set => sobe = value; }
+        public List<Soba> Sobe
+        {
+            get
+            {
+                return sobe;
+            }
+
+            set
+            {
+                sobe = value;
+            }
+        }
     }
 }

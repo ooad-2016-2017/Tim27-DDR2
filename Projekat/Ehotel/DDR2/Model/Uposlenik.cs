@@ -12,6 +12,45 @@ namespace DDR2.Model
         double plata;
         DateTime dat_zaposlenja;
 
+        public string Jmbg
+        {
+            get
+            {
+                return jmbg;
+            }
+
+            set
+            {
+                jmbg = value;
+            }
+        }
+
+        public double Plata
+        {
+            get
+            {
+                return plata;
+            }
+
+            set
+            {
+                plata = value;
+            }
+        }
+
+        public DateTime Dat_zaposlenja
+        {
+            get
+            {
+                return dat_zaposlenja;
+            }
+
+            set
+            {
+                dat_zaposlenja = value;
+            }
+        }
+
         public Uposlenik()
         {
         }
@@ -23,8 +62,6 @@ namespace DDR2.Model
             Dat_zaposlenja = zap;
         }
 
-        public string Jmbg { get => jmbg; set => jmbg = value; }
-        public double Plata { get => plata; set => plata = value; }
-        public DateTime Dat_zaposlenja { get => dat_zaposlenja; set => dat_zaposlenja = value; }
+        
     }
 }

@@ -15,6 +15,17 @@ namespace DDR2.Model
             Rezervacije = new List<Rezervacija>();
         }
 
-        public List<Rezervacija> Rezervacije { get => rezervacije; set => rezervacije = value; }
+        public List<Rezervacija> Rezervacije
+        {
+            get
+            {
+                return rezervacije;
+            }
+
+            set
+            {
+                rezervacije = value;
+            }
+        }
     }
 }
