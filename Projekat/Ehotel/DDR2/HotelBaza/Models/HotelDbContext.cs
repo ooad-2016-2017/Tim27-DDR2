@@ -1,7 +1,7 @@
 ﻿using DDR2.Model;
-using Microsoft.Data.Entity;
 using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,6 +14,7 @@ namespace DDR2.HotelBaza.Models
     {
         public DbSet<Soba> Sobe { get; set; }
         public DbSet<Gost> Gosti { get; set; }
+        public DbSet<Admin> Admini { get; set; }
         public DbSet<Rezervacija> Rezervacije { get; set; }
         public DbSet<Recepcionar> Recepcionari { get; set; }
         public DbSet<Sobarica> Sobarice { get; set; }
@@ -41,6 +42,8 @@ namespace DDR2.HotelBaza.Models
         {
             //jedno od polja je image da se zna šta je zapravo predstavlja byte[]
             modelBuilder.Entity<Soba>().Property(p => p.Slika).HasColumnType("image");
+
+            base.OnModelCreating(modelBuilder);
         }
 
     }

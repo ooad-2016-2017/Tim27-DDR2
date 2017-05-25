@@ -9,9 +9,10 @@ using DDR2.Model;
 namespace DDR2.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170525015542_MyFirstMigration")]
+    partial class MyFirstMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
@@ -122,16 +123,6 @@ namespace DDR2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sobe");
-                });
-
-            modelBuilder.Entity("DDR2.Model.Admin", b =>
-                {
-                    b.HasBaseType("DDR2.Model.Korisnik");
-
-
-                    b.ToTable("Admin");
-
-                    b.HasDiscriminator().HasValue("Admin");
                 });
 
             modelBuilder.Entity("DDR2.Model.Gost", b =>

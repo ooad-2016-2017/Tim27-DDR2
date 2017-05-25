@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using DDR2.View;
 using DDR2.HotelBaza.Models;
-using Microsoft.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace DDR2
 {
@@ -35,7 +35,7 @@ namespace DDR2
             this.Suspending += OnSuspending;
             using (var db = new HotelDbContext())
             {
-                db.Database.ApplyMigrations();
+                db.Database.Migrate();
                 DefaultPodaci.Initialize(db);
             }
         }
