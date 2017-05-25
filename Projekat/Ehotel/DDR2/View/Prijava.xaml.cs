@@ -26,17 +26,6 @@ namespace DDR2.View
         {
             this.InitializeComponent();
         }
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            if(txtEmail.Text=="admin" && txtPassword.Password=="admin")
-            this.Frame.Navigate(typeof(AdminPanel), e);
-            if (txtEmail.Text == "recepcionar" && txtPassword.Password == "recepcionar")
-                this.Frame.Navigate(typeof(Reception), e);
-            if (txtEmail.Text == "gost" && txtPassword.Password == "gost")
-                this.Frame.Navigate(typeof(GuestPanel), e);
-            if (txtEmail.Text == "sobarica" && txtPassword.Password == "sobarica")
-                this.Frame.Navigate(typeof(RoomCleaning), e);
-        }
         private void btnNewAcc_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(NewAccount), e);

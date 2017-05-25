@@ -74,7 +74,6 @@ namespace DDR2.HotelBaza.Models
                     Check_out = new DateTime(2014, 12, 17)
                 }
                 );
-
             }
             if (!context.Gosti.Any())
             {
@@ -133,6 +132,72 @@ namespace DDR2.HotelBaza.Models
                     Dat_zaposlenja = new DateTime(2013, 12, 12),
                     Jmbg = "92838392948",
                     Plata = 213,
+                }
+                );
+            }
+            if (!context.Korisnici.Any())
+            {
+                context.Korisnici.AddRange(
+                new Recepcionar()
+                {
+                    Ime = "loky",
+                    Prezime = "loky",
+                    Drzava = "blabla",
+                    Grad = "fihvehrerk",
+                    Adresa = "Neka tamo 12",
+                    Email = "hdvdiskjgv",
+                    Telefon = "66666666",
+                    Username = "loki",
+                    Password = "loki",
+                    Dat_rodjenja = new DateTime(1996, 09, 15),
+                    Dat_zaposlenja = new DateTime(2013, 12, 12),
+                    Jmbg = "1509996100000",
+                    Plata = 1389,
+                });
+                context.Korisnici.AddRange(
+                new Sobarica()
+                {
+                    Ime = "Berina",
+                    Prezime = "Simba",
+                    Drzava = "Srbija",
+                    Grad = "Beograd",
+                    Adresa = "Neka tamo 15",
+                    Email = "berinasmajovic@yahoo.com",
+                    Telefon = "061666999",
+                    Username = "simba",
+                    Password = "simba",
+                    Dat_rodjenja = new DateTime(1996, 09, 15),
+                    Dat_zaposlenja = new DateTime(2013, 12, 12),
+                    Jmbg = "1509996100000",
+                    Plata = 666,
+                });
+                context.Korisnici.AddRange(
+                new Gost()
+                {
+                    Ime = "djani",
+                    Prezime = "djani",
+                    Drzava = "Etiopija",
+                    Grad = "Pjon Jang",
+                    Adresa = "bla bal",
+                    Email = "hahaha",
+                    Telefon = "020202",
+                    Username = "djani",
+                    Password = "djani",
+                    Dat_rodjenja = new DateTime(2013, 12, 12),
+                });
+                context.Korisnici.AddRange(
+                new Admin()
+                {
+                    Ime = "admin",
+                    Prezime = "admin",
+                    Drzava = "Etiopija",
+                    Grad = "Pjon Jang",
+                    Adresa = "bla bal",
+                    Email = "hahaha",
+                    Telefon = "020202",
+                    Username = "ddr2",
+                    Password = "ddr2",
+                    Dat_rodjenja = new DateTime(2013, 12, 12),
                 }
                 );
             }

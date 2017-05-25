@@ -2,11 +2,15 @@
     x:Class="DDR2.View.Prijava"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:DDR2.View"
+    xmlns:local="using:DDR2.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Height="298" Width="601">
 
+    <Page.DataContext>
+        <local:LogInVM/>
+    </Page.DataContext>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center" Width="600" Height="300">
 
         <TextBlock FontSize="35" FontWeight="Bold">
@@ -15,13 +19,13 @@
             </TextBlock.Foreground>Log into eHotel</TextBlock>
         <TextBlock/>
 
-        <TextBlock FontSize="25" FontWeight="Bold" Height="40" TextAlignment="Center" Margin="10,63,407,197">Email</TextBlock>
+        <TextBlock FontSize="25" FontWeight="Bold" Height="40" TextAlignment="Center" Margin="10,63,407,197">Username</TextBlock>
         <TextBlock FontSize="25" FontWeight="Bold" TextAlignment="Center" RenderTransformOrigin="1.19,-0.95" Margin="230,63,160,197">
                     <Run Text="Password"/>
         </TextBlock>
-        <TextBox x:Name="txtEmail" Margin="10,103,404,157"/>
-        <PasswordBox x:Name="txtPassword" Height="40" Margin="248,103,160,157"/>
-        <Button x:Name="btnLogin" Click="btnLogin_Click" BorderBrush="Black" FontSize="20" Background="LightGreen" Content="Log In" Width="100" Margin="472,103,0,158"/>
+        <TextBox x:Name="txtUsername" Text="{Binding Username}" Margin="10,103,404,157"/>
+        <PasswordBox x:Name="txtPassword" Password="{Binding Password}" Height="40" Margin="248,103,160,157"/>
+        <Button x:Name="btnLogin" Command="{Binding Logovanje}" BorderBrush="Black" FontSize="20" Background="LightGreen" Content="Log In" Width="100" Margin="472,103,0,158"/>
         <TextBlock FontSize="35" FontWeight="Bold" Margin="0,148,0,104">
             <TextBlock.Foreground>
                 <SolidColorBrush Color="{ThemeResource SystemBaseMediumColor}"/>
