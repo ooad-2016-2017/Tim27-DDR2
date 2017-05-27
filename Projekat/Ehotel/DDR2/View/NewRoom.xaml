@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,-930,-100">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="31*"/>
             <ColumnDefinition Width="33*"/>
@@ -43,7 +43,6 @@
         <TextBlock x:Name="textBlock_Copy4" FontSize="20" HorizontalAlignment="Left" Margin="38,525,0,0" TextWrapping="Wrap" Text="Maximum Number Of Children: " VerticalAlignment="Top" Height="49" Width="342"/>
         <local:numericUpDown HorizontalAlignment="Left" Margin="426,418,0,0" VerticalAlignment="Top"/>
         <local:numericUpDown HorizontalAlignment="Left" Margin="426,525,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="cancel" Content="Cancel" Click="cancel_Click" FontSize="20" BorderBrush="Black" Background="LightCoral" HorizontalAlignment="Left" Margin="406,633,0,0" VerticalAlignment="Top" Height="62" Width="145"/>
-        <Button x:Name="button_Copy" Content="Add" FontSize="20" BorderBrush="Black" Background="LightGreen" HorizontalAlignment="Left" Margin="38,633,0,0" VerticalAlignment="Top" Height="62" Width="145"/>
+        <Button x:Name="button_Copy" Content="Add" FontSize="20" BorderBrush="Black" Background="LightGreen" HorizontalAlignment="Left" Margin="38,633,0,0" VerticalAlignment="Top" Height="62" Width="513"/>
     </Grid>
 </Page>

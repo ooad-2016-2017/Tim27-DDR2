@@ -1,10 +1,12 @@
-﻿using System;
+﻿using DDR2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,15 +27,6 @@ namespace DDR2.View
         public NewAccount()
         {
             this.InitializeComponent();
-        }
-
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.GoBack();
-        }
-        private void btnNewAcc_Click(object sender, RoutedEventArgs e)
-        {
-           
         }
     }
 }

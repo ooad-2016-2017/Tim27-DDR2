@@ -52,11 +52,6 @@ namespace DDR2.View
 
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(GuestPanel), e);
-        }
-
         private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
 

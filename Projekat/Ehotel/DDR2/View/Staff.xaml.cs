@@ -37,18 +37,11 @@ namespace DDR2.View
         {
 
         }
-
-        private void btnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AdminPanel), e);
-        }
-
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             using (var db = new HotelDbContext())
             {
-                StaffListView.ItemsSource = db.Recepcionari.OrderBy(c => c.Plata).ToList();
-                StaffListView2.ItemsSource = db.Sobarice.OrderBy(c => c.Plata).ToList();
+                StaffListView.ItemsSource = db.Uposlenici.OrderBy(c => c.Plata).ToList();
             }
         }
 
@@ -61,7 +54,7 @@ namespace DDR2.View
             }
             if (dep == null) return;
             using (var db = new HotelDbContext()) {
-                StaffListView.ItemsSource = db.Recepcionari.OrderBy(c => c.Plata).ToList();
+                StaffListView.ItemsSource = db.Uposlenici.OrderBy(c => c.Plata).ToList();
             }
         }
     }

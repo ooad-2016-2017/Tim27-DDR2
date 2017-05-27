@@ -1,4 +1,5 @@
-﻿using DDR2.HotelBaza.Models;
+﻿using DDR2.Helper;
+using DDR2.HotelBaza.Models;
 using DDR2.Model;
 using DDR2.View;
 using System;
@@ -13,36 +14,25 @@ namespace DDR2.ViewModel
 {
     class LogInVM : MainViewModelBase
     {
-        string username = "";
-        string password = "";
-        
-        public string Username
+        public string Username { get; set; } = "";
+        public string Password { get; set; } = "";
+        public ICommand Logovanje { get; set; }
+        public ICommand NewAccount { get; set; }
+        public INavigationService NavigationService { get; set; }
+
+        public LogInVM()
         {
-            get { return username; }
-            set
-            {
-                username = value;
-                OnPropertyChanged("Username");
-            }
-        }
-        public string Password
-        {
-            get { return password; }
-            set
-            {
-                password = value;
-                OnPropertyChanged("Password");
-            }
-        }
-        public ICommand Logovanje
-        {
-            get
-            {
-                return new DelegateCommand(FindUser);
-            }
+            NavigationService = new NavigationService();
+            Logovanje = new RelayCommand<object>(FindUser);
+            NewAccount = new RelayCommand<object>(KreiranjeAccounta,parametar=>true);
         }
 
-        public async void FindUser()
+        public void KreiranjeAccounta(object parametar)
+        {
+            NavigationService.Navigate(typeof(NewAccount));
+        }
+
+        public async void FindUser(object parametar)
         {
             using (var db = new HotelDbContext())
             {

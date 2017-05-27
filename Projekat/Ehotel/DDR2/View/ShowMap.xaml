@@ -9,8 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10,0,10,210">
         <Grid HorizontalAlignment="Left" Height="1790" Margin="0,0,0,-1280" VerticalAlignment="Top" Width="1260">
-            <Button x:Name="button1_Copy" FontSize="25 " Background="LightCoral" BorderBrush="Black"  Content="Go back" HorizontalAlignment="Left" Margin="1075,634,0,0" VerticalAlignment="Top" Width="167" Height="66" Click="button1_Copy_Click"/>
+            
         </Grid>
-        
     </Grid>
 </Page>

@@ -97,12 +97,6 @@ namespace DDR2.View
                 male.IsChecked = false;
                 female.IsChecked = false;
             }
-
-        }
-
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AdminPanel), e);
         }
     }
 }

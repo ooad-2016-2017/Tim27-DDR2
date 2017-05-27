@@ -17,11 +17,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBox PlaceholderText="Search by reservation ID" FontSize="25" Margin="300,0,-808,0" Grid.Row="1"/>
-        <Button HorizontalAlignment="Right" Background="LightGreen" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" Click="Button_Click" Grid.Row="1">Search</Button>
-        <Button x:Name="btnGoBack" Grid.Row="1" BorderBrush="Black" FontSize="25" Content="Go Back" Click="btnGoBack_Click_1" Background="LightCoral" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="300"/>
-        <TextBlock Text="Reservations" FontSize="40" VerticalAlignment="Center" Grid.Row="2" Margin="0,16,-970,-29" Height="63"/>
-        <Grid Margin="0,84,-970,-89" Grid.Row="2">
+        <TextBox PlaceholderText="Search by reservation ID" FontSize="25" Margin="0,0,-812,0"/>
+        <Button HorizontalAlignment="Right" Background="LightGreen" BorderBrush="Black" FontSize="25" Margin="0,0,-974,0" Width="162" Height="50" Click="Button_Click">Search</Button>
+        <TextBlock Text="Reservations" FontSize="40" VerticalAlignment="Center" Grid.Row="1" Margin="4,0,-974,37" Height="63" Grid.RowSpan="2"/>
+        <Grid Margin="10,23,-980,-28" Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -35,7 +34,7 @@
             <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Room number</TextBlock>
             <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">Guest</TextBlock>
         </Grid>
-        <ListView Margin="0,139,-970,-1000" Grid.Row="2"
+        <ListView Margin="0,83,-970,-1000" Grid.Row="2"
             x:Name="ReservationsListView"
             IsItemClickEnabled="True">
 

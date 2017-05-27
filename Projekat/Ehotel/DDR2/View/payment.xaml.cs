@@ -31,11 +31,5 @@ namespace DDR2.View
         {
 
         }
-
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(NewReservation), e);
-        }
-
     }
 }

@@ -35,9 +35,5 @@ namespace DDR2.View
         private void gridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
         }
-        private void btnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AdminPanel), e);
-        }
     }
 }

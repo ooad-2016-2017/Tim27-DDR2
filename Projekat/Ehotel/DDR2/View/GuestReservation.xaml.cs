@@ -28,11 +28,6 @@ namespace DDR2.View
             this.InitializeComponent();
         }
 
-        private void btnGoBack_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(GuestPanel), e);
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 

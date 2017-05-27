@@ -26,10 +26,5 @@ namespace DDR2.View
         {
             this.InitializeComponent();
         }
-
-        private void cancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Rooms), e);
-        }
     }
 }

@@ -38,8 +38,7 @@
         <PasswordBox x:Name="txtPassword" Width="250" PlaceholderText="Password" HorizontalAlignment="Left" Margin="10,271,0,-261"/>
         <PasswordBox x:Name="txtCpassword" Width="250" PlaceholderText="Confirm your password" HorizontalAlignment="Left" Margin="300,268,-250,-258"/>
         <TextBox x:Name="txtEmail" PlaceholderText="Email address" Width="540" HorizontalAlignment="Left" Margin="10,338,-250,-328"/>
-        <Button x:Name="btnNewAcc" Click="btnNewAcc_Click" Width="170" Height="48" BorderBrush="Black" FontSize="20" Background="LightGreen" Content="Add" Margin="615,489,-485,-487"/>
-        <Button x:Name="btnCancel" Click="btnCancel_Click"  Width="170" Height="48" BorderBrush="Black" FontSize="20" Background="LightCoral" Content="Cancel" Margin="985,489,-855,-487"/>
+        <Button x:Name="btnNewAcc" Click="btnNewAcc_Click" Width="538" Height="48" BorderBrush="Black" FontSize="20" Background="LightGreen" Content="Add" Margin="615,489,-853,-487"/>
         <TextBlock FontSize="20" Width="150" HorizontalAlignment="Left" Margin="615,419,-465,-409" Text="Salary"/>
         <TextBox  Name="txtSalary" Margin="787,419,-853,-409" Height="40"/>
         <TextBlock FontSize="20" Width="194" HorizontalAlignment="Left" Margin="10,419,0,-409" Text="Hire Date"/>

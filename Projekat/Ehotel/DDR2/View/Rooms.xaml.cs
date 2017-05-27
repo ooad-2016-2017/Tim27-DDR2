@@ -41,11 +41,6 @@ namespace DDR2.View
 
         }
 
-        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AdminPanel), e);
-        }
-
         private void BtnAddRoom_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(NewRoom), e);

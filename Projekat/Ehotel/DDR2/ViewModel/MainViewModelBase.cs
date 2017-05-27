@@ -9,24 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
+using DDR2.Helper;
 
 namespace DDR2.ViewModel
 {
-    public interface INavigationService
-    {
-        void Navigate(Type page);
-    }
-
-    public abstract class MainViewModelBase : INotifyPropertyChanged, INavigationService
+    public abstract class MainViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public INavigationService NavigationService { get; set; }
-
-        public void Navigate(Type page)
-        {
-            var frame = (Frame)Window.Current.Content;
-            frame.Navigate(page);
-        }
 
         protected virtual void OnPropertyChanged(string propertyName)
         {

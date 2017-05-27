@@ -37,11 +37,6 @@ namespace DDR2.View
 
         }
 
-        private void btnBack_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(GuestPanel), e);
-        }
-
         private void btnChangePass_Click(object sender, RoutedEventArgs e)
         {
             txtNew.Visibility = Visibility.Visible;

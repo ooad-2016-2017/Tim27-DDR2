@@ -33,11 +33,6 @@ namespace DDR2.View
 
         }
 
-        private void btnGoBack_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AdminPanel), e);
-        }
-
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             using (var db = new HotelDbContext())
