@@ -8,7 +8,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace DDR2.Helper
 {
-    class NavigationService:INavigationService
+    public class NavigationService:INavigationService
     {
         public void Navigate(Type sourcePage)
         {
