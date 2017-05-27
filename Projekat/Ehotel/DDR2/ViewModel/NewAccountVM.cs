@@ -23,7 +23,7 @@ namespace DDR2.ViewModel
         public string ConfirmPassword { get; set; } = "";
         public bool MaleChecked { get; set; } = false;
         public bool FemaleChecked { get; set; } = false;
-        //public Gost NoviGost { get; set; }
+        public Gost NoviGost { get; set; }
         public ICommand Create { get; set; }
         public INavigationService NavigationService { get; set; }
 
