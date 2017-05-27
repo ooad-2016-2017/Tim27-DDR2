@@ -22,7 +22,10 @@ namespace DDR2.ViewModel
         public string Username { get; set; } = "";
         public string Password { get; set; } = "";
         public string ConfirmPassword { get; set; } = "";
-        public Gost NoviGost { get; set; }
+        public string Drzava { get; set; }
+        public List<string> Drzave { get; set; }
+        public DateTime DatumRodjenja { get; set; } = DateTime.Now;
+        Gost NoviGost;
         public ICommand Create { get; set; }
         public INavigationService NavigationService { get; set; }
 
@@ -30,6 +33,21 @@ namespace DDR2.ViewModel
         {
             NavigationService = new NavigationService();
             Create = new RelayCommand<object>(KreirajAccount,ProvjeriPolja);
+            PopuniDrzave();
+        }
+
+        public void PopuniDrzave()
+        {
+            Drzave = new List<string> { "Albania","Andorra","Armenia","Austria","Azerbaijan",
+                                        "Belarus","Belgium","Bosnia and Herzegovina","Bulgaria",
+                                        "Croatia","Cyprus","Czech Republic","Denmark","Estonia",
+                                        "Finland","France","Georgia","Germany","Greece",
+                                        "Hungary","Iceland","Ireland","Italy","Kazakhstan","Kosovo",
+                                        "Latvia","Liechtenstein","Lithuania","Luxembourg",
+                                        "Macedonia","Malta","Moldova","Monaco","Montenegro",
+                                        "Netherlands","Norway","Poland","Portugal","Romania","Russia",
+                                        "San Marino","Serbia","Slovakia","Slovenia","Spain","Sweden",
+                                        "Switzerland","Turkey","Ukraine","United Kingdom"};
         }
 
         public void KreirajAccount(object param)

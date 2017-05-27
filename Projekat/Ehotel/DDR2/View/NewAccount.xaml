@@ -6,8 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:DDR2.ViewModel"
-    mc:Ignorable="d" HorizontalContentAlignment="Center" Width="2443" Height="2732" ScrollViewer.VerticalScrollMode="Auto">
+    xmlns:converter="using:DDR2.Helper"
+    mc:Ignorable="d" HorizontalContentAlignment="Center" Width="1563" Height="2290" ScrollViewer.VerticalScrollMode="Auto">
 
+    <Page.Resources>
+        <converter:DateConverter x:Key="theDateConverter"></converter:DateConverter>
+    </Page.Resources>
+    
     <Page.DataContext>
         <ViewModel:NewAccountVM x:Name="account"></ViewModel:NewAccountVM>
     </Page.DataContext>
@@ -26,6 +31,8 @@
         <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="615,65,-457,-55">Country</TextBlock>
         <ComboBox 
             Width="368" Height="40" Margin="787,60,-855,-50"
+            SelectedValue="{Binding Drzava, Mode=TwoWay}"
+            ItemsSource="{Binding Drzave, Mode=TwoWay}"
             />
         <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="615,130,-457,-120">City</TextBlock>
         <TextBox Text="{Binding Telefon, Mode=TwoWay}" Margin="787,338,-855,-328" Height="40"></TextBox>
@@ -33,7 +40,8 @@
         <RadioButton Width="150" Margin="787,198,-637,-180">Male</RadioButton>
         <RadioButton Width="150" Margin="1005,198,-855,-180">Female</RadioButton>
         <TextBlock FontSize="20" Height="40" Width="100" HorizontalAlignment="Left" Margin="615,267,-415,-257">Birth date</TextBlock>
-        <DatePicker Margin="787,271,-855,-253" Width="368"></DatePicker>
+        <DatePicker Margin="787,271,-855,-253" Width="368"
+                    Date="{Binding DatumRodjenja, Mode=TwoWay, Converter={StaticResource theDateConverter}}"/>
         <TextBlock FontSize="20" Width="150" HorizontalAlignment="Left" Margin="615,338,-465,-328">Mobile phone</TextBlock>
         <TextBox Text="{Binding Grad, Mode=TwoWay}" Margin="787,130,-855,-120" Height="40"></TextBox>
         <TextBox x:Name="txtUsername" Text="{Binding Username, Mode=TwoWay}" Height="40" PlaceholderText="Username" Width="540" HorizontalAlignment="Left" Margin="10,204,-250,-194"/>
