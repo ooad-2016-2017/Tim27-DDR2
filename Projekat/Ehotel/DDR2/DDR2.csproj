@@ -131,10 +131,12 @@
     <Compile Include="Model\Uposlenik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\AddStuffVM.cs" />
+    <Compile Include="ViewModel\AdminPanelVM.cs" />
     <Compile Include="ViewModel\AdminReservationsVM.cs" />
     <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\MainViewModelBase.cs" />
     <Compile Include="ViewModel\NewAccountVM.cs" />
+    <Compile Include="ViewModel\ViewProfileVM.cs" />
     <Compile Include="View\AddStuff.xaml.cs">
       <DependentUpon>AddStuff.xaml</DependentUpon>
     </Compile>

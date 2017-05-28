@@ -28,7 +28,7 @@ namespace DDR2.ViewModel
             Logovanje = new RelayCommand<object>(FindUser, parametar=>true);
             NewAccount = new RelayCommand<object>(KreiranjeAccounta,parametar=>true);
         }
-
+        
         public void KreiranjeAccounta(object parametar)
         {
             NavigationService.Navigate(typeof(NewAccount));
@@ -52,7 +52,7 @@ namespace DDR2.ViewModel
 
                         if (korisnik is Admin)
                         {
-                            NavigationService.Navigate(typeof(AdminPanel));
+                            NavigationService.Navigate(typeof(AdminPanel), new AdminPanelVM(this));
                         }
                         else if (korisnik is Sobarica)
                         {

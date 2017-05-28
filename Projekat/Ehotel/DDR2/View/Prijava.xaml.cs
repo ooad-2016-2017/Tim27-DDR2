@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDR2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,18 +27,14 @@ namespace DDR2.View
         public Prijava()
         {
             this.InitializeComponent();
-            var currentView = SystemNavigationManager.GetForCurrentView();
-            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+            DataContext = new LogInVM();
+            NavigationCacheMode = NavigationCacheMode.Required;
         }
 
-        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (Frame.CanGoBack)
-            {
-                Frame.GoBack();
-                e.Handled = true;
-            }
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
         }
     }
 }

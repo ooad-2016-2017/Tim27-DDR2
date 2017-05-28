@@ -61,7 +61,7 @@ namespace DDR2.ViewModel
                 db.Gosti.Add(NoviGost);
                 db.Korisnici.Add(NoviGost);
                 db.SaveChanges();
-                var dialog = new MessageDialog("Account created succesfully!\n");
+                var dialog = new MessageDialog("Your account has been created successfully!\n");
                 await dialog.ShowAsync();
             }
         }
