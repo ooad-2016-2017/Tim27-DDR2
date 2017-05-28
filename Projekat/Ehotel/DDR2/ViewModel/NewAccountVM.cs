@@ -14,7 +14,7 @@ using static DDR2.Model.Osoba;
 
 namespace DDR2.ViewModel
 {
-    public class NewAccountVM : MainViewModelBase
+    class NewAccountVM : MainViewModelBase
     {
         public string Ime { get; set; } = "";
         public string Prezime { get; set; } = "";
@@ -23,21 +23,17 @@ namespace DDR2.ViewModel
         public string Email { get; set; } = "";
         public string Telefon { get; set; } = "";
         public string Username { get; set; } = "";
-        string password = "";
-        string confirmPassword = "";
-        public string Password { get { return password; } set { password = Encryptor.MD5Hash(value); } }
-        public string ConfirmPassword { get { return confirmPassword; } set { confirmPassword = Encryptor.MD5Hash(value); } }
+        public string Password { get; set; } = "";
+        public string ConfirmPassword { get; set; } = "";
         public string Drzava { get; set; } = "";
         public gender Spol { get; set; }
         public List<string> Drzave { get; set; }
         public DateTime DatumRodjenja { get; set; } = DateTime.Now;
         Gost NoviGost;
         public ICommand Create { get; set; }
-        public INavigationService NavigationService { get; set; }
 
         public NewAccountVM()
         {
-            NavigationService = new NavigationService();
             Create = new RelayCommand<object>(KreirajAccount,ProvjeriPolja);
             PopuniDrzave();
         }
@@ -64,7 +60,7 @@ namespace DDR2.ViewModel
                 db.Gosti.Add(NoviGost);
                 db.Korisnici.Add(NoviGost);
                 db.SaveChanges();
-                var dialog = new MessageDialog("Account created!");
+                var dialog = new MessageDialog("Account created!\n");
                 await dialog.ShowAsync();
             }
         }

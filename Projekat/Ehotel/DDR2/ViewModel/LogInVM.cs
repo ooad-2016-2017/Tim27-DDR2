@@ -46,9 +46,9 @@ namespace DDR2.ViewModel
             {
                 using (var db = new HotelDbContext())
                 {
-                    if (db.Korisnici.Count() > 0) //kasnije ako skontam sto nece da radi enkripcija u bazi, popravicu ovde da ne stoji hash==password
+                    if (db.Korisnici.Count() > 0) 
                     {
-                        var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username && Encryptor.MD5Hash(kor.Password) == Password);
+                        var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username && kor.Password == Password);
 
                         if (korisnik is Admin)
                         {
@@ -68,7 +68,7 @@ namespace DDR2.ViewModel
                         }
                         else
                         {
-                            korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username || Encryptor.MD5Hash(kor.Password) == Password);
+                            korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username || kor.Password == Password);
                             if (korisnik != null)
                             {
                                 if (korisnik.Username == Username && korisnik.Password != Password)
