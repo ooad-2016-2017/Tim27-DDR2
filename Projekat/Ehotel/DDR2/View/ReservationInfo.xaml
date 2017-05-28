@@ -7,11 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Height="1461" Width="1285">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="68,0,0,736">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="68,0,0,806">
         <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch" Margin="37,10,55,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="80" FontSize="50" TextAlignment="Center" Foreground="#FF292626" >
             <Run Foreground="#FF837C7C" FontWeight="Bold" Text="Reservation Info"/>
         </TextBlock>
-        <Grid Margin="-20,45,-425,0" Height="680" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1657" RenderTransformOrigin="0.501,0.533">
+        <Grid Margin="-20,45,-420,0" Height="670" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1657" RenderTransformOrigin="0.501,0.533">
             <Grid HorizontalAlignment="Left" Height="100" Margin="713,10,0,0" VerticalAlignment="Top" Width="100"/>
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="51,94,0,0" TextWrapping="Wrap" Text="Reservation ID:" VerticalAlignment="Top" Height="36" Width="181" SelectionChanged="textBlock1_SelectionChanged" FontSize="25" FontWeight="Medium"/>
             <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="51,162,0,0" TextWrapping="Wrap" Text="Room type:" VerticalAlignment="Top" Height="36" Width="181" SelectionChanged="textBlock1_SelectionChanged" FontSize="25" FontWeight="Medium"/>
@@ -31,8 +31,6 @@
             <TextBlock x:Name="textBlock1_Copy7" HorizontalAlignment="Left" Margin="51,370,0,0" TextWrapping="Wrap" Text="Pool:" VerticalAlignment="Top" Height="36" Width="181" SelectionChanged="textBlock1_SelectionChanged" FontSize="25" FontWeight="Medium"/>
             <TextBlock x:Name="textBlock1_Copy8" HorizontalAlignment="Left" Margin="51,440,0,0" TextWrapping="Wrap" Text="Check-in date:" VerticalAlignment="Top" Height="36" Width="199" SelectionChanged="textBlock1_SelectionChanged" FontSize="25" FontWeight="Medium"/>
             <TextBlock x:Name="textBlock1_Copy9" HorizontalAlignment="Left" Margin="51,504,0,0" TextWrapping="Wrap" Text="Check-out date:" VerticalAlignment="Top" Height="36" Width="199" SelectionChanged="textBlock1_SelectionChanged" FontSize="25" FontWeight="Medium"/>
-            <Button x:Name="button" Content="Modify Reservation" Background="LightGreen" BorderBrush="Black" HorizontalAlignment="Left" Margin="51,580,0,0" VerticalAlignment="Top" Height="59" Width="551" FontSize="25"/>
-            <Button x:Name="button_Copy" Content="Cancel Reservation" Background="LightCoral" BorderBrush="Black" HorizontalAlignment="Left" Margin="641,580,0,0" VerticalAlignment="Top" Height="59" Width="537" FontSize="25"/>
             <TextBox x:Name="textBox" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="269,98,0,0" Width="333"/>
             <TextBox x:Name="textBox_Copy" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="269,162,0,0" Width="333"/>
             <TextBox x:Name="textBox_Copy1" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="269,232,0,0" Width="333"/>
@@ -46,7 +44,7 @@
             <TextBox x:Name="textBox_Copy9" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="845,306,0,0" Width="333"/>
             <TextBox x:Name="textBox_Copy10" IsReadOnly="True" Text="€  " FontSize="50" HorizontalAlignment="Left" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="672,440,0,0" Width="480" Height="80"/>
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="165" Margin="622,415,0,0" VerticalAlignment="Top" Width="535">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="180" Margin="622,410,0,0" VerticalAlignment="Top" Width="535">
             <TextBlock x:Name="textBlock2"  FontSize="40" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TOTAL:"/>
         </Border>
 

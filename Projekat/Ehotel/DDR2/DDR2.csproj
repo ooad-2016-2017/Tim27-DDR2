@@ -131,10 +131,10 @@
     <Compile Include="Model\Uposlenik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\AddStuffVM.cs" />
+    <Compile Include="ViewModel\AdminReservationsVM.cs" />
     <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\MainViewModelBase.cs" />
     <Compile Include="ViewModel\NewAccountVM.cs" />
-    <Compile Include="ViewModel\RegistracijaVM.cs" />
     <Compile Include="View\AddStuff.xaml.cs">
       <DependentUpon>AddStuff.xaml</DependentUpon>
     </Compile>
@@ -143,6 +143,9 @@
     </Compile>
     <Compile Include="View\AdminReservations.xaml.cs">
       <DependentUpon>AdminReservations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GuestDetails.xaml.cs">
+      <DependentUpon>GuestDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GuestReservation.xaml.cs">
       <DependentUpon>GuestReservation.xaml</DependentUpon>
@@ -183,6 +186,9 @@
     <Compile Include="View\RoomCleaning.xaml.cs">
       <DependentUpon>RoomCleaning.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RoomDetails.xaml.cs">
+      <DependentUpon>RoomDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Rooms.xaml.cs">
       <DependentUpon>Rooms.xaml</DependentUpon>
     </Compile>
@@ -191,6 +197,9 @@
     </Compile>
     <Compile Include="View\Staff.xaml.cs">
       <DependentUpon>Staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StaffDetails.xaml.cs">
+      <DependentUpon>StaffDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Statistics.xaml.cs">
       <DependentUpon>Statistics.xaml</DependentUpon>
@@ -234,6 +243,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AdminReservations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GuestDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -289,6 +302,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\RoomDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Rooms.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -298,6 +315,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StaffDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

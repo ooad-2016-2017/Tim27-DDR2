@@ -1,5 +1,4 @@
-﻿using DDR2.HotelBaza.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,19 +20,11 @@ namespace DDR2.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AdminReservations : Page
+    public sealed partial class StaffDetails : Page
     {
-        public AdminReservations()
+        public StaffDetails()
         {
             this.InitializeComponent();
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            using (var db = new HotelDbContext())
-            {
-                ReservationsListView.ItemsSource = db.Rezervacije.OrderBy(c => c.Cijena).ToList();
-            }
         }
     }
 }
