@@ -76,7 +76,7 @@ namespace DDR2.ViewModel
             string naziv = Naslov;
             using (var db=new HotelDbContext())
             {
-                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Parent.Username && Encryptor.MD5Hash(kor.Password) == Parent.Password);
+                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Parent.Username && kor.Password == Parent.Password);
                 naziv += ", " + korisnik.Ime + " " + korisnik.Prezime;
             }
             return naziv;

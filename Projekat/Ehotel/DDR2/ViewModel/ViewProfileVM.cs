@@ -48,7 +48,7 @@ namespace DDR2.ViewModel
         {
             using (var db = new HotelDbContext())
             {
-                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && Encryptor.MD5Hash(kor.Password) == AdminParent.Parent.Password);
+                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
                 Ime = korisnik.Ime;
                 Prezime = korisnik.Prezime;
                 Adresa = korisnik.Adresa;
@@ -66,7 +66,7 @@ namespace DDR2.ViewModel
         {
             using(var db=new HotelDbContext())
             {
-                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && Encryptor.MD5Hash(kor.Password) == AdminParent.Parent.Password);
+                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
                 korisnik.Ime = Ime;
                 korisnik.Prezime = Prezime;
                 korisnik.Adresa = Adresa;
@@ -81,6 +81,8 @@ namespace DDR2.ViewModel
                 db.SaveChanges();
                 var dialog = new MessageDialog("Changes saved!");
                 await dialog.ShowAsync();
+                //cim promjeni bilo sta odlogujemo ga
+                AdminParent.Parent.NavigationService.GoBack();
             }
         }
 
@@ -88,9 +90,9 @@ namespace DDR2.ViewModel
         {
             using (var db = new HotelDbContext())
             {
-                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && Encryptor.MD5Hash(kor.Password) == AdminParent.Parent.Password);
+                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
 
-                if (Encryptor.MD5Hash(korisnik.Password) != CurrentPassword)
+                if (korisnik.Password != CurrentPassword)
                 {
                     var dialog = new MessageDialog("Incorrect password!\nPlease, re-enter your password.");
                     dialog.Title = "Error";
@@ -122,7 +124,7 @@ namespace DDR2.ViewModel
         {
             using (var db = new HotelDbContext())
             {
-                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && Encryptor.MD5Hash(kor.Password) == AdminParent.Parent.Password);
+                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
                 WelcomePoruka += " " + korisnik.Ime + " " + korisnik.Prezime;
             }
         }
