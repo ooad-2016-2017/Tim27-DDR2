@@ -5,15 +5,9 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Width="1439" Height="962" Background="Black">
+    mc:Ignorable="d" Width="1439" Height="962">
 
-    <Grid Margin="-0.009,0.027,170.009,192" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" RequestedTheme="Dark">
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="White" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+    <Grid Margin="-0.009,0.027,170.009,192" RenderTransformOrigin="0.5,0.5" Background="White">
         <Grid.RenderTransform>
             <CompositeTransform Rotation="-0.104"/>
         </Grid.RenderTransform>
@@ -25,12 +19,12 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBox PlaceholderText="Search by reservation ID" FontSize="25" Margin="0,0,-808,0" Background="#66080808"/>
-        <Button HorizontalAlignment="Right" Background="#FF1D401D" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" Click="Button_Click_1">Search</Button>
-        <TextBlock Text="Reservations" FontSize="40" VerticalAlignment="Center" Grid.Row="1" Margin="1,0,-970,47" Grid.RowSpan="2"/>
-        <ListView Margin="-1,0,-969,-637" Grid.Row="2"
+        <TextBox PlaceholderText="Search by reservation ID" FontSize="25" Margin="0,0,-808,0"/>
+        <Button HorizontalAlignment="Right" Background="#FF47B847" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" Click="Button_Click_1">Search</Button>
+        <TextBlock Text="Reservations" FontSize="40" VerticalAlignment="Center" Grid.Row="1" Margin="1,0,-970,47" Grid.RowSpan="2" FocusVisualPrimaryBrush="White"/>
+        <ListView Margin="-1,0,-969,-620" Grid.Row="2"
             x:Name="ReservationsListView"
-            IsItemClickEnabled="True">
+            IsItemClickEnabled="True" Background="White">
             <ListView.Template>
                 <ControlTemplate>
                     <Grid>

@@ -5,7 +5,7 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Height="735.5" Width="1296.667" Background="Black" RequestedTheme="Dark">
+    mc:Ignorable="d" Height="735.5" Width="1296.667">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" VerticalAlignment="Center" HorizontalAlignment="Center" Height="627" Width="1297" Margin="0,0,0,57" >
         <Grid.RowDefinitions>
@@ -19,11 +19,11 @@
         <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch" TextAlignment="Center" TextWrapping="Wrap" Text="Welcome to eHotel Entrada" FontSize="50
                    " VerticalAlignment="Top" Height="60" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
         <StackPanel Grid.Row="1" VerticalAlignment="Stretch">
-            <Button Name="btnNewRez" BorderBrush="Gray" Background="Black" FontSize="30" Click="btnNewRez_Click" Height="105" HorizontalAlignment="Stretch">Make New Reservation</Button>
-            <Button Name="btnShowRez" BorderBrush="Gray" Background="Black" FontSize="30" Click="btnShowRez_Click" Height="105" HorizontalAlignment="Stretch">Show All Reservations</Button>
-            <Button Name="btnShowMap" BorderBrush="Gray" Background="Black" FontSize="30" Click="btnShowMap_Click" Height="105" HorizontalAlignment="Stretch">Show Map</Button>
-            <Button Name="btnViewProfile" BorderBrush="Gray" Background="Black" FontSize="30" Click="btnViewProfile_Click" Height="105" HorizontalAlignment="Stretch">View Your Profile</Button>
-            <Button Name="btnExit" BorderBrush="Gray" Background="Black" FontSize="30" Click="btnExit_Click" Height="105" HorizontalAlignment="Stretch">Log Out</Button>
+            <Button Name="btnNewRez" BorderBrush="Gray" Background="White" FontSize="30" Click="btnNewRez_Click" Height="105" HorizontalAlignment="Stretch">Make New Reservation</Button>
+            <Button Name="btnShowRez" BorderBrush="Gray" Background="White" FontSize="30" Click="btnShowRez_Click" Height="105" HorizontalAlignment="Stretch">Show All Reservations</Button>
+            <Button Name="btnShowMap" BorderBrush="Gray" Background="White" FontSize="30" Click="btnShowMap_Click" Height="105" HorizontalAlignment="Stretch">Show Map</Button>
+            <Button Name="btnViewProfile" BorderBrush="Gray" Background="White" FontSize="30" Click="btnViewProfile_Click" Height="105" HorizontalAlignment="Stretch">View Your Profile</Button>
+            <Button Name="btnExit" BorderBrush="Gray" Background="White" FontSize="30" Click="btnExit_Click" Height="105" HorizontalAlignment="Stretch">Log Out</Button>
         </StackPanel>
         <CalendarView Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></CalendarView>
     </Grid>

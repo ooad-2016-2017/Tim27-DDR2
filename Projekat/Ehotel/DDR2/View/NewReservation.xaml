@@ -5,7 +5,7 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Height="770" Width="1440" Background="Black" RequestedTheme="Dark">
+    mc:Ignorable="d" Height="770" Width="1440">
 
     <ScrollViewer HorizontalAlignment="Left" Height="807" Margin="10,10,0,0" VerticalAlignment="Top" Width="1420" ViewChanged="ScrollViewer_ViewChanged">
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1230" Height="571" RenderTransformOrigin="0.522,0.502">
@@ -98,11 +98,11 @@
                 <TextBlock x:Name="textBlock2_Copy7" HorizontalAlignment="Left" Margin="40,220,0,0" TextWrapping="Wrap" Text="Check-in date:" VerticalAlignment="Top" Height="52" Width="230" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" Grid.Row="2"/>
             </Grid>
             <DatePicker HorizontalAlignment="Left" Margin="1525,483,-492,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-            <Button x:Name="btnsearchRooms" Content="Search available rooms" Background="#FF134713" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="30,459,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="420" Click="btnsearchRooms_Click"/>
+            <Button x:Name="btnsearchRooms" Content="Search available rooms" Background="#FF53BD53" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="30,459,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="420" Click="btnsearchRooms_Click"/>
             <ToggleSwitch x:Name="poolSwitch" HorizontalAlignment="Left" Margin="885,365,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="60" Width="205" FontSize="20">
             </ToggleSwitch>
             <ToggleSwitch x:Name="poolSwitch_Copy" HorizontalAlignment="Left" Margin="885,453,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="60" Width="205" FontSize="20"/>
-            <Button x:Name="button_Copy" Content="Next" Background="#FF16404D" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="485,459,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="110" Click="button_Click"/>
+            <Button x:Name="button_Copy" Content="Next" Background="#FF64B7D1" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="485,459,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="110" Click="button_Click"/>
         </Grid>
 
     </ScrollViewer>
