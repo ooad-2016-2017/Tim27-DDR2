@@ -1,4 +1,5 @@
-﻿using DDR2.Model;
+﻿using DDR2.Helper;
+using DDR2.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +47,7 @@ namespace DDR2.HotelBaza.Models
                         Email = "hahaha",
                         Telefon = "020202",
                         Username = "username",
-                        Password = "password",
+                        Password = "pass",
                         Dat_rodjenja = new DateTime(2013, 12, 12),
                     },
                     Soba = new Soba()
@@ -88,7 +89,7 @@ namespace DDR2.HotelBaza.Models
                     Email = "hahaha",
                     Telefon = "020202",
                     Username = "username",
-                    Password = "password",
+                    Password = "pass",
                     Dat_rodjenja = new DateTime(2013, 12, 12),
                 }
                 );
@@ -106,7 +107,7 @@ namespace DDR2.HotelBaza.Models
                     Email = "hahaha",
                     Telefon = "020202",
                     Username = "username",
-                    Password = "password",
+                    Password = "pass",
                     Dat_rodjenja = new DateTime(1996, 12, 12),
                     Dat_zaposlenja = new DateTime(2013, 12, 12),
                     Jmbg = "92838392948",
@@ -148,7 +149,7 @@ namespace DDR2.HotelBaza.Models
                     Email = "hdvdiskjgv",
                     Telefon = "66666666",
                     Username = "loki",
-                    Password = "loki",
+                    Password = Encryptor.MD5Hash("loki"),//zasto nece da se enkriptuje ni sa funkcijom ni bez nje, nego kad uzimam podatke iz baze moram in kriptovati!?
                     Dat_rodjenja = new DateTime(1996, 09, 15),
                     Dat_zaposlenja = new DateTime(2013, 12, 12),
                     Jmbg = "1509996100000",

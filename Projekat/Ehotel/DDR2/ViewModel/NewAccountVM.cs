@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using static DDR2.Model.Osoba;
 
@@ -22,9 +23,11 @@ namespace DDR2.ViewModel
         public string Email { get; set; } = "";
         public string Telefon { get; set; } = "";
         public string Username { get; set; } = "";
-        public string Password { get; set; } = "";
-        public string ConfirmPassword { get; set; } = "";
-        public string Drzava { get; set; }
+        string password = "";
+        string confirmPassword = "";
+        public string Password { get { return password; } set { password = Encryptor.MD5Hash(value); } }
+        public string ConfirmPassword { get { return confirmPassword; } set { confirmPassword = Encryptor.MD5Hash(value); } }
+        public string Drzava { get; set; } = "";
         public gender Spol { get; set; }
         public List<string> Drzave { get; set; }
         public DateTime DatumRodjenja { get; set; } = DateTime.Now;
@@ -53,7 +56,7 @@ namespace DDR2.ViewModel
                                         "Switzerland","Turkey","Ukraine","United Kingdom"};
         }
 
-        public void KreirajAccount(object param)
+        public async void KreirajAccount(object param)
         {
             NoviGost = new Gost(Username, Password, Ime, Prezime, Adresa, Drzava, Email, Grad, Telefon, DatumRodjenja, Spol);
             using (var db = new HotelDbContext())
@@ -61,6 +64,8 @@ namespace DDR2.ViewModel
                 db.Gosti.Add(NoviGost);
                 db.Korisnici.Add(NoviGost);
                 db.SaveChanges();
+                var dialog = new MessageDialog("Account created!");
+                await dialog.ShowAsync();
             }
         }
 

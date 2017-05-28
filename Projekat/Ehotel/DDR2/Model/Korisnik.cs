@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDR2.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace DDR2.Model
 
             set
             {
-                password = value;
+                password = Encryptor.MD5Hash(value);
             }
         }
 

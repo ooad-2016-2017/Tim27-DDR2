@@ -8,7 +8,7 @@
     xmlns:ViewModel="using:DDR2.ViewModel"
     xmlns:converter="using:DDR2.Helper"
     xmlns:enumconverter="using:DDR2.Helper"
-    mc:Ignorable="d" HorizontalContentAlignment="Center" Width="1563" Height="2290" ScrollViewer.VerticalScrollMode="Auto">
+    mc:Ignorable="d" HorizontalContentAlignment="Center" Width="2483" Height="2705" ScrollViewer.VerticalScrollMode="Auto">
 
     <Page.Resources>
         <ViewModel:NewAccountVM x:Name="account"></ViewModel:NewAccountVM>
@@ -28,11 +28,9 @@
         <TextBox x:Name="txtLname" Text="{Binding Prezime, Mode=TwoWay}" PlaceholderText="Last name" Height="40" Width="250" HorizontalAlignment="Right" Margin="0,60,-250,-60"/>
         <TextBox x:Name="txtAddress" Text="{Binding Adresa, Mode=TwoWay}" PlaceholderText="Address" Height="40" Width="540" HorizontalAlignment="Left" Margin="10,130,-250,-120"/>
         <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="615,65,-457,-55">Country</TextBlock>
-        <ComboBox 
-            Width="368" Height="40" Margin="787,60,-855,-50"
-            SelectedValue="{Binding Drzava, Mode=TwoWay}"
-            ItemsSource="{Binding Drzave, Mode=TwoWay}"
-            />
+        <ComboBox Width="368" Height="40" Margin="787,60,-855,-50"
+                  ItemsSource="{Binding Drzave, Mode=TwoWay}"
+                  SelectedValue="{Binding Drzava, Mode=TwoWay}"/>
         <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="615,130,-457,-120">City</TextBlock>
         <TextBox Text="{Binding Telefon, Mode=TwoWay}" Margin="787,338,-855,-328" Height="40"></TextBox>
         <TextBlock FontSize="20" Width="100" Height="40" HorizontalAlignment="Left" Margin="615,201,-415,-191">Gender</TextBlock>
@@ -43,12 +41,12 @@
         <TextBlock FontSize="20" Height="40" Width="100" HorizontalAlignment="Left" Margin="615,267,-415,-257">Birth date</TextBlock>
         <DatePicker Margin="787,271,-855,-253" Width="368"
                     Date="{Binding DatumRodjenja, Mode=TwoWay, Converter={StaticResource theDateConverter}}"/>
-        <TextBlock FontSize="20" Width="150" HorizontalAlignment="Left" Margin="615,338,-465,-328">Mobile phone</TextBlock>
+        <TextBlock Text="{Binding Telefon, Mode=TwoWay}" FontSize="20" Width="150" HorizontalAlignment="Left" Margin="615,338,-465,-328">Mobile phone</TextBlock>
         <TextBox Text="{Binding Grad, Mode=TwoWay}" Margin="787,130,-855,-120" Height="40"></TextBox>
         <TextBox x:Name="txtUsername" Text="{Binding Username, Mode=TwoWay}" Height="40" PlaceholderText="Username" Width="540" HorizontalAlignment="Left" Margin="10,204,-250,-194"/>
         <PasswordBox x:Name="txtPassword" Password="{Binding Password, Mode=TwoWay}" Width="540" PlaceholderText="Password" HorizontalAlignment="Left" Margin="10,271,-250,-261"/>
         <PasswordBox x:Name="txtCpassword" Password="{Binding ConfirmPassword, Mode=TwoWay}" Width="540" PlaceholderText="Confirm your password" HorizontalAlignment="Left" Margin="10,338,-250,-328"/>
         <TextBox x:Name="txtEmail" Text="{Binding Email, Mode=TwoWay}" PlaceholderText="Email address" Width="540" HorizontalAlignment="Left" Margin="10,401,-250,-391"/>
-        <Button x:Name="btnNewAcc" Command="{Binding Create}" Width="540" Height="40" BorderBrush="Black" FontSize="20" Background="LightGreen" Content="Create Account" Margin="615,401,-855,-391"/>
+        <Button x:Name="btnNewAcc" Command="{Binding Path=Create}" Width="540" Height="40" BorderBrush="Black" FontSize="20" Background="LightGreen" Content="Create Account" Margin="615,401,-855,-391"/>
     </Grid>
 </Page>

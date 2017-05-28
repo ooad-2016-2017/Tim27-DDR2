@@ -95,8 +95,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helper\ComboBoxItemConvert.cs" />
     <Compile Include="Helper\DateConverter.cs" />
+    <Compile Include="Helper\Encryptor.cs" />
     <Compile Include="Helper\EnumToBoolConverter.cs" />
     <Compile Include="Helper\INavigationService.cs" />
     <Compile Include="Helper\NavigationService.cs" />
