@@ -197,7 +197,7 @@ namespace DDR2.HotelBaza.Models
                     Email = "hahaha",
                     Telefon = "020202",
                     Username = "ddr2",
-                    Password = "ddr2",
+                    Password = Encryptor.MD5Hash("ddr2"),
                     Dat_rodjenja = new DateTime(2013, 12, 12),
                 }
                 );

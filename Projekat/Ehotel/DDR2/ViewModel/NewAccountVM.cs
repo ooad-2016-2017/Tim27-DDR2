@@ -27,7 +27,7 @@ namespace DDR2.ViewModel
         public string ConfirmPassword { get; set; } = "";
         public string Drzava { get; set; } = "";
         public gender Spol { get; set; }
-        public List<string> Drzave { get; set; }
+        public List<string> Drzave { get; set; } 
         public DateTime DatumRodjenja { get; set; } = DateTime.Now;
         Gost NoviGost;
         public ICommand Create { get; set; }
@@ -35,12 +35,12 @@ namespace DDR2.ViewModel
         public NewAccountVM()
         {
             Create = new RelayCommand<object>(KreirajAccount,ProvjeriPolja);
-            PopuniDrzave();
+            Drzave=PopuniDrzave(Drzave);
         }
 
-        public void PopuniDrzave()
+        public static List<String> PopuniDrzave(List<string>lista)
         {
-            Drzave = new List<string>  {"Albania","Andorra","Armenia","Austria","Azerbaijan",
+            lista = new List<string>  {"Albania","Andorra","Armenia","Austria","Azerbaijan",
                                         "Belarus","Belgium","Bosnia and Herzegovina","Bulgaria",
                                         "Croatia","Cyprus","Czech Republic","Denmark","Estonia",
                                         "Finland","France","Georgia","Germany","Greece",
@@ -50,6 +50,7 @@ namespace DDR2.ViewModel
                                         "Netherlands","Norway","Poland","Portugal","Romania","Russia",
                                         "San Marino","Serbia","Slovakia","Slovenia","Spain","Sweden",
                                         "Switzerland","Turkey","Ukraine","United Kingdom"};
+            return lista;
         }
 
         public async void KreirajAccount(object param)
@@ -60,7 +61,7 @@ namespace DDR2.ViewModel
                 db.Gosti.Add(NoviGost);
                 db.Korisnici.Add(NoviGost);
                 db.SaveChanges();
-                var dialog = new MessageDialog("Account created!\n");
+                var dialog = new MessageDialog("Account created succesfully!\n");
                 await dialog.ShowAsync();
             }
         }

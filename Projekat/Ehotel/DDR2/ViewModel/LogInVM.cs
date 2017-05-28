@@ -46,9 +46,9 @@ namespace DDR2.ViewModel
             {
                 using (var db = new HotelDbContext())
                 {
-                    if (db.Korisnici.Count() > 0) 
+                    if (db.Korisnici.Count() > 0) //ovde za sada moramo dodavati hesiranje kod provjere passworda jer nesta nece kod default podataka da se hesira
                     {
-                        var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username && kor.Password == Password);
+                        var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username && Encryptor.MD5Hash(kor.Password) == Password);
 
                         if (korisnik is Admin)
                         {

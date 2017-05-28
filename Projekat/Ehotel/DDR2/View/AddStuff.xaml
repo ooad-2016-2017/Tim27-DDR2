@@ -5,7 +5,19 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:DDR2.ViewModel"
+    xmlns:converter="using:DDR2.Helper"
+    xmlns:enumconverter="using:DDR2.Helper"
     mc:Ignorable="d" Width="1205" Height="565">
+
+    <Page.DataContext>
+        <ViewModel:AddStuffVM x:Name="stuff"></ViewModel:AddStuffVM>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <converter:DateConverter x:Key="theDateConverter"></converter:DateConverter>
+        <enumconverter:EnumToBoolConverter x:Key="genderConvert"></enumconverter:EnumToBoolConverter>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,10">
         <Grid.RowDefinitions>
@@ -15,39 +27,39 @@
             <ColumnDefinition Width="300"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Foreground="Gray" HorizontalAlignment="Stretch" Margin="0,0,-905,10" Text="Add  new employee"/>
-        <TextBox x:Name="txtFname" PlaceholderText="First name" Height="40" Width="250" HorizontalAlignment="Left" Margin="10,60,0,-60"/>
-        <TextBox x:Name="txtLname" PlaceholderText="Last name" Height="40" Width="250" HorizontalAlignment="Right" Margin="0,60,-250,-60"/>
-        <TextBox x:Name="txtAddress" PlaceholderText="Address" Height="40" Width="540" HorizontalAlignment="Left" Margin="10,130,-250,-120"/>
-        <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="615,65,-457,-55">Country</TextBlock>
-        <ComboBox Name="CountrySelector" Width="368" Height="40" Margin="787,60,-855,-50">
-            <ComboBoxItem>Bosna i Hecegovina</ComboBoxItem>
-            <ComboBoxItem>Hrvatska</ComboBoxItem>
-            <ComboBoxItem>Srbija</ComboBoxItem>
-            <ComboBoxItem>Makedonija</ComboBoxItem>
-        </ComboBox>
+        <TextBox x:Name="txtFname" Text="{Binding Ime, Mode=TwoWay}" PlaceholderText="First name" Height="40" Width="250" HorizontalAlignment="Left" Margin="10,60,0,-60"/>
+        <TextBox x:Name="txtLname" Text="{Binding Prezime, Mode=TwoWay}" PlaceholderText="Last name" Height="40" Width="250" HorizontalAlignment="Right" Margin="0,60,-250,-60"/>
+        <TextBox x:Name="txtAddress" Text="{Binding Adresa, Mode=TwoWay}" PlaceholderText="Address" Height="40" Width="540" HorizontalAlignment="Left" Margin="10,130,-250,-120"/>
+        <TextBlock FontSize="20" Height="40" Width="142" HorizontalAlignment="Left" Margin="615,65,-457,-55">Country</TextBlock>
+        <ComboBox Name="CountrySelector" Width="368" Height="40" Margin="787,60,-855,-50"
+                  ItemsSource="{Binding Drzave, Mode=TwoWay}"
+                  SelectedValue="{Binding Drzava, Mode=TwoWay}"/>
         <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="615,130,-457,-120">City</TextBlock>
-        <TextBox Name="txtMobile" Margin="787,338,-855,-328" Height="40"></TextBox>
+        <TextBox Name="txtMobile" Text="{Binding Telefon, Mode=TwoWay}" Margin="787,338,-855,-328" Height="40"></TextBox>
         <TextBlock FontSize="20" Width="100" Height="40" HorizontalAlignment="Left" Margin="615,201,-415,-191">Gender</TextBlock>
-        <RadioButton Name="male" Width="150" Margin="787,198,-637,-180">Male</RadioButton>
-        <RadioButton Name="female" Width="150" Margin="1005,198,-855,-180">Female</RadioButton>
+        <RadioButton Name="male" Width="150" Margin="787,198,-637,-180"
+                     IsChecked="{Binding Spol, Converter={StaticResource genderConvert}, ConverterParameter=Male, Mode=TwoWay}">Male</RadioButton>
+        <RadioButton Name="female" Width="150" Margin="1005,198,-855,-180"
+                     IsChecked="{Binding Spol, Converter={StaticResource genderConvert}, ConverterParameter=Female, Mode=TwoWay}">Female</RadioButton>
         <TextBlock FontSize="20" Height="40" Width="100" HorizontalAlignment="Left" Margin="615,267,-415,-257">Birth date</TextBlock>
-        <DatePicker Name="datumRodjenja" Margin="787,271,-855,-253" Width="368"></DatePicker>
+        <DatePicker Name="datumRodjenja" Margin="787,271,-855,-253" Width="368"
+                    Date="{Binding DatumRodjenja, Mode=TwoWay, Converter={StaticResource theDateConverter}}"/>
         <TextBlock FontSize="20" Width="150" HorizontalAlignment="Left" Margin="615,338,-465,-328">Mobile phone</TextBlock>
-        <TextBox Name="txtCity" Margin="787,130,-855,-120" Height="40"></TextBox>
-        <TextBox x:Name="txtUsername" Height="40" PlaceholderText="Username" Width="250" HorizontalAlignment="Left" Margin="10,204,0,-194"/>
-        <PasswordBox x:Name="txtPassword" Width="250" PlaceholderText="Password" HorizontalAlignment="Left" Margin="10,271,0,-261"/>
-        <PasswordBox x:Name="txtCpassword" Width="250" PlaceholderText="Confirm your password" HorizontalAlignment="Left" Margin="300,268,-250,-258"/>
-        <TextBox x:Name="txtEmail" PlaceholderText="Email address" Width="540" HorizontalAlignment="Left" Margin="10,338,-250,-328"/>
-        <Button x:Name="btnNewAcc" Click="btnNewAcc_Click" Width="538" Height="48" BorderBrush="Black" FontSize="20" Background="LightGreen" Content="Add" Margin="615,489,-853,-487"/>
+        <TextBox Name="txtCity" Text="{Binding Grad, Mode=TwoWay}" Margin="787,130,-855,-120" Height="40"></TextBox>
+        <TextBox x:Name="txtUsername" Text="{Binding Username, Mode=TwoWay}" Height="40" PlaceholderText="Username" Width="250" HorizontalAlignment="Left" Margin="10,204,0,-194"/>
+        <PasswordBox x:Name="txtPassword" Password="{Binding Password, Mode=TwoWay}" Width="250" PlaceholderText="Password" HorizontalAlignment="Left" Margin="10,271,0,-261"/>
+        <PasswordBox x:Name="txtCpassword" Password="{Binding ConfirmPassword, Mode=TwoWay}" Width="250" PlaceholderText="Confirm your password" HorizontalAlignment="Left" Margin="300,268,-250,-258"/>
+        <TextBox x:Name="txtEmail" Text="{Binding Email, Mode=TwoWay}" PlaceholderText="Email address" Width="540" HorizontalAlignment="Left" Margin="10,338,-250,-328"/>
+        <Button x:Name="btnNewAcc" Command="{Binding Path=Add}" Width="538" Height="48" BorderBrush="Black" FontSize="20" Background="LightGreen" Content="Add" Margin="615,489,-853,-487"/>
         <TextBlock FontSize="20" Width="150" HorizontalAlignment="Left" Margin="615,419,-465,-409" Text="Salary"/>
-        <TextBox  Name="txtSalary" Margin="787,419,-853,-409" Height="40"/>
+        <TextBox  Name="txtSalary" Text="{Binding Plata, Mode=TwoWay}" Margin="787,419,-853,-409" Height="40"/>
         <TextBlock FontSize="20" Width="194" HorizontalAlignment="Left" Margin="10,419,0,-409" Text="Hire Date"/>
-        <DatePicker Name="datumZaposlenja" HorizontalAlignment="Left" Height="39" Margin="204,416,-250,-405" VerticalAlignment="Top" Width="346"/>
-        <TextBox x:Name="txtJmbg" PlaceholderText="JMBG" Height="40" Width="250" HorizontalAlignment="Left" Margin="300,204,-250,-194" Text=""/>
-        <ComboBox Name="posaoSelector" Width="346" Height="40" Margin="204,489,-250,-479">
-            <ComboBoxItem Content="Receptionist"/>
-            <ComboBoxItem Content="Maid"/>
-        </ComboBox>
+        <DatePicker Name="datumZaposlenja" HorizontalAlignment="Left" Height="39" Margin="204,416,-250,-405" VerticalAlignment="Top" Width="346"
+                    Date="{Binding DatumZaposlenja, Mode=TwoWay, Converter={StaticResource theDateConverter}}"/>
+        <TextBox x:Name="txtJmbg" Text="{Binding JMBG, Mode=TwoWay}" PlaceholderText="JMBG" Height="40" Width="250" HorizontalAlignment="Left" Margin="300,204,-250,-194"/>
+        <ComboBox Name="posaoSelector" Width="346" Height="40" Margin="204,489,-250,-479"
+                  ItemsSource="{Binding Poslovi, Mode=TwoWay}"
+                  SelectedValue="{Binding Posao, Mode=TwoWay}"/>
         <TextBlock FontSize="20" Width="194" HorizontalAlignment="Left" Margin="10,489,0,-479" Text="Job"/>
     </Grid>
 </Page>
