@@ -7,15 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:DDR2.ViewModel"
     xmlns:converter="using:DDR2.Helper"
+    xmlns:enumconverter="using:DDR2.Helper"
     mc:Ignorable="d" HorizontalContentAlignment="Center" Width="1563" Height="2290" ScrollViewer.VerticalScrollMode="Auto">
 
     <Page.Resources>
-        <converter:DateConverter x:Key="theDateConverter"></converter:DateConverter>
-    </Page.Resources>
-    
-    <Page.DataContext>
         <ViewModel:NewAccountVM x:Name="account"></ViewModel:NewAccountVM>
-    </Page.DataContext>
+        <converter:DateConverter x:Key="theDateConverter"></converter:DateConverter>
+        <enumconverter:EnumToBoolConverter x:Key="genderConvert"></enumconverter:EnumToBoolConverter>
+    </Page.Resources>
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Stretch" Height="Auto" Margin="10,10,1223,2200" RenderTransformOrigin="1.342,2.606">
         <Grid.RowDefinitions>
@@ -37,8 +36,10 @@
         <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="615,130,-457,-120">City</TextBlock>
         <TextBox Text="{Binding Telefon, Mode=TwoWay}" Margin="787,338,-855,-328" Height="40"></TextBox>
         <TextBlock FontSize="20" Width="100" Height="40" HorizontalAlignment="Left" Margin="615,201,-415,-191">Gender</TextBlock>
-        <RadioButton Width="150" Margin="787,198,-637,-180">Male</RadioButton>
-        <RadioButton Width="150" Margin="1005,198,-855,-180">Female</RadioButton>
+        <RadioButton Width="150" Margin="787,198,-637,-180"
+                     IsChecked="{Binding Spol, Converter={StaticResource genderConvert}, ConverterParameter=Male, Mode=TwoWay}">Male</RadioButton>
+        <RadioButton Width="150" Margin="1005,198,-855,-180"
+                     IsChecked="{Binding Spol, Converter={StaticResource genderConvert}, ConverterParameter=Female, Mode=TwoWay}">Female</RadioButton>
         <TextBlock FontSize="20" Height="40" Width="100" HorizontalAlignment="Left" Margin="615,267,-415,-257">Birth date</TextBlock>
         <DatePicker Margin="787,271,-855,-253" Width="368"
                     Date="{Binding DatumRodjenja, Mode=TwoWay, Converter={StaticResource theDateConverter}}"/>

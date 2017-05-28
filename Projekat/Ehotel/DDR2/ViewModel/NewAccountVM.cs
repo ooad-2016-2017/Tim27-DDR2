@@ -1,4 +1,5 @@
 ﻿using DDR2.Helper;
+using DDR2.HotelBaza.Models;
 using DDR2.Model;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Xaml.Controls;
+using static DDR2.Model.Osoba;
 
 namespace DDR2.ViewModel
 {
@@ -23,6 +25,7 @@ namespace DDR2.ViewModel
         public string Password { get; set; } = "";
         public string ConfirmPassword { get; set; } = "";
         public string Drzava { get; set; }
+        public gender Spol { get; set; }
         public List<string> Drzave { get; set; }
         public DateTime DatumRodjenja { get; set; } = DateTime.Now;
         Gost NoviGost;
@@ -38,7 +41,7 @@ namespace DDR2.ViewModel
 
         public void PopuniDrzave()
         {
-            Drzave = new List<string> { "Albania","Andorra","Armenia","Austria","Azerbaijan",
+            Drzave = new List<string>  {"Albania","Andorra","Armenia","Austria","Azerbaijan",
                                         "Belarus","Belgium","Bosnia and Herzegovina","Bulgaria",
                                         "Croatia","Cyprus","Czech Republic","Denmark","Estonia",
                                         "Finland","France","Georgia","Germany","Greece",
@@ -52,11 +55,19 @@ namespace DDR2.ViewModel
 
         public void KreirajAccount(object param)
         {
-
+            NoviGost = new Gost(Username, Password, Ime, Prezime, Adresa, Drzava, Email, Grad, Telefon, DatumRodjenja, Spol);
+            using (var db = new HotelDbContext())
+            {
+                db.Gosti.Add(NoviGost);
+                db.Korisnici.Add(NoviGost);
+                db.SaveChanges();
+            }
         }
+
         public bool ProvjeriPolja(object param)
         {
             //validirati polja
+            if (Password != ConfirmPassword) return false;
             return true;
         }
     }

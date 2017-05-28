@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Helper\ComboBoxItemConvert.cs" />
     <Compile Include="Helper\DateConverter.cs" />
+    <Compile Include="Helper\EnumToBoolConverter.cs" />
     <Compile Include="Helper\INavigationService.cs" />
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\RelayCommand.cs" />

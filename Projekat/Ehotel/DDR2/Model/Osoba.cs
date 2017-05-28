@@ -12,6 +12,28 @@ namespace DDR2.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        string ime, prezime, adresa, drzava, email, grad, telefon;
+        DateTime dat_rodjenja;
+        public enum gender { Male, Female };
+        gender spol_osobe;
+
+        public Osoba()
+        {
+        }
+
+        public Osoba(string ime, string prezime, string adresa, string drzava, string email, string grad, string telefon, DateTime dat_rodjenja, gender spol)
+        {
+            this.Ime = ime;
+            this.Prezime = prezime;
+            this.Adresa = adresa;
+            this.Drzava = drzava;
+            this.Email = email;
+            this.Grad = grad;
+            this.Telefon = telefon;
+            this.Dat_rodjenja = dat_rodjenja;
+            this.Spol_osobe = spol;
+        }
+
         public string Ime
         {
             get
@@ -128,28 +150,5 @@ namespace DDR2.Model
                 spol_osobe = value;
             }
         }
-
-        string ime, prezime, adresa, drzava, email, grad, telefon;
-        DateTime dat_rodjenja;
-        public enum gender { male, female };
-        gender spol_osobe;
-
-        public Osoba()
-        {
-        }
-
-        public Osoba(string ime, string prezime, string adresa, string drzava, string email, string grad, string telefon, DateTime dat_rodjenja, gender spol)
-        {
-            this.Ime = ime;
-            this.Prezime = prezime;
-            this.Adresa = adresa;
-            this.Drzava = drzava;
-            this.Email = email;
-            this.Grad = grad;
-            this.Telefon = telefon;
-            this.Dat_rodjenja = dat_rodjenja;
-            this.Spol_osobe = spol;
-        }
-
     }
 }
