@@ -5,9 +5,55 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Width="790" Height="635">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="-345,0,-60,75">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Foreground="Gray" HorizontalAlignment="Stretch" Margin="0,0,-905,10" TextAlignment="Center" Text="Employee Details" FontSize="30"/>
+        <TextBlock FontSize="20" Height="40" Width="142" HorizontalAlignment="Left" Margin="615,65,-457,-55">Country</TextBlock>
+        <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="615,130,-457,-120">City</TextBlock>
+        <TextBox Name="txtMobile" Margin="787,201,-855,-191" Height="40"></TextBox>
+        <TextBlock FontSize="20" Width="100" Height="40" HorizontalAlignment="Left" Margin="10,484,0,-474">Gender</TextBlock>
+        <TextBlock FontSize="20" Height="40" Width="100" HorizontalAlignment="Left" Margin="615,338,-415,-328">Birth date</TextBlock>
+        <DatePicker Name="datumRodjenja" Margin="787,342,-855,-324" Width="368"/>
+        <TextBlock FontSize="20" Width="150" HorizontalAlignment="Left" Margin="615,201,-465,-191">Address</TextBlock>
+        <TextBox Name="txtCity" Margin="787,130,-855,-120" Height="40"></TextBox>
+        <TextBlock FontSize="20" Width="150" HorizontalAlignment="Left" Margin="615,408,-465,-398" Text="Salary"/>
+        <TextBox  Name="txtSalary" Margin="787,408,-853,-398" Height="40"/>
+        <TextBlock FontSize="20" Width="194" HorizontalAlignment="Left" Margin="613,272,-507,-262" Text="Hire Date"/>
+        <DatePicker Name="datumZaposlenja" HorizontalAlignment="Left" Height="39" Margin="787,269,-853,-258" VerticalAlignment="Top" Width="366"/>
+        <TextBlock FontSize="20" Width="194" HorizontalAlignment="Left" Margin="615,484,-509,-474" Text="Job" RenderTransformOrigin="0.644,0.525"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="787,65,-853,-55" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Height="40"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="787,479,-853,-469" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Height="40"/>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Margin="180,484,-246,-474" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Height="40"/>
+        <TextBlock FontSize="20" Height="40" Width="142" HorizontalAlignment="Left" Margin="10,62,0,-52">
+            <Run Text="First name"/>
+        </TextBlock>
+        <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="10,127,0,-117">
+            <Run Text="Last name"/>
+        </TextBlock>
+        <TextBlock FontSize="20" Width="100" Height="40" HorizontalAlignment="Left" Margin="10,198,0,-188">
+            <Run Text="Username"/>
+        </TextBlock>
+        <TextBox x:Name="txtCity_Copy" Margin="182,127,-250,-117" Height="40"/>
+        <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Margin="182,62,-248,-52" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Height="40"/>
+        <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Margin="184,201,-250,-191" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Height="40"/>
+        <TextBlock FontSize="20" Height="40" Width="142" HorizontalAlignment="Left" Margin="8,269,0,-259">
+            <Run Text="Email"/>
+        </TextBlock>
+        <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="8,334,0,-324">
+            <Run Text="Phone number"/>
+        </TextBlock>
+        <TextBlock FontSize="20" Width="100" Height="40" HorizontalAlignment="Left" Margin="8,405,0,-395">
+            <Run Text="JMBG"/>
+        </TextBlock>
+        <TextBox x:Name="txtCity_Copy1" Margin="180,334,-248,-324" Height="40"/>
+        <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Margin="180,269,-246,-259" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Height="40"/>
+        <TextBox x:Name="textBox_Copy5" HorizontalAlignment="Left" Margin="182,408,-248,-398" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Height="40"/>
     </Grid>
 </Page>
