@@ -5,8 +5,8 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Width="1275"
-    Loaded="Page_Loaded">
+    mc:Ignorable="d" Width="1265"
+    Loaded="Page_Loaded" RequestedTheme="Dark" Height="810">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,10,10,0">
         <Grid.RowDefinitions>
@@ -18,8 +18,8 @@
             <ColumnDefinition Width="300"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBox PlaceholderText="Search guests" FontSize="25" Margin="0,0,-808,0"/>
-        <Button HorizontalAlignment="Right" Background="LightGreen" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" Click="Button_Click">Search</Button>
-        <Button Grid.Row="1" FontSize="25" Height="50" Width="1270" Background="LightGray" BorderBrush="Black" Name="btnAddGuest" Click="btnAddGuest_Click" Margin="0,0,-970,0">Add Guest</Button>
+        <Button HorizontalAlignment="Right" Background="#FF154D15" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" Click="Button_Click">Search</Button>
+        <Button Grid.Row="1" FontSize="25" Height="50" Width="1270" Background="#FF182846" BorderBrush="Black" Name="btnAddGuest" Click="btnAddGuest_Click" Margin="0,0,-970,0">Add Guest</Button>
         <TextBlock Text="Guests" FontSize="40" VerticalAlignment="Center" Grid.Row="2" Margin="0,16,-970,-29" Height="63"/>
         <Grid Margin="0,84,-970,-80" Grid.Row="2">
             <Grid.ColumnDefinitions>

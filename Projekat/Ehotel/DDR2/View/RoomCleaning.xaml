@@ -5,7 +5,7 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Width="1271.429">
+    mc:Ignorable="d" Width="1271.429" RequestedTheme="Dark">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -17,13 +17,10 @@
             <ColumnDefinition Width="300"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBox PlaceholderText="Search rooms" FontSize="25" Margin="0,0,-808,0"/>
-        <Button HorizontalAlignment="Right" Background="LightGreen" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Name="btnSearch" Click="btnSearch_Click" Width="162" Height="50">Search</Button>
-        <Button Grid.Row="1" FontSize="25" Height="50" Width="350" Background="LightGray" BorderBrush="Black" Name="btnAllRooms" Click="btnAllRooms_Click" Margin="0,0,-120,0">Show cleaned rooms</Button>
-        <Button Grid.Row="1" FontSize="25" Height="50" Width="321" Background="LightGray" BorderBrush="Black" Name="btnCleanedRoom" Click="btnCleanedRoom_Click" Margin="350,0,-371,0">Show all rooms</Button>
-        <Button Grid.Row="1" FontSize="25" Height="50" Width="300" Background="LightGray" BorderBrush="Black" Name="btnClean" Click="btnClean_Click" Margin="671,0,-671,0">Clean room</Button>
-        <Button Grid.Row="1" FontSize="25" Height="50" Width="300" Background="LightCoral" BorderBrush="Black" Name="btnLog" Click="btnLog_Click" Margin="971,0,-971,0">Log Out</Button>
+        <Button HorizontalAlignment="Right" Background="#FF1C4D1C" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Name="btnSearch" Click="btnSearch_Click" Width="162" Height="50">Search</Button>
+        <Button Grid.Row="1" FontSize="25" Height="50" Width="1271" Background="#FF163F4B" BorderBrush="Black" Name="btnAllRooms" Click="btnAllRooms_Click" Margin="0,0,-971,0">Show cleaned rooms</Button>
         <TextBlock Text="Rooms" FontSize="40" VerticalAlignment="Center" Grid.Row="2" Margin="0,0,0,-34"/>
-        <ListView Margin="0,84,-970,-84" Grid.Row="2"
+        <ListView Margin="0,84,-970,-507" Grid.Row="2"
             x:Name="RoomsListView"
             IsItemClickEnabled="True">
             <ListView.Template>
