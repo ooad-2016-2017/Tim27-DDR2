@@ -6,12 +6,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:DDR2.ViewModel"
-    mc:Ignorable="d" Height="298" Width="601">
+    mc:Ignorable="d" Height="Auto" Width="Auto" Background="Black" RequestedTheme="Dark" AllowDrop="True" IsTabStop="False" FontSize="15" BorderBrush="Black">
 
     <Page.DataContext>
         <ViewModel:LogInVM x:Name="login"></ViewModel:LogInVM>
     </Page.DataContext>
-    
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center" Width="600" Height="300">
 
         <TextBlock FontSize="35" FontWeight="Bold">

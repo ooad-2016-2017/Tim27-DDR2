@@ -5,7 +5,7 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Height="1461" Width="1285">
+    mc:Ignorable="d" Height="1421" Width="1285" RequestedTheme="Dark" Background="Black">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="68,0,0,806">
         <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch" Margin="37,10,55,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="80" FontSize="50" TextAlignment="Center" Foreground="#FF292626" >
