@@ -5,7 +5,7 @@
     xmlns:local="using:DDR2.HotelBaza.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Width="1268.833" Height="924"
+    mc:Ignorable="d" Width="1268.833" Height="1479"
     xmlns:converter="using:DDR2.Helper"
     Loaded="Page_Loaded">
 
@@ -29,8 +29,6 @@
                 <StackPanel Orientation="Horizontal" Grid.Column="4">
                     <HyperlinkButton VerticalAlignment="Center">Edit</HyperlinkButton>
                     <TextBlock VerticalAlignment="Center" Text=" | "></TextBlock>
-                    <HyperlinkButton VerticalAlignment="Center">Details</HyperlinkButton>
-                    <TextBlock VerticalAlignment="Center" Text=" | "></TextBlock>
                     <HyperlinkButton VerticalAlignment="Center">Delete</HyperlinkButton>
                 </StackPanel>
             </Grid>
@@ -40,27 +38,30 @@
 
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,10,-0.333,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" Margin="0,0,-0.333,629">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="1290">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-        <TextBox PlaceholderText="Search rooms" FontSize="25" Margin="0,0,-808,0"/>
-        <Button HorizontalAlignment="Right" Background="LightGreen" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" Click="Button_Click">Search</Button>
-        <Button Grid.Row="1" FontSize="25" Height="50" Width="1270" Background="LightGray" BorderBrush="Black" Name="BtnAddRoom" Click="BtnAddRoom_Click" Margin="0,0,-970,0">Add New Room</Button>
-        <TextBlock Text="Rooms" FontSize="40" VerticalAlignment="Center" Grid.Row="2" Margin="0,16,-970,-29" Height="63"/>
+            <TextBox PlaceholderText="Search rooms" FontSize="25" Margin="0,0,-808,0"/>
+            <Button HorizontalAlignment="Right" Background="LightGreen" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" Click="Button_Click">Search</Button>
+            <Button Grid.Row="1" FontSize="25" Height="50" Width="1270" Background="LightGray" BorderBrush="Black" Name="BtnAddRoom" Click="BtnAddRoom_Click" Margin="0,0,-970,0">Add New Room</Button>
+            <TextBlock Text="Rooms" FontSize="40" VerticalAlignment="Center" Margin="10,0,-980,10" Height="60" Grid.Row="2"/>
 
-        <StackPanel Margin="0,0,-970,-935" Grid.Row="2" Height="Auto" Orientation="Vertical">
-            <ListView Margin="-1,79,0,-425" Grid.Row="2"
+            <ListView Margin="-1,0,-970,5" Grid.Row="3"
                 x:Name="RoomsList"
                 ItemTemplate="{StaticResource SobeTemplate}"
                 Background="White"
-                ItemsSource="{Binding SobeZaListu, Mode=TwoWay}" Height="371">
+                ItemsSource="{Binding SobeZaListu, Mode=TwoWay}" Grid.RowSpan="2">
                 <ListView.Template>
                     <ControlTemplate>
                         <Grid>
@@ -91,19 +92,22 @@
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>
-            <StackPanel Orientation="Horizontal" DataContext="{Binding SelectedItem, ElementName=RoomsList}" Height="790" Margin="0,0,10,0">
-                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="0,515,10,10" Width="660">
+            <StackPanel  Grid.Row="5"  Orientation="Horizontal" DataContext="{Binding SelectedItem, ElementName=RoomsList}" Margin="0,0,-969,0">
+                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="0,0,10,10" Width="660">
+                    <TextBlock Text="Details: " FontSize="25"/>
+                    <TextBlock Text="Room name: "/>
                     <TextBlock Text="{Binding Naziv}"/>
+                    <TextBlock Text="Room munber: "/>
                     <TextBlock Text="{Binding Broj}"/>
+                    <TextBlock Text="Room price: "/>
                     <TextBlock Text="{Binding Cijena}"/>
+                    <TextBlock Text="Is room clean: "/>
                     <TextBlock Text="{Binding Ociscena}"/>
-                    <TextBlock Text="{Binding Slobodna}"/>                    <TextBlock Text="{Binding Tip}"/>                    <TextBlock Text="{Binding Max_djece}"/>                    <TextBlock Text="{Binding Max_odraslih}"/>                    <TextBlock Text="{Binding Opis}"/>                </StackPanel>
-                <Image x:Name="image" HorizontalAlignment="Left" Height="270"  Margin="5,520,0,0" VerticalAlignment="Top"  Source="{Binding Slika, Converter={StaticResource thePictureConverter}}" RenderTransformOrigin="0.5,0.5" Width="585">
-                    <Image.RenderTransform>
-                        <CompositeTransform ScaleX="-1"/>
-                    </Image.RenderTransform>
-                </Image>
+                    <TextBlock Text="Is room available: "/>
+                    <TextBlock Text="{Binding Slobodna}"/>                    <TextBlock Text="Room type: "/>                    <TextBlock Text="{Binding Tip}"/>                    <TextBlock Text="Maximum number of children: "/>                    <TextBlock Text="{Binding Max_djece}"/>                    <TextBlock Text="Maximum number of adults: "/>                    <TextBlock Text="{Binding Max_odraslih}"/>                    <TextBlock Text="Description: "/>                    <TextBlock Text="{Binding Opis}"/>                    <TextBlock Text="Picture: "/>
+                </StackPanel>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="535" VerticalAlignment="Top"  Source="{Binding Slika, Converter={StaticResource thePictureConverter}}" Width="596"/>
             </StackPanel>
-        </StackPanel>
-    </Grid>
+        </Grid>
+    </ScrollViewer>
 </Page>
