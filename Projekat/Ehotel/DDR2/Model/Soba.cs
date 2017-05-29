@@ -166,7 +166,5 @@ namespace DDR2.Model
         public Soba()
         {
         }
-
-      
     }
 }

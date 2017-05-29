@@ -1,6 +1,8 @@
 ﻿using DDR2.Helper;
 using DDR2.HotelBaza.Models;
+using DDR2.View;
 using DDR2.ViewModel;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,13 +32,26 @@ namespace DDR2.ViewModel
         public gender Spol { get; set; }
         public DateTime DatumRodjenja { get; set; }
         public List<string> Drzave { get; set; }
-        public AdminPanelVM AdminParent { get; set; }
+        public AdminPanelVM AdminParent { get; set; } = null;
+        public ReceptionVM RecepcionarParent { get; set; } = null;
         public ICommand SavePassword { get; set; }
         public ICommand SaveEverythingElse { get; set; }
+        public INavigationService NavigationService { get; set; }
 
         public ViewProfileVM(AdminPanelVM parent)
         {
+            NavigationService = new NavigationService();
             AdminParent = parent;
+            ProslijediPoruku();
+            Drzave = NewAccountVM.PopuniDrzave(Drzave);
+            InicijalizirajPodatke();
+            SavePassword = new RelayCommand<object>(PromjenaPass, parametar => true);
+            SaveEverythingElse = new RelayCommand<object>(PromjenaOstalo, parametar => true);
+        }
+        public ViewProfileVM(ReceptionVM parent)
+        {
+            NavigationService = new NavigationService();
+            RecepcionarParent = parent;
             ProslijediPoruku();
             Drzave = NewAccountVM.PopuniDrzave(Drzave);
             InicijalizirajPodatke();
@@ -48,7 +63,11 @@ namespace DDR2.ViewModel
         {
             using (var db = new HotelDbContext())
             {
-                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
+                var korisnik = db.Korisnici.First();
+                if(AdminParent!=null)
+                    korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
+                else if(RecepcionarParent!=null)
+                    korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == RecepcionarParent.Parent.Username && kor.Password == RecepcionarParent.Parent.Password);
                 Ime = korisnik.Ime;
                 Prezime = korisnik.Prezime;
                 Adresa = korisnik.Adresa;
@@ -64,25 +83,40 @@ namespace DDR2.ViewModel
 
         public async void PromjenaOstalo(object p)
         {
-            using(var db=new HotelDbContext())
+            bool trebaLogOut = false;
+
+            using (var db=new HotelDbContext())
             {
-                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
+                var korisnik = db.Korisnici.First();
+                if (AdminParent != null)
+                    korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
+                else if (RecepcionarParent != null)
+                    korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == RecepcionarParent.Parent.Username && kor.Password == RecepcionarParent.Parent.Password);
                 korisnik.Ime = Ime;
                 korisnik.Prezime = Prezime;
                 korisnik.Adresa = Adresa;
                 korisnik.Grad = Grad;
                 korisnik.Spol_osobe = Spol;
-                korisnik.Username = Username;
+                if (korisnik.Username != Username)
+                {
+                    korisnik.Username = Username;
+                    trebaLogOut = true;
+                }
                 korisnik.Telefon = Telefon;
                 korisnik.Email = Email;
                 korisnik.Dat_rodjenja = DatumRodjenja;
                 korisnik.Drzava = Drzava;
 
+                db.Entry(korisnik).State = EntityState.Modified;
                 db.SaveChanges();
                 var dialog = new MessageDialog("Changes saved!");
                 await dialog.ShowAsync();
-                //cim promjeni bilo sta odlogujemo ga
-                AdminParent.Parent.NavigationService.GoBack();
+                //cim promjeni username odlogujemo ga
+                if (trebaLogOut)
+                {
+                    trebaLogOut = false;
+                    NavigationService.Navigate(typeof(Prijava));
+                }
             }
         }
 
@@ -90,7 +124,11 @@ namespace DDR2.ViewModel
         {
             using (var db = new HotelDbContext())
             {
-                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
+                var korisnik = db.Korisnici.First();
+                if (AdminParent != null)
+                    korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
+                else if (RecepcionarParent != null)
+                    korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == RecepcionarParent.Parent.Username && kor.Password == RecepcionarParent.Parent.Password);
 
                 if (korisnik.Password != CurrentPassword)
                 {
@@ -110,11 +148,12 @@ namespace DDR2.ViewModel
                     {
                         korisnik.Password = NewPassword;
 
+                        db.Entry(korisnik).State = EntityState.Modified;
                         db.SaveChanges();
                         var dialog = new MessageDialog("Your password has been changed successfully!");
                         await dialog.ShowAsync();
                         //cim promjeni password odlogujemo ga
-                        AdminParent.Parent.NavigationService.GoBack();
+                        NavigationService.Navigate(typeof(Prijava));
                     }
                 }
             }
@@ -124,10 +163,15 @@ namespace DDR2.ViewModel
         {
             using (var db = new HotelDbContext())
             {
-                var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
+                var korisnik = db.Korisnici.First();
+                if (AdminParent != null)
+                    korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == AdminParent.Parent.Username && kor.Password == AdminParent.Parent.Password);
+                else if (RecepcionarParent != null)
+                    korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == RecepcionarParent.Parent.Username && kor.Password == RecepcionarParent.Parent.Password);
+
                 WelcomePoruka += " " + korisnik.Ime + " " + korisnik.Prezime;
             }
         }
-        
+
     }
 }

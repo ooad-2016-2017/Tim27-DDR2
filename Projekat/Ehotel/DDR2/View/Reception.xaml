@@ -7,14 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="using:DDR2.Model"
     xmlns:ViewModel="using:DDR2.ViewModel"
-    mc:Ignorable="d" Width="1439" Height="962">
+    mc:Ignorable="d" Width="1775" Height="907">
 
-    <Page.DataContext>
-        <ViewModel:ReceptionVM x:Name="reception"></ViewModel:ReceptionVM>
-    </Page.DataContext>
-    
     <Page.Resources>
-        <DataTemplate x:Key="RezervacijeTemplate"  x:DataType="models:Rezervacija">
+        <DataTemplate x:Key="RezervacijeTemplate"
+                      x:DataType="models:Rezervacija">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -26,72 +23,83 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="{x:Bind Rezervacija_id}" Grid.Column="0" HorizontalAlignment="Left"/>
-                <TextBlock Text="{x:Bind Soba.Broj}" Grid.Column="1" HorizontalAlignment="Center"/>
-                <TextBlock Text="{x:Bind Gost.Ime}" Grid.Column="2" HorizontalAlignment="Right"/>
-                <TextBlock Text="{x:Bind Gost.Prezime}" Grid.Column="3" HorizontalAlignment="Right"/>
-                <TextBlock Text="{x:Bind Check_in}" Grid.Column="4" HorizontalAlignment="Left"/>
-                <TextBlock Text="{x:Bind Check_out}" Grid.Column="5" HorizontalAlignment="Center"/>
-                <StackPanel Orientation="Horizontal" Grid.Column="6">
-                    <HyperlinkButton>Check In</HyperlinkButton>
-                    <HyperlinkButton>Check Out</HyperlinkButton>
+                <TextBlock Text="{x:Bind Rezervacija_id}" VerticalAlignment="Center" Grid.Column="0" HorizontalAlignment="Left"/>
+                <TextBlock Text="{x:Bind Path=Soba.Broj}" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                    <TextBlock Text="{x:Bind Path=Gost.Ime}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBlock Text=" "></TextBlock>
+                    <TextBlock Text="{x:Bind Path=Gost.Prezime}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <TextBlock Text="{x:Bind Check_in}" VerticalAlignment="Center" Grid.Column="3" HorizontalAlignment="Left"/>
+                <TextBlock Text="{x:Bind Check_out}" VerticalAlignment="Center" Grid.Column="4" HorizontalAlignment="Left"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="5">
+                    <HyperlinkButton x:Name="cekirajBtn" Click="cekirajBtn_Click" VerticalAlignment="Center">Check In</HyperlinkButton>
+                    <TextBlock VerticalAlignment="Center" Text=" | "></TextBlock>
+                    <HyperlinkButton x:Name="odcekirajBtn" Click="odcekirajBtn_Click"  VerticalAlignment="Center">Check Out</HyperlinkButton>
+                    <TextBlock VerticalAlignment="Center" Text=" | "></TextBlock>
+                    <HyperlinkButton x:Name="detailsBtn" Click="detailsBtn_Click"  VerticalAlignment="Center">View Details</HyperlinkButton>
                 </StackPanel>
             </Grid>
         </DataTemplate>
     </Page.Resources>
     
-    <Grid Margin="1.03,0.026,168.97,-953.135" RenderTransformOrigin="0.5,0.5" Background="White" UseLayoutRounding="False" d:LayoutRounding="Auto">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <TextBox PlaceholderText="Search by reservation ID" FontSize="25" Margin="0,0,-808,0"/>
-        <Button HorizontalAlignment="Right" Background="#FF47B847" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" Click="Button_Click_1">Search</Button>
-        <TextBlock Text="Reservations" FontSize="40" VerticalAlignment="Center" Grid.Row="1" Margin="1,0,-970,47" Grid.RowSpan="2"/>
-        <ListView Margin="-1,0,-969,-620" Grid.Row="2"
-            x:Name="ReservationsListView"
-            ItemTemplate="{StaticResource RezervacijeTemplate}"
-            IsItemClickEnabled="True" Background="White"
-            ItemsSource="{Binding Rezervacije, Mode=TwoWay}">
-            <ListView.Template>
-                <ControlTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="0">Reservation ID</TextBlock>
-                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="4">Check in date</TextBlock>
-                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="5">Check out date</TextBlock>
-                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Room number</TextBlock>
-                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">First name</TextBlock>
-                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Last name</TextBlock>
+    <ScrollViewer HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto">
+        <Grid RenderTransformOrigin="0.5,0.5" Background="White" Width="1735" Height="910">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox PlaceholderText="Search by reservation ID" FontSize="25" Margin="-1,0,-1272,0.333" Grid.Row="2"/>
+            <Button HorizontalAlignment="Right" Background="#FF47B847" BorderBrush="Black" FontSize="25" Margin="0,0,-1434,0.333" Width="162" Height="50" Grid.Row="2">Search</Button>
+            <TextBlock Text="All reservations" FontSize="40" VerticalAlignment="Center" Grid.Row="2" Margin="-1,51,-1434,-64.667" Height="64"/>
+            <ListView Margin="-1,115,-1434,-811.667" Grid.Row="2"
+                x:Name="ReservationsListView"
+                ItemTemplate="{StaticResource RezervacijeTemplate}"
+                Background="White"
+                SelectionMode="Single"
+                ItemsSource="{Binding Rezervacije, Mode=TwoWay}">
+                <ListView.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="0">Reservation ID</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Check in date</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="4">Check out date</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Room number</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">Guest</TextBlock>
+                            </Grid>
+                            <ItemsPresenter Margin="0,33,0,0" Grid.RowSpan="2"/>
                         </Grid>
-                        <ItemsPresenter Margin="0,33,0,0" Grid.RowSpan="2"/>
-                    </Grid>
-                </ControlTemplate>
-            </ListView.Template>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                </Style>
-            </ListView.ItemContainerStyle>
-        </ListView>
-    </Grid>
+                    </ControlTemplate>
+                </ListView.Template>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+            <Button x:Name="button" Command="{Binding Path=CekiraneRez, Mode=TwoWay}" FontSize="25" Content="See checked in reservations" HorizontalAlignment="Left" Margin="444,0,-589,0" VerticalAlignment="Top" Width="445" Height="50" Grid.Row="1"/>
+            <Button x:Name="button_Copy" Command="{Binding Path=OdekiraneRez, Mode=TwoWay}" FontSize="25" Content="See checked out reservations" HorizontalAlignment="Left" Margin="-1,0,-144,0" VerticalAlignment="Top" Width="445" Height="50" Grid.Row="1"/>
+            <Button x:Name="button_Copy1" Command="{Binding Path=LogOut, Mode=TwoWay}" FontSize="25" Content="Log out" HorizontalAlignment="Left" Margin="1329,0,-1434,0" VerticalAlignment="Top" Width="405" Height="50" Grid.Row="1"/>
+            <TextBlock x:Name="textBlock" VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Left" Margin="-1,0,-1194,0" TextWrapping="Wrap" Text="Welcome" Width="1495" Height="50"/>
+            <Button x:Name="button_Copy2" Command="{Binding Profil, Mode=TwoWay}" FontSize="25" Content="View profile" HorizontalAlignment="Left" Margin="889,0,-1029,0" VerticalAlignment="Top" Width="440" Height="50" Grid.Row="1"/>
+        </Grid>
+    </ScrollViewer>
 </Page>

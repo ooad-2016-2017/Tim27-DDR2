@@ -46,7 +46,7 @@ namespace DDR2.ViewModel
             {
                 using (var db = new HotelDbContext())
                 {
-                    if (db.Korisnici.Count() > 0) //samo za admina ce raditi bez enkriptovanja, jer smo mu promijenili password preko forme, ne znam sta je sa bazom
+                    if (db.Korisnici.Count() > 0) 
                     {
                         var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username && kor.Password == Password);
 
@@ -60,7 +60,7 @@ namespace DDR2.ViewModel
                         }
                         else if (korisnik is Recepcionar)
                         {
-                            NavigationService.Navigate(typeof(Reception));
+                            NavigationService.Navigate(typeof(Reception), new ReceptionVM(this));
                         }
                         else if (korisnik is Gost)
                         {
