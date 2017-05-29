@@ -27,13 +27,5 @@ namespace DDR2.View
         {
             this.InitializeComponent();
         }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            using (var db = new HotelDbContext())
-            {
-                ReservationsListView.ItemsSource = db.Rezervacije.OrderBy(c => c.Cijena).ToList();
-            }
-        }
     }
 }

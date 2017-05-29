@@ -48,7 +48,7 @@ namespace DDR2.ViewModel
                 {
                     if (db.Korisnici.Count() > 0) //samo za admina ce raditi bez enkriptovanja, jer smo mu promijenili password preko forme, ne znam sta je sa bazom
                     {
-                        var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username && kor.Password == Password);
+                        var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username && Encryptor.MD5Hash(kor.Password) == Password);
 
                         if (korisnik is Admin)
                         {
@@ -73,7 +73,7 @@ namespace DDR2.ViewModel
                             {
                                 if (korisnik.Username == Username && korisnik.Password != Password)
                                 {
-                                    var dialog = new MessageDialog("Incorrect password.\nPlease try again.");
+                                    var dialog = new MessageDialog("Incorrect password.\nPlease try again." + korisnik.Password+" "+Password);
                                     Password = "";
                                     dialog.Title = "Error";
                                     await dialog.ShowAsync();

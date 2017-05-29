@@ -5,12 +5,44 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:DDR2.Model"
+    xmlns:ViewModel="using:DDR2.ViewModel"
     mc:Ignorable="d" Width="1439" Height="962">
 
-    <Grid Margin="-0.009,0.027,170.009,192" RenderTransformOrigin="0.5,0.5" Background="White">
-        <Grid.RenderTransform>
-            <CompositeTransform Rotation="-0.104"/>
-        </Grid.RenderTransform>
+    <Page.DataContext>
+        <ViewModel:ReceptionVM x:Name="reception"></ViewModel:ReceptionVM>
+    </Page.DataContext>
+    
+    <Page.Resources>
+        <DataTemplate x:Key="RezervacijeTemplate"  x:DataType="models:Rezervacija">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{x:Bind Rezervacija_id}" Grid.Column="0" HorizontalAlignment="Left"/>
+                <TextBlock Text="{x:Bind Soba.Broj}" Grid.Column="1" HorizontalAlignment="Center"/>
+                <TextBlock Text="{x:Bind Gost.Ime}" Grid.Column="2" HorizontalAlignment="Right"/>
+                <TextBlock Text="{x:Bind Gost.Prezime}" Grid.Column="3" HorizontalAlignment="Right"/>
+                <TextBlock Text="{x:Bind Check_in}" Grid.Column="4" HorizontalAlignment="Left"/>
+                <TextBlock Text="{x:Bind Check_out}" Grid.Column="5" HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="6">
+                    <HyperlinkButton>Check In</HyperlinkButton>
+                    <HyperlinkButton>Check Out</HyperlinkButton>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid Margin="1.03,0.026,168.97,-953.135" RenderTransformOrigin="0.5,0.5" Background="White" UseLayoutRounding="False" d:LayoutRounding="Auto">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
@@ -21,10 +53,12 @@
         </Grid.ColumnDefinitions>
         <TextBox PlaceholderText="Search by reservation ID" FontSize="25" Margin="0,0,-808,0"/>
         <Button HorizontalAlignment="Right" Background="#FF47B847" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" Click="Button_Click_1">Search</Button>
-        <TextBlock Text="Reservations" FontSize="40" VerticalAlignment="Center" Grid.Row="1" Margin="1,0,-970,47" Grid.RowSpan="2" FocusVisualPrimaryBrush="White"/>
+        <TextBlock Text="Reservations" FontSize="40" VerticalAlignment="Center" Grid.Row="1" Margin="1,0,-970,47" Grid.RowSpan="2"/>
         <ListView Margin="-1,0,-969,-620" Grid.Row="2"
             x:Name="ReservationsListView"
-            IsItemClickEnabled="True" Background="White">
+            ItemTemplate="{StaticResource RezervacijeTemplate}"
+            IsItemClickEnabled="True" Background="White"
+            ItemsSource="{Binding Rezervacije, Mode=TwoWay}">
             <ListView.Template>
                 <ControlTemplate>
                     <Grid>
@@ -39,13 +73,17 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="0">Reservation ID</TextBlock>
-                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Check in date</TextBlock>
-                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="4">Check out date</TextBlock>
+                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="4">Check in date</TextBlock>
+                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="5">Check out date</TextBlock>
                             <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Room number</TextBlock>
-                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">Guest</TextBlock>
+                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">First name</TextBlock>
+                            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Last name</TextBlock>
                         </Grid>
+                        <ItemsPresenter Margin="0,33,0,0" Grid.RowSpan="2"/>
                     </Grid>
                 </ControlTemplate>
             </ListView.Template>

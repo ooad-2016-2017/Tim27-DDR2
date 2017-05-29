@@ -136,6 +136,7 @@
     <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\MainViewModelBase.cs" />
     <Compile Include="ViewModel\NewAccountVM.cs" />
+    <Compile Include="ViewModel\ReceptionVM.cs" />
     <Compile Include="ViewModel\ViewProfileVM.cs" />
     <Compile Include="View\AddStuff.xaml.cs">
       <DependentUpon>AddStuff.xaml</DependentUpon>

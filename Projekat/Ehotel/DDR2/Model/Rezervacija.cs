@@ -12,6 +12,40 @@ namespace DDR2.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        public enum Tip_smjestaja { halfboard, fullboard }
+        Gost gost;
+        string rezervacija_id;
+        bool parking, bazen;
+        double cijena;
+        Tip_smjestaja smjestaj;
+        int br_djece, br_odraslih, br_noci, br_soba; //obrisati broj soba jebemu mater
+        DateTime check_in, check_out;
+        Soba soba;
+        bool isCheckedIn = false;
+        bool isCheckedOut = false;
+
+
+        public Rezervacija(Gost g, string id, bool park, bool baz, double cijena, Tip_smjestaja tip, int brd, int bro, int brn, int brs, DateTime cind, DateTime coutd, bool cin, bool cout)
+        {
+            Gost = g;
+            Rezervacija_id = id;
+            Parking = park;
+            Bazen = baz;
+            Cijena = cijena;
+            Smjestaj = tip;
+            Br_djece = brd;
+            Br_odraslih = bro;
+            Br_noci = brn;
+            Br_soba = brs;
+            Check_in = cind;
+            Check_out = coutd;
+            IsCheckedIn = cin;
+            isCheckedOut = cout;
+        }
+
+        public Rezervacija()
+        {
+        }
         public Gost Gost
         {
             get
@@ -181,36 +215,30 @@ namespace DDR2.Model
             }
         }
 
-        public enum Tip_smjestaja { halfboard, fullboard}
-        Gost gost;
-        string rezervacija_id;
-        bool parking, bazen;
-        double cijena;
-        Tip_smjestaja smjestaj;
-        int br_djece, br_odraslih, br_noci, br_soba;
-        DateTime check_in, check_out;
-        Soba soba;
-
-        public Rezervacija(Gost g, string id, bool park, bool baz, double cijena, Tip_smjestaja tip, int brd, int bro, int brn, int brs, DateTime cin, DateTime cout)
+        public bool IsCheckedIn
         {
-            Gost = g;
-            Rezervacija_id = id;
-            Parking = park;
-            Bazen = baz;
-            Cijena = cijena;
-            Smjestaj = tip;
-            Br_djece = brd;
-            Br_odraslih = bro;
-            Br_noci = brn;
-            Br_soba = brs;
-            Check_in = cin;
-            Check_out = cout;
+            get
+            {
+                return isCheckedIn;
+            }
+
+            set
+            {
+                isCheckedIn = value;
+            }
         }
 
-        public Rezervacija()
+        public bool IsCheckedOut
         {
-        }
+            get
+            {
+                return isCheckedOut;
+            }
 
-    
+            set
+            {
+                isCheckedOut = value;
+            }
+        }
     }
 }

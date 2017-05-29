@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DDR2.Model.Osoba;
 using static DDR2.Model.Rezervacija;
 using static DDR2.Model.Soba;
 
@@ -138,23 +139,9 @@ namespace DDR2.HotelBaza.Models
             }
             if (!context.Korisnici.Any())
             {
-                context.Korisnici.AddRange(
-                new Recepcionar()
-                {
-                    Ime = "loky",
-                    Prezime = "loky",
-                    Drzava = "blabla",
-                    Grad = "fihvehrerk",
-                    Adresa = "Neka tamo 12",
-                    Email = "hdvdiskjgv",
-                    Telefon = "66666666",
-                    Username = "loki",
-                    Password = Encryptor.MD5Hash("loki"),//zasto nece da se enkriptuje ni sa funkcijom ni bez nje, nego kad uzimam podatke iz baze moram in kriptovati!?
-                    Dat_rodjenja = new DateTime(1996, 09, 15),
-                    Dat_zaposlenja = new DateTime(2013, 12, 12),
-                    Jmbg = "1509996100000",
-                    Plata = 1389,
-                });
+                Recepcionar r = new Recepcionar("150999445454", 1200, new DateTime(2013, 12, 12), "loki", "loki", "berina", "smajovic", "neka", "nka", "dka", "enka", "2154876", new DateTime(1996, 09, 15), gender.Female);
+                context.Korisnici.Add(r);
+
                 context.Korisnici.AddRange(
                 new Sobarica()
                 {
