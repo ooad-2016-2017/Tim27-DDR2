@@ -37,7 +37,7 @@
         </DataTemplate>
 
         <converter:PictureConverter x:Name="thePictureConverter"></converter:PictureConverter>
-        
+
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,10,-0.333,0">
@@ -55,12 +55,12 @@
         <Button Grid.Row="1" FontSize="25" Height="50" Width="1270" Background="LightGray" BorderBrush="Black" Name="BtnAddRoom" Click="BtnAddRoom_Click" Margin="0,0,-970,0">Add New Room</Button>
         <TextBlock Text="Rooms" FontSize="40" VerticalAlignment="Center" Grid.Row="2" Margin="0,16,-970,-29" Height="63"/>
 
-        <StackPanel Margin="0,5,-970,-764" Grid.Row="2">
+        <StackPanel Margin="0,0,-970,-935" Grid.Row="2" Height="Auto" Orientation="Vertical">
             <ListView Margin="-1,79,0,-425" Grid.Row="2"
                 x:Name="RoomsList"
                 ItemTemplate="{StaticResource SobeTemplate}"
                 Background="White"
-                ItemsSource="{Binding SobeZaListu, Mode=TwoWay}" Height="416">
+                ItemsSource="{Binding SobeZaListu, Mode=TwoWay}" Height="371">
                 <ListView.Template>
                     <ControlTemplate>
                         <Grid>
@@ -91,14 +91,18 @@
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>
-            <StackPanel Orientation="Horizontal" DataContext="{Binding SelectedItem, ElementName=RoomsList}" Height="305" Margin="0,0,10,0">
-                <StackPanel Height="125" RenderTransformOrigin="0.5,0.5">
+            <StackPanel Orientation="Horizontal" DataContext="{Binding SelectedItem, ElementName=RoomsList}" Height="790" Margin="0,0,10,0">
+                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="0,515,10,10" Width="660">
                     <TextBlock Text="{Binding Naziv}"/>
                     <TextBlock Text="{Binding Broj}"/>
                     <TextBlock Text="{Binding Cijena}"/>
                     <TextBlock Text="{Binding Ociscena}"/>
                     <TextBlock Text="{Binding Slobodna}"/>                    <TextBlock Text="{Binding Tip}"/>                    <TextBlock Text="{Binding Max_djece}"/>                    <TextBlock Text="{Binding Max_odraslih}"/>                    <TextBlock Text="{Binding Opis}"/>                </StackPanel>
-                <Image x:Name="image" HorizontalAlignment="Left" Height="500"  Margin="5,0,0,0" VerticalAlignment="Top"  Source="{Binding Slika, Converter={StaticResource thePictureConverter}}"/>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="270"  Margin="5,520,0,0" VerticalAlignment="Top"  Source="{Binding Slika, Converter={StaticResource thePictureConverter}}" RenderTransformOrigin="0.5,0.5" Width="585">
+                    <Image.RenderTransform>
+                        <CompositeTransform ScaleX="-1"/>
+                    </Image.RenderTransform>
+                </Image>
             </StackPanel>
         </StackPanel>
     </Grid>
