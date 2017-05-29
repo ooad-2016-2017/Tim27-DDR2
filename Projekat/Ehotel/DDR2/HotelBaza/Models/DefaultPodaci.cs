@@ -68,7 +68,6 @@ namespace DDR2.HotelBaza.Models
                     Br_djece = 1,
                     Br_odraslih = 2,
                     Br_noci = 5,
-                    Br_soba = 1,
                     Bazen = false,
                     Parking = true,
                     Smjestaj = Tip_smjestaja.halfboard,

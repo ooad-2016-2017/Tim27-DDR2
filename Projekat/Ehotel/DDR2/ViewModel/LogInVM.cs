@@ -48,7 +48,7 @@ namespace DDR2.ViewModel
                 {
                     if (db.Korisnici.Count() > 0) //samo za admina ce raditi bez enkriptovanja, jer smo mu promijenili password preko forme, ne znam sta je sa bazom
                     {
-                        var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username && Encryptor.MD5Hash(kor.Password) == Password);
+                        var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username && kor.Password == Password);
 
                         if (korisnik is Admin)
                         {

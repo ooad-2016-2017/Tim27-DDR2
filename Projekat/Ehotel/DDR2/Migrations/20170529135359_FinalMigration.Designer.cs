@@ -9,8 +9,8 @@ using DDR2.Model;
 namespace DDR2.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    [Migration("20170525015542_MyFirstMigration")]
-    partial class MyFirstMigration
+    [Migration("20170529135359_FinalMigration")]
+    partial class FinalMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -67,8 +67,6 @@ namespace DDR2.Migrations
 
                     b.Property<int>("Br_odraslih");
 
-                    b.Property<int>("Br_soba");
-
                     b.Property<DateTime>("Check_in");
 
                     b.Property<DateTime>("Check_out");
@@ -76,6 +74,10 @@ namespace DDR2.Migrations
                     b.Property<double>("Cijena");
 
                     b.Property<int?>("GostId");
+
+                    b.Property<bool>("IsCheckedIn");
+
+                    b.Property<bool>("IsCheckedOut");
 
                     b.Property<bool>("Parking");
 
@@ -123,6 +125,16 @@ namespace DDR2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sobe");
+                });
+
+            modelBuilder.Entity("DDR2.Model.Admin", b =>
+                {
+                    b.HasBaseType("DDR2.Model.Korisnik");
+
+
+                    b.ToTable("Admin");
+
+                    b.HasDiscriminator().HasValue("Admin");
                 });
 
             modelBuilder.Entity("DDR2.Model.Gost", b =>

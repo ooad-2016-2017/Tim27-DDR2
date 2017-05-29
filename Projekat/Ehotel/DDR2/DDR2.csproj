@@ -107,13 +107,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20170525015542_MyFirstMigration.cs" />
-    <Compile Include="Migrations\20170525015542_MyFirstMigration.designer.cs">
-      <DependentUpon>20170525015542_MyFirstMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20170525020322_MySecondMigration.cs" />
-    <Compile Include="Migrations\20170525020322_MySecondMigration.designer.cs">
-      <DependentUpon>20170525020322_MySecondMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20170529135359_FinalMigration.cs" />
+    <Compile Include="Migrations\20170529135359_FinalMigration.designer.cs">
+      <DependentUpon>20170529135359_FinalMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\HotelDbContextModelSnapshot.cs" />
     <Compile Include="Model\Admin.cs" />

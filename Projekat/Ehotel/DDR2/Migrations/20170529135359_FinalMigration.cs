@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DDR2.Migrations
 {
-    public partial class MyFirstMigration : Migration
+    public partial class FinalMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -67,11 +67,12 @@ namespace DDR2.Migrations
                     Br_djece = table.Column<int>(nullable: false),
                     Br_noci = table.Column<int>(nullable: false),
                     Br_odraslih = table.Column<int>(nullable: false),
-                    Br_soba = table.Column<int>(nullable: false),
                     Check_in = table.Column<DateTime>(nullable: false),
                     Check_out = table.Column<DateTime>(nullable: false),
                     Cijena = table.Column<double>(nullable: false),
                     GostId = table.Column<int>(nullable: true),
+                    IsCheckedIn = table.Column<bool>(nullable: false),
+                    IsCheckedOut = table.Column<bool>(nullable: false),
                     Parking = table.Column<bool>(nullable: false),
                     Rezervacija_id = table.Column<string>(nullable: true),
                     Smjestaj = table.Column<int>(nullable: false),

@@ -66,8 +66,6 @@ namespace DDR2.Migrations
 
                     b.Property<int>("Br_odraslih");
 
-                    b.Property<int>("Br_soba");
-
                     b.Property<DateTime>("Check_in");
 
                     b.Property<DateTime>("Check_out");
@@ -75,6 +73,10 @@ namespace DDR2.Migrations
                     b.Property<double>("Cijena");
 
                     b.Property<int?>("GostId");
+
+                    b.Property<bool>("IsCheckedIn");
+
+                    b.Property<bool>("IsCheckedOut");
 
                     b.Property<bool>("Parking");
 

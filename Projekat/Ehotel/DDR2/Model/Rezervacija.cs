@@ -18,7 +18,7 @@ namespace DDR2.Model
         bool parking, bazen;
         double cijena;
         Tip_smjestaja smjestaj;
-        int br_djece, br_odraslih, br_noci, br_soba; //obrisati broj soba jebemu mater
+        int br_djece, br_odraslih, br_noci;
         DateTime check_in, check_out;
         Soba soba;
         bool isCheckedIn = false;
@@ -36,7 +36,6 @@ namespace DDR2.Model
             Br_djece = brd;
             Br_odraslih = bro;
             Br_noci = brn;
-            Br_soba = brs;
             Check_in = cind;
             Check_out = coutd;
             IsCheckedIn = cin;
@@ -160,19 +159,6 @@ namespace DDR2.Model
             set
             {
                 br_noci = value;
-            }
-        }
-
-        public int Br_soba
-        {
-            get
-            {
-                return br_soba;
-            }
-
-            set
-            {
-                br_soba = value;
             }
         }
 
