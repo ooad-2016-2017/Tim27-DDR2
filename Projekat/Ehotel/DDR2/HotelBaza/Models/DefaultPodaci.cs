@@ -172,21 +172,6 @@ namespace DDR2.HotelBaza.Models
                     Password = "djani",
                     Dat_rodjenja = new DateTime(2013, 12, 12),
                 });
-                context.Korisnici.AddRange(
-                new Admin()
-                {
-                    Ime = "admin",
-                    Prezime = "admin",
-                    Drzava = "Etiopija",
-                    Grad = "Pjon Jang",
-                    Adresa = "bla bal",
-                    Email = "hahaha",
-                    Telefon = "020202",
-                    Username = "ddr2",
-                    Password = "ddr2",
-                    Dat_rodjenja = new DateTime(2013, 12, 12),
-                }
-                );
             }
             context.SaveChanges();
         }

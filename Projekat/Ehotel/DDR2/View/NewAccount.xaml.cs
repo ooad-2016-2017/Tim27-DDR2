@@ -1,4 +1,7 @@
-﻿using DDR2.ViewModel;
+﻿using DDR2.Helper;
+using DDR2.Model;
+using DDR2.ViewModel;
+using Microsoft.WindowsAzure.MobileServices;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,6 +10,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -31,7 +35,32 @@ namespace DDR2.View
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
-        
+
+        IMobileServiceTable<GostTabela> userTableObj = App.MobileService.GetTable<GostTabela>();
+        private void btnNewAcc_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            try
+            {
+                GostTabela obj = new GostTabela();
+                obj.ime = txtFname.Text;
+                obj.prezime = txtLname.Text;
+                obj.grad = txtGrad.Text;
+                obj.adresa = txtAddress.Text;
+                obj.email = txtEmail.Text;
+                obj.telefon = txtTelefon.Text;
+                obj.username = txtUsername.Text;
+                obj.password = txtPassword.Password;
+                obj.drzava = (string)cdrzave.SelectedValue;
+                obj.dat_rodjenja = dpRodjenje.Date.ToString();
+                userTableObj.InsertAsync(obj);
+            }
+            catch (Exception ex)
+            {
+                MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
+                msgDialogError.ShowAsync();
+            }
+        }
+
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         {
             if (Frame.CanGoBack)
@@ -39,6 +68,11 @@ namespace DDR2.View
                 Frame.GoBack();
                 e.Handled = true;
             }
+        }
+
+        private void btnNewAcc_Tapped_1(object sender, TappedRoutedEventArgs e)
+        {
+
         }
     }
 }

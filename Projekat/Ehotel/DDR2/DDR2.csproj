@@ -116,6 +116,7 @@
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Gost.cs" />
     <Compile Include="Model\GostiAdmin.cs" />
+    <Compile Include="Model\GostTabela.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\OsobljeAdmin.cs" />

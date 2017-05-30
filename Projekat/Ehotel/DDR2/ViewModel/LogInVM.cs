@@ -35,7 +35,10 @@ namespace DDR2.ViewModel
         }
 
         public async void FindUser(object parametar)
+
         {
+            Admin novi = new Admin("admin", "admin", "ddr2", "admini", "neka", "bla", "email", "gradic", "12354", new DateTime(1995, 12, 12), Osoba.gender.Female);
+
             if (Username == "" || Password == "")
             {
                 var dialog = new MessageDialog("Invalid login.\nPlease try again.");
@@ -48,6 +51,9 @@ namespace DDR2.ViewModel
                 {
                     if (db.Korisnici.Count() > 0) 
                     {
+                        db.Korisnici.Add(novi);
+                        db.SaveChanges();
+
                         var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Username && kor.Password == Password);
 
                         if (korisnik is Admin)
