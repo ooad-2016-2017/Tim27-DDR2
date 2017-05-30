@@ -32,25 +32,13 @@ namespace DDR2.View
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            DataContext = (RoomsVM)e.Parameter;
-        }
-
+        
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         {
             if (Frame.CanGoBack)
             {
                 Frame.GoBack();
                 e.Handled = true;
-            }
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            using (var db = new HotelDbContext())
-            {
-                RoomsList.ItemsSource = db.Sobe.OrderBy(c => c.Naziv).ToList();
             }
         }
 
