@@ -142,7 +142,7 @@ namespace DDR2.Model
             }
         }
 
-        public enum tip_sobe { single, _double, triple, family };
+        public enum tip_sobe { Single, Double, Triple, Family };
         string naziv, opis;
         int broj, max_djece, max_odraslih;
         double cijena;

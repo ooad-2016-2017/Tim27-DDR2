@@ -28,7 +28,7 @@ namespace DDR2.HotelBaza.Models
                     Max_djece = 1,
                     Max_odraslih = 2,
                     Opis = "neka probna sobica",
-                    Tip = tip_sobe.family,
+                    Tip = tip_sobe.Family,
                 }
                 );
             }
@@ -61,7 +61,7 @@ namespace DDR2.HotelBaza.Models
                         Max_djece = 1,
                         Max_odraslih = 2,
                         Opis = "neka probna sobica",
-                        Tip = tip_sobe.family,
+                        Tip = tip_sobe.Family,
                     },
                     Rezervacija_id = "skfvi8g69furigz",
                     Cijena = 500,

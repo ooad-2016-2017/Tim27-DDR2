@@ -94,19 +94,20 @@
             </ListView>
             <StackPanel  Grid.Row="5"  Orientation="Horizontal" DataContext="{Binding SelectedItem, ElementName=RoomsList}" Margin="0,0,-969,0">
                 <StackPanel RenderTransformOrigin="0.5,0.5" Margin="0,0,10,10" Width="660">
-                    <TextBlock Text="Details: " FontSize="25"/>
-                    <TextBlock Text="Room name: "/>
+                    <TextBlock Text="Details" FontWeight="Bold" FontSize="25"/>
+                    <TextBlock  FontWeight="Bold" Text="-------------------------" FontSize="25"/>
+                    <TextBlock Text="Room name: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Naziv}"/>
-                    <TextBlock Text="Room munber: "/>
+                    <TextBlock Text="Room number: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Broj}"/>
-                    <TextBlock Text="Room price: "/>
+                    <TextBlock Text="Room price: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Cijena}"/>
-                    <TextBlock Text="Is room clean: "/>
+                    <TextBlock Text="Clean: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Ociscena}"/>
-                    <TextBlock Text="Is room available: "/>
-                    <TextBlock Text="{Binding Slobodna}"/>                    <TextBlock Text="Room type: "/>                    <TextBlock Text="{Binding Tip}"/>                    <TextBlock Text="Maximum number of children: "/>                    <TextBlock Text="{Binding Max_djece}"/>                    <TextBlock Text="Maximum number of adults: "/>                    <TextBlock Text="{Binding Max_odraslih}"/>                    <TextBlock Text="Description: "/>                    <TextBlock Text="{Binding Opis}"/>                    <TextBlock Text="Picture: "/>
+                    <TextBlock Text="Available: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Slobodna}"/>                    <TextBlock Text="Room type: " Foreground="Blue"/>                    <TextBlock Text="{Binding Tip}"/>                    <TextBlock Text="Maximum number of children: " Foreground="Blue"/>                    <TextBlock Text="{Binding Max_djece}"/>                    <TextBlock Text="Maximum number of adults: " Foreground="Blue"/>                    <TextBlock Text="{Binding Max_odraslih}"/>                    <TextBlock Text="Description: " Foreground="Blue"/>                    <TextBlock Text="{Binding Opis}"/>                    <TextBlock Text="Picture: " Foreground="Blue"/>
                 </StackPanel>
-                <Image x:Name="image" HorizontalAlignment="Left" Height="535" VerticalAlignment="Top"  Source="{Binding Slika, Converter={StaticResource thePictureConverter}}" Width="596"/>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="535" VerticalAlignment="Top"  Source="{Binding Slika, Converter={StaticResource thePictureConverter}}" Width="596"/>
             </StackPanel>
         </Grid>
     </ScrollViewer>

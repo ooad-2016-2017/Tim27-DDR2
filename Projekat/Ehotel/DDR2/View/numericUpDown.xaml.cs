@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDR2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,25 +20,10 @@ namespace DDR2.View
 {
     public sealed partial class numericUpDown : UserControl
     {
-        int brojac = 0;
         public numericUpDown()
         {
             this.InitializeComponent();
-            broj.Text = "0";
-            broj.IsReadOnly = true;
-        }
-
-        private void btnUp_Click(object sender, RoutedEventArgs e)
-        {
-            brojac++;
-            broj.Text = brojac.ToString();
-        }
-
-        private void btnDown_Click(object sender, RoutedEventArgs e)
-        {
-            brojac--;
-            if(brojac<=0) brojac=0;
-            broj.Text = brojac.ToString();
+            DataContext = new NumericUpDownVM();
         }
     }
 }

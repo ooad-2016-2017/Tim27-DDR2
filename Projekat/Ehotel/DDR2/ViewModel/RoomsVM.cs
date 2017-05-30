@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace DDR2.ViewModel
 {
-    class RoomsVM
+    class RoomsVM : MainViewModelBase
     {
         public string Pretraga { get; set; }
         public ICommand Search { get; set; }

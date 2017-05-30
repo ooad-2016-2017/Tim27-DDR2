@@ -133,6 +133,8 @@
     <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\MainViewModelBase.cs" />
     <Compile Include="ViewModel\NewAccountVM.cs" />
+    <Compile Include="ViewModel\NewRoomVM.cs" />
+    <Compile Include="ViewModel\NumericUpDownVM.cs" />
     <Compile Include="ViewModel\ReceptionVM.cs" />
     <Compile Include="ViewModel\RoomsVM.cs" />
     <Compile Include="ViewModel\ViewProfileVM.cs" />
