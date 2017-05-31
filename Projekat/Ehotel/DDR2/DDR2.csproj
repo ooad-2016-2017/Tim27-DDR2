@@ -131,10 +131,13 @@
     <Compile Include="ViewModel\AddStuffVM.cs" />
     <Compile Include="ViewModel\AdminPanelVM.cs" />
     <Compile Include="ViewModel\AdminReservationsVM.cs" />
+    <Compile Include="ViewModel\EditGuestVM.cs" />
     <Compile Include="ViewModel\EditRoomVM.cs" />
+    <Compile Include="ViewModel\GuestsVM.cs" />
     <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\MainViewModelBase.cs" />
     <Compile Include="ViewModel\NewAccountVM.cs" />
+    <Compile Include="ViewModel\NewGuestVM.cs" />
     <Compile Include="ViewModel\NewRoomVM.cs" />
     <Compile Include="ViewModel\NumericUpDownVM.cs" />
     <Compile Include="ViewModel\ReceptionVM.cs" />
@@ -149,11 +152,11 @@
     <Compile Include="View\AdminReservations.xaml.cs">
       <DependentUpon>AdminReservations.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditGuest.xaml.cs">
+      <DependentUpon>EditGuest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditRoom.xaml.cs">
       <DependentUpon>EditRoom.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\GuestDetails.xaml.cs">
-      <DependentUpon>GuestDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GuestReservation.xaml.cs">
       <DependentUpon>GuestReservation.xaml</DependentUpon>
@@ -163,6 +166,9 @@
     </Compile>
     <Compile Include="View\MonthlyReport.xaml.cs">
       <DependentUpon>MonthlyReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewGuest.xaml.cs">
+      <DependentUpon>NewGuest.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NewRoom.xaml.cs">
       <DependentUpon>NewRoom.xaml</DependentUpon>
@@ -251,11 +257,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EditRoom.xaml">
+    <Page Include="View\EditGuest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\GuestDetails.xaml">
+    <Page Include="View\EditRoom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -268,6 +274,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MonthlyReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewGuest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

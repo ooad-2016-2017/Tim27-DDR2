@@ -1,5 +1,4 @@
-﻿using DDR2.HotelBaza.Models;
-using DDR2.ViewModel;
+﻿using DDR2.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,20 +22,18 @@ namespace DDR2.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Guests : Page
+    public sealed partial class EditGuest : Page
     {
-        public Guests()
+        public EditGuest()
         {
             this.InitializeComponent();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
-        
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DataContext = new GuestsVM();
+            DataContext = (EditGuestVM)e.Parameter;
         }
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
@@ -49,4 +46,3 @@ namespace DDR2.View
         }
     }
 }
-
