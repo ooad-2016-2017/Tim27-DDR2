@@ -131,6 +131,7 @@
     <Compile Include="ViewModel\AddStuffVM.cs" />
     <Compile Include="ViewModel\AdminPanelVM.cs" />
     <Compile Include="ViewModel\AdminReservationsVM.cs" />
+    <Compile Include="ViewModel\EditRoomVM.cs" />
     <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\MainViewModelBase.cs" />
     <Compile Include="ViewModel\NewAccountVM.cs" />
@@ -147,6 +148,9 @@
     </Compile>
     <Compile Include="View\AdminReservations.xaml.cs">
       <DependentUpon>AdminReservations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditRoom.xaml.cs">
+      <DependentUpon>EditRoom.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GuestDetails.xaml.cs">
       <DependentUpon>GuestDetails.xaml</DependentUpon>
@@ -189,9 +193,6 @@
     </Compile>
     <Compile Include="View\RoomCleaning.xaml.cs">
       <DependentUpon>RoomCleaning.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RoomDetails.xaml.cs">
-      <DependentUpon>RoomDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Rooms.xaml.cs">
       <DependentUpon>Rooms.xaml</DependentUpon>
@@ -250,6 +251,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\EditRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\GuestDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -303,10 +308,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RoomCleaning.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\RoomDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -22,9 +22,9 @@ namespace DDR2.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class NewRoom : Page
+    public sealed partial class EditRoom : Page
     {
-        public NewRoom()
+        public EditRoom()
         {
             this.InitializeComponent();
             var currentView = SystemNavigationManager.GetForCurrentView();
@@ -34,7 +34,7 @@ namespace DDR2.View
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DataContext = new NewRoomVM();
+            DataContext = (EditRoomVM)e.Parameter;
         }
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)

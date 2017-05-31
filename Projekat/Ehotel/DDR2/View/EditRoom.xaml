@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="DDR2.View.EditRoom"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DDR2.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converter="using:DDR2.Helper"
+    mc:Ignorable="d" Background="#FFFDF9F9" Width="1465" Height="1240">
+
+    <Page.Resources>
+        <converter:PictureConverter x:Name="thePictureConverter"></converter:PictureConverter>
+    </Page.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" Margin="0,0,0,505">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="735" VerticalAlignment="Bottom" Width="1455">
+            <Image x:Name="image" Source="{Binding Slika, Converter={StaticResource thePictureConverter}}" HorizontalAlignment="Left" Height="505" Margin="608,25,0,0" VerticalAlignment="Top" Width="642"/>
+            <TextBlock x:Name="textBlock" FontSize="20" HorizontalAlignment="Left" Margin="15,33,0,0" TextWrapping="Wrap" Text="Room Name: " VerticalAlignment="Top" Height="45" Width="212"/>
+            <TextBlock x:Name="textBlock_Copy" FontSize="20" HorizontalAlignment="Left" Margin="15,100,0,0" TextWrapping="Wrap" Text="Room Number: " VerticalAlignment="Top" Height="45" Width="212"/>
+            <TextBlock x:Name="textBlock_Copy1" FontSize="20" HorizontalAlignment="Left" Margin="15,162,0,0" TextWrapping="Wrap" Text="Room Type: " VerticalAlignment="Top" Height="45" Width="212"/>
+            <TextBlock x:Name="textBlock_Copy2" FontSize="20" HorizontalAlignment="Left" Margin="15,235,0,0" TextWrapping="Wrap" Text="Room Price: " VerticalAlignment="Top" Height="45" Width="212"/>
+            <TextBox x:Name="textBox1" Text="{Binding Naziv, Mode=TwoWay}" BorderBrush="Black" HorizontalAlignment="Left" Margin="225,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="45"/>
+            <TextBox x:Name="textBox1_Copy" Text="{Binding Broj, Mode=TwoWay}" BorderBrush="Black" HorizontalAlignment="Left" Margin="225,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="45"/>
+            <TextBox x:Name="textBox1_Copy1" Text="{Binding Cijena, Mode=TwoWay}" BorderBrush="Black" HorizontalAlignment="Left" Margin="225,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="45"/>
+            <TextBlock x:Name="textBlock_Copy3" FontSize="20" HorizontalAlignment="Left" Margin="15,305,0,0" TextWrapping="Wrap" Text="Maximum Number Of Adults: " VerticalAlignment="Top" Height="49" Width="392"/>
+            <TextBlock x:Name="textBlock_Copy4" FontSize="20" HorizontalAlignment="Left" Margin="15,378,0,0" TextWrapping="Wrap" Text="Maximum Number Of Children: " VerticalAlignment="Top" Height="49" Width="342"/>
+            <TextBox x:Name="textBox1_Copy3" Text="{Binding Odrasli, Mode=TwoWay}" BorderBrush="Black" HorizontalAlignment="Left" Margin="380,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Height="49"/>
+            <TextBox x:Name="textBox1_Copy4" Text="{Binding Djeca, Mode=TwoWay}" BorderBrush="Black" HorizontalAlignment="Left" Margin="380,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Height="49"/>
+            <TextBox x:Name="textBox" Text="{Binding Opis, Mode=TwoWay}" AcceptsReturn="True" BorderBrush="Black" HorizontalAlignment="Left" Margin="15,450,0,0" TextWrapping="Wrap" PlaceholderText="Description" FontSize="20" VerticalAlignment="Top" Height="260" Width="536"/>
+            <Button x:Name="button" Command="{Binding Path=UploadSlike, Mode=TwoWay}" Background="LightBlue" Content="Upload Photo" FontSize="30" HorizontalAlignment="Left" Margin="608,565,0,0" VerticalAlignment="Top" Height="75" Width="642"/>
+            <Button x:Name="button_Copy" Command="{Binding Path=Save, Mode=TwoWay}" Content="Save Changes" Background="LightGreen" FontSize="30" HorizontalAlignment="Left" Margin="608,640,0,0" VerticalAlignment="Top" Height="70" Width="642"/>
+            <ComboBox x:Name="comboBox" BorderBrush="Black" HorizontalAlignment="Left" Margin="225,162,0,0" VerticalAlignment="Top" Width="326" Height="45"
+                  ItemsSource="{Binding Tipovi, Mode=TwoWay}"
+                  SelectedValue="{Binding Tip, Mode=TwoWay}"/>
+        </Grid>
+    </ScrollViewer>
+</Page>

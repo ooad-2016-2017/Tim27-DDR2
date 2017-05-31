@@ -32,7 +32,12 @@ namespace DDR2.View
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
-        
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            DataContext = new RoomsVM();
+        }
+
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         {
             if (Frame.CanGoBack)
@@ -40,16 +45,6 @@ namespace DDR2.View
                 Frame.GoBack();
                 e.Handled = true;
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnAddRoom_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(NewRoom), e);
         }
     }
 }

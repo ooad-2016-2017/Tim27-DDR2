@@ -1,6 +1,6 @@
 ﻿using DDR2.Helper;
 using DDR2.HotelBaza.Models;
-using DDR2.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using static DDR2.Model.Soba;
 
 namespace DDR2.ViewModel
 {
-    class NewRoomVM : MainViewModelBase
+    class EditRoomVM : MainViewModelBase
     {
         public string Naziv { get; set; } = "";
         int broj, djeca, odrasli;
@@ -23,21 +23,39 @@ namespace DDR2.ViewModel
         tip_sobe tip;
         public string Tip { get { return tip.ToString(); } set { tip = (tip_sobe)Enum.Parse(typeof(tip_sobe), value); } }
         double cijena;
-        public string Cijena { get { return cijena.ToString(); } set { cijena = Convert.ToDouble(value); } } 
+        public string Cijena { get { return cijena.ToString(); } set { cijena = Convert.ToDouble(value); } }
         public string Djeca { get { return djeca.ToString(); } set { djeca = Convert.ToInt32(value); } }
         public string Odrasli { get { return odrasli.ToString(); } set { odrasli = Convert.ToInt32(value); } }
         public string Opis { get; set; } = "";
         public byte[] Slika { get; set; }
         public List<string> Tipovi { get; set; }
         public ICommand UploadSlike { get; set; }
-        public ICommand AddRoom { get; set; }
+        public ICommand Save { get; set; }
+        public RoomsVM ListaRoditelj { get; set; }
 
-        public NewRoomVM()
+        public EditRoomVM(RoomsVM parent)
         {
+            ListaRoditelj = parent;
+            InicijalizirajPodatke();
             Tipovi = new List<string> { "Single", "Double", "Triple", "Family" };
             UploadSlike = new RelayCommand<object>(upload, parametar => true);
-            AddRoom = new RelayCommand<object>(dodaj, parametar => true);
-            using(var db=new HotelDbContext()) Broj = db.Sobe.Last().Broj++.ToString();
+            Save = new RelayCommand<object>(spasi, parametar => true);
+        }
+
+        public void InicijalizirajPodatke()
+        {
+            using (var db = new HotelDbContext())
+            {
+                var soba = db.Sobe.FirstOrDefault(x => x == ListaRoditelj.Selektovana);
+                Naziv = soba.Naziv;
+                Broj = soba.Broj.ToString();
+                Tip = soba.Tip.ToString();
+                Djeca = soba.Max_djece.ToString();
+                Odrasli = soba.Max_odraslih.ToString();
+                Cijena = soba.Cijena.ToString();
+                Slika = soba.Slika;
+                Opis = soba.Opis;
+            }
         }
 
         public async void upload(object p)
@@ -54,17 +72,25 @@ namespace DDR2.ViewModel
                 Slika = (await FileIO.ReadBufferAsync(file)).ToArray(); ;
             }
         }
-        public async void dodaj(object p)
+
+        public async void spasi(object p)
         {
-            Soba nova = new Soba(Naziv, broj, cijena, true, true, tip, djeca, odrasli, Opis);
-            nova.Slika = Slika;
             using(var db=new HotelDbContext())
             {
-                db.Sobe.Add(nova);
-                db.SaveChanges();
+                var promijeniti = db.Sobe.FirstOrDefault(x => x == ListaRoditelj.Selektovana);
+                promijeniti.Naziv = Naziv;
+                promijeniti.Broj = broj;
+                promijeniti.Cijena = cijena;
+                promijeniti.Tip = tip;
+                promijeniti.Opis = Opis;
+                promijeniti.Slika = Slika;
+                promijeniti.Max_djece = djeca;
+                promijeniti.Max_odraslih = odrasli;
 
-                var poruka = new MessageDialog("Room " + nova.Naziv + " created successfully!");
-                await poruka.ShowAsync();
+                db.Entry(promijeniti).State = EntityState.Modified;
+                db.SaveChanges();
+                var dialog = new MessageDialog("Changes saved!");
+                await dialog.ShowAsync();
             }
         }
     }

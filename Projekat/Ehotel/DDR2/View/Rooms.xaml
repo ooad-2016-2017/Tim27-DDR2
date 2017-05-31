@@ -6,13 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Width="1268.833" Height="1609"
-    xmlns:ViewModel="using:DDR2.ViewModel"
     xmlns:converter="using:DDR2.Helper">
 
-    <Page.DataContext>
-        <ViewModel:RoomsVM x:Name="rooms"></ViewModel:RoomsVM>
-    </Page.DataContext>
-    
     <Page.Resources>
         <DataTemplate x:Key="SobeTemplate">
             <Grid>
@@ -25,15 +20,14 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="{Binding Naziv}" VerticalAlignment="Center" Grid.Column="0" HorizontalAlignment="Left"/>
                 <TextBlock Text="{Binding Broj}" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left"/>
                 <TextBlock Text="{Binding Cijena}" VerticalAlignment="Center" Grid.Column="2" HorizontalAlignment="Left"/>
-                <TextBlock Text="{Binding Status}" VerticalAlignment="Center" Grid.Column="3" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Tip}" VerticalAlignment="Center" Grid.Column="3" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Slobodna}" VerticalAlignment="Center" Grid.Column="4" HorizontalAlignment="Left"/>
                 <StackPanel Orientation="Horizontal" Grid.Column="4">
-                    <HyperlinkButton VerticalAlignment="Center">Edit</HyperlinkButton>
-                    <TextBlock VerticalAlignment="Center" Text=" | "></TextBlock>
-                    <HyperlinkButton VerticalAlignment="Center">Delete</HyperlinkButton>
                 </StackPanel>
             </Grid>
         </DataTemplate>
@@ -57,9 +51,8 @@
             </Grid.ColumnDefinitions>
 
             <TextBox PlaceholderText="Search rooms" FontSize="25" Margin="0,0,-808,0"/>
-            <Button HorizontalAlignment="Right" Background="LightGreen" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" Click="Button_Click">Search</Button>
-            <Button Grid.Row="1" FontSize="25" Height="50" Width="1270" Background="LightGray" BorderBrush="Black" Name="BtnAddRoom" Click="BtnAddRoom_Click" Margin="0,0,-970,0">Add New Room</Button>
-            <TextBlock Text="Rooms" FontSize="40" VerticalAlignment="Center" Margin="10,0,-980,10" Height="60" Grid.Row="2"/>
+            <Button Command="{Binding Path=Search, Mode=TwoWay}" HorizontalAlignment="Right" Background="LightGreen" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50">Search</Button>
+            <TextBlock Text="Rooms" FontSize="40" VerticalAlignment="Center" Margin="10,5,0,5" Height="60" Grid.Row="2"/>
 
             <ListView Margin="-1,0,-970,9.667" Grid.Row="3"
                       ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -85,11 +78,13 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="0">Room name</TextBlock>
                                 <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Room number</TextBlock>
                                 <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">Price</TextBlock>
-                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Status</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Type</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="4">Available</TextBlock>
                             </Grid>
                             <ItemsPresenter Margin="0,33,0,0" Grid.RowSpan="2"/>
                         </Grid>
@@ -102,7 +97,7 @@
                 </ListView.ItemContainerStyle>
             </ListView>
             <StackPanel  Grid.Row="5"  Orientation="Horizontal" DataContext="{Binding SelectedItem, ElementName=RoomsList}" Margin="0,0,-969,-190">
-                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="0,0,10,-185" Width="450">
+                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="0,0,10,-185" Width="365">
                     <TextBlock Text="Details" FontWeight="Bold" FontSize="25"/>
                     <TextBlock  FontWeight="Bold" Text="-------------------------" FontSize="25"/>
                     <TextBlock Text="Room name: " Foreground="Blue"/>
@@ -114,9 +109,21 @@
                     <TextBlock Text="Clean: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Ociscena}"/>
                     <TextBlock Text="Available: " Foreground="Blue"/>
-                    <TextBlock Text="{Binding Slobodna}"/>                    <TextBlock Text="Room type: " Foreground="Blue"/>                    <TextBlock Text="{Binding Tip}"/>                    <TextBlock Text="Maximum number of children: " Foreground="Blue"/>                    <TextBlock Text="{Binding Max_djece}"/>                    <TextBlock Text="Maximum number of adults: " Foreground="Blue"/>                    <TextBlock Text="{Binding Max_odraslih}"/>                    <TextBlock Text="Description: " Foreground="Blue"/>                    <TextBlock Text="{Binding Opis}"/>                    <Button Command="{Binding Path=RoomsVM.Brisi, Mode=TwoWay}">Delete</Button>                </StackPanel>
-                <Image x:Name="image" HorizontalAlignment="Left" Height="725" VerticalAlignment="Top"  Source="{Binding Slika, Converter={StaticResource thePictureConverter}}" Width="810"/>
+                    <TextBlock Text="{Binding Slobodna}"/>
+                    <TextBlock Text="Room type: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Tip}"/>
+                    <TextBlock Text="Maximum number of children: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Max_djece}"/>
+                    <TextBlock Text="Maximum number of adults: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Max_odraslih}"/>
+                    <TextBlock Text="Description: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Opis}"/>
+                </StackPanel>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="875" VerticalAlignment="Top"  Source="{Binding Slika, Converter={StaticResource thePictureConverter}}" Width="895"/>
             </StackPanel>
+            <Button VerticalAlignment="Center" Command="{Binding Path=Edituj, Mode=TwoWay}" BorderBrush="Black" FontSize="30" Height="50" Margin="580,0,-635,0" Width="355" Grid.Row="1">Edit</Button>
+            <Button VerticalAlignment="Center" Command="{Binding Path=Brisi, Mode=TwoWay}" BorderBrush="Black" FontSize="30" Height="50" Margin="935,0,-969,0" Width="334" Grid.Row="1">Delete</Button>
+            <Button Command="{Binding Path=AddRoom, Mode=TwoWay}" Grid.Row="1" FontSize="30" Height="50" Width="581" Background="LightGray" BorderBrush="Black" Name="BtnAddRoom" Margin="-1,0,-280,0">Add New Room</Button>
         </Grid>
     </ScrollViewer>
 </Page>

@@ -69,10 +69,5 @@ namespace DDR2.View
                 e.Handled = true;
             }
         }
-
-        private void btnNewAcc_Tapped_1(object sender, TappedRoutedEventArgs e)
-        {
-
-        }
     }
 }

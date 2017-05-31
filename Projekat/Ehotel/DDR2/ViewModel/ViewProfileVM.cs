@@ -172,6 +172,5 @@ namespace DDR2.ViewModel
                 WelcomePoruka += " " + korisnik.Ime + " " + korisnik.Prezime;
             }
         }
-
     }
 }
