@@ -95,7 +95,7 @@
                 </ListView.ItemContainerStyle>
             </ListView>
             <StackPanel  Grid.Row="5"  Orientation="Horizontal" DataContext="{Binding SelectedItem, ElementName=GuestsList}" Margin="0,0,-969,-190">
-                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="0,0,10,-185" Width="365">
+                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="0,0,10,-185" Width="1270">
                     <TextBlock Text="Details" FontWeight="Bold" FontSize="25"/>
                     <TextBlock  FontWeight="Bold" Text="-------------------------" FontSize="25"/>
                     <TextBlock Text="First name: " Foreground="Blue"/>
@@ -117,7 +117,6 @@
                     <TextBlock Text="Gender: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Spol_osobe}"/>
                 </StackPanel>
-                
             </StackPanel>
             <Button VerticalAlignment="Center" Command="{Binding Path=Edituj, Mode=TwoWay}" BorderBrush="Black" FontSize="30" Height="50" Margin="580,0,-635,0" Width="355" Grid.Row="1">Edit</Button>
             <Button VerticalAlignment="Center" Command="{Binding Path=Brisi, Mode=TwoWay}" BorderBrush="Black" FontSize="30" Height="50" Margin="935,0,-969,0" Width="334" Grid.Row="1">Delete</Button>
