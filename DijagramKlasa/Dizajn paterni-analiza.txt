@@ -1,0 +1,41 @@
+
+
+1.STRUKTURNI DIZAJN PATERNI
+
+	1.1.ADAPTER PATERN
+
+        Obzirom da postoje situacije kada je potreban drugaèiji interfejs veæ postojeæe klase, a ne želimo mijenjati postojeæu klasu koristi se Adapter patern. 
+	U eventualnoj nadogradnji i modifikaciji pojedinih funkcionalnosti našeg sistema, krije se moguænost primjene ovog paterna. Kada bi postojala želja za drugaèijim prikazom tabele, morali bismo na neki naèin prilagoditi podatke koji bi se prikazivali u toj tabeli. To prilagoðavanje se može postiæi primjenom upravo adapter paterna.
+
+	1.2.FACADE PATERN
+
+ 	Kako je osnovna namjena Facade paterna da osigura više pogleda visokog nivoa na podsisteme, on bi se mogao iskoristiti za uspostavljanje veze izmeðu formi u našem sistemu(korisnièkih intefejsa) i logièkog pogleda sistema.
+ 	Bilo bi potrebno napraviti klasu koja bi objedinjavala sve logièke dijelove sistema, odnosno klasu koja bi sadržavala sve ViewModele.
+
+	1.3.DECORATOR PATERN
+
+	Ovaj patern omoguæava dinamièko dodavanje novih elemenata i ponašanja (funkcionalnosti) postojeæim objektima. Ne postoji velika korist od korištenja ovog paterna u našem projektu.
+
+	1.4.BRIDGE PATERN
+
+	Ovaj patern odvaja apstrakciju od njegove implementacije, tako da se ta dva mogu razlikovati. Zadatak mu je da odvoji interfejs klase od njegove primjene, tako da se može mijenjati implementacija bez promjene koda klijenta.
+
+	1.5.COMPOSITE PATERN
+
+	Osnovna namjena Composite paterna (kompozitni patern) je da omoguæi formiranje strukture stabla pomoæu klasa, u kojoj se individualni objekti (listovi stabla) i kompozicije individualnih objekata (korijeni stabla) jednako tretiraju. Moguæa primjena ovog paterna u našem sistemu je grupisanje korisnika po tipu.
+
+2.KREACIJSKI DIZAJN PATERNI
+
+	2.1.SINGLETON
+
+	Uloga Singleton paterna je da osigura da se klasa može instancirati samo jednom i da osigura globalni pristup kreiranoj instanci klase. Zahvaljujuæi namjeni ovog paterna, on postaje primjenjiv i za naš projekat, zbog postojanja mnogo klasa koje je u svojoj interakciji sa bazom dovoljno instancirati samo jednom.
+
+	2.2.BUILDER PATERN
+
+	Uloga Builder paterna je odvajanje specifikacije kompleksnih objekata od njihove stvarne konstrukcije. Isti konstrukcijski proces može kreirati razlièite reprezentacije. 
+
+
+
+
+
+
