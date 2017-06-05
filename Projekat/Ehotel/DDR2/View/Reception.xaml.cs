@@ -39,53 +39,5 @@ namespace DDR2.View
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
             DataContext = (ReceptionVM)e.Parameter;
         }
-        private async void odcekirajBtn_Click(object sender, RoutedEventArgs e)
-        {
-            DependencyObject dep = (DependencyObject)e.OriginalSource;
-            while ((dep != null) && !(dep is ListViewItem))
-            {
-                dep = VisualTreeHelper.GetParent(dep);
-            }
-            if (dep == null)
-                return;
-            using (var db = new HotelDbContext())
-            {
-                Rezervacija rez = (Rezervacija)ReservationsListView.ItemFromContainer(dep);
-                if (!rez.IsCheckedIn)
-                {
-                    var dialog = new MessageDialog("You are not checked in!");
-                    dialog.Title = "Error";
-                    await dialog.ShowAsync();
-                }
-                else rez.IsCheckedOut = true;
-                db.Entry(rez).State = EntityState.Modified;
-                db.SaveChanges();
-                ReservationsListView.ItemsSource = db.Rezervacije.OrderBy(c => c.Cijena).ToList();
-            }
-        }
-
-        private void cekirajBtn_Click(object sender, RoutedEventArgs e)
-        {
-            DependencyObject dep = (DependencyObject)e.OriginalSource;
-            while ((dep != null) && !(dep is ListViewItem))
-            {
-                dep = VisualTreeHelper.GetParent(dep);
-            }
-            if (dep == null)
-                return;
-            using (var db = new HotelDbContext())
-            {
-                Rezervacija rez = (Rezervacija)ReservationsListView.ItemFromContainer(dep);
-                rez.IsCheckedIn = true;
-                db.Entry(rez).State = EntityState.Modified;
-                db.SaveChanges();
-                ReservationsListView.ItemsSource = db.Rezervacije.OrderBy(c => c.Cijena).ToList();
-            }
-        }
-
-        private void detailsBtn_Click(object sender, RoutedEventArgs e)
-        {
-               //ovo bi moralo preko binding :/
-        }
     }
 }

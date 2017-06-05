@@ -7,11 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="using:DDR2.Model"
     xmlns:ViewModel="using:DDR2.ViewModel"
-    mc:Ignorable="d" Width="1775" Height="907">
+    mc:Ignorable="d" Width="1840" Height="907"
+    xmlns:converter="using:DDR2.Helper">
 
     <Page.Resources>
-        <DataTemplate x:Key="RezervacijeTemplate"
-                      x:DataType="models:Rezervacija">
+        <DataTemplate x:Key="RezTemplate">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -22,47 +22,50 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="{x:Bind Rezervacija_id}" VerticalAlignment="Center" Grid.Column="0" HorizontalAlignment="Left"/>
-                <TextBlock Text="{x:Bind Path=Soba.Broj}" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Rezervacija_id}" VerticalAlignment="Center" Grid.Column="0" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Path=Soba.Broj}" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left"/>
                 <StackPanel Orientation="Horizontal" Grid.Column="2">
-                    <TextBlock Text="{x:Bind Path=Gost.Ime}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                    <TextBlock Text=" "></TextBlock>
-                    <TextBlock Text="{x:Bind Path=Gost.Prezime}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBlock Text="{Binding Path=Gost.Ime}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBlock Text="{Binding Path=Gost.Prezime}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                 </StackPanel>
-                <TextBlock Text="{x:Bind Check_in}" VerticalAlignment="Center" Grid.Column="3" HorizontalAlignment="Left"/>
-                <TextBlock Text="{x:Bind Check_out}" VerticalAlignment="Center" Grid.Column="4" HorizontalAlignment="Left"/>
-                <StackPanel Orientation="Horizontal" Grid.Column="5">
-                    <HyperlinkButton x:Name="cekirajBtn" Click="cekirajBtn_Click" VerticalAlignment="Center">Check In</HyperlinkButton>
-                    <TextBlock VerticalAlignment="Center" Text=" | "></TextBlock>
-                    <HyperlinkButton x:Name="odcekirajBtn" Click="odcekirajBtn_Click"  VerticalAlignment="Center">Check Out</HyperlinkButton>
-                    <TextBlock VerticalAlignment="Center" Text=" | "></TextBlock>
-                    <HyperlinkButton x:Name="detailsBtn" Click="detailsBtn_Click"  VerticalAlignment="Center">View Details</HyperlinkButton>
-                </StackPanel>
+                <TextBlock Text="{Binding Check_in}" VerticalAlignment="Center" Grid.Column="3" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Check_out}" VerticalAlignment="Center" Grid.Column="4" HorizontalAlignment="Left"/>
             </Grid>
         </DataTemplate>
+
+        <converter:PictureConverter x:Name="thePictureConverter"></converter:PictureConverter>
+
     </Page.Resources>
-    
-    <ScrollViewer HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto">
-        <Grid RenderTransformOrigin="0.5,0.5" Background="White" Width="1735" Height="910">
+
+    <ScrollViewer VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" Margin="0,0,-1,0">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="1605">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="700"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBox PlaceholderText="Search by reservation ID" FontSize="25" Margin="-1,0,-1272,0.333" Grid.Row="2"/>
-            <Button HorizontalAlignment="Right" Background="#FF47B847" BorderBrush="Black" FontSize="25" Margin="0,0,-1434,0.333" Width="162" Height="50" Grid.Row="2">Search</Button>
-            <TextBlock Text="All reservations" FontSize="40" VerticalAlignment="Center" Grid.Row="2" Margin="-1,51,-1434,-64.667" Height="64"/>
-            <ListView Margin="-1,115,-1434,-811.667" Grid.Row="2"
-                x:Name="ReservationsListView"
-                ItemTemplate="{StaticResource RezervacijeTemplate}"
-                Background="White"
-                SelectionMode="Single"
-                ItemsSource="{Binding Rezervacije, Mode=TwoWay}">
+
+            <TextBox PlaceholderText="Search reservations" FontSize="25" Margin="0,0,-808,0"/>
+            <Button Command="{Binding Path=Search, Mode=TwoWay}" HorizontalAlignment="Right" Background="LightGreen" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50">Search</Button>
+            <TextBlock Text="All reservations" FontSize="40" VerticalAlignment="Center" Margin="10,5,0,5" Height="60" Grid.Row="2"/>
+
+            <ListView Margin="-1,0,-1138,10" Grid.Row="3"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      ScrollViewer.VerticalScrollMode="Enabled"
+                      x:Name="RoomsList"
+                      ItemsSource="{Binding RezervacijeLista, Mode=TwoWay}"
+                      ItemTemplate="{StaticResource RezTemplate}"
+                      Background="White"
+                      SelectedItem="{Binding Selektovana, Mode=TwoWay}"
+                      Grid.RowSpan="2">
                 <ListView.Template>
                     <ControlTemplate>
                         <Grid>
@@ -77,13 +80,12 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="0">Reservation ID</TextBlock>
-                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Check in date</TextBlock>
-                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="4">Check out date</TextBlock>
                                 <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Room number</TextBlock>
                                 <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">Guest</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Check in date</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="4">Check out date</TextBlock>
                             </Grid>
                             <ItemsPresenter Margin="0,33,0,0" Grid.RowSpan="2"/>
                         </Grid>
@@ -95,11 +97,46 @@
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>
-            <Button x:Name="button" Command="{Binding Path=CekiraneRez, Mode=TwoWay}" FontSize="25" Content="See checked in reservations" HorizontalAlignment="Left" Margin="444,0,-589,0" VerticalAlignment="Top" Width="445" Height="50" Grid.Row="1"/>
-            <Button x:Name="button_Copy" Command="{Binding Path=OdekiraneRez, Mode=TwoWay}" FontSize="25" Content="See checked out reservations" HorizontalAlignment="Left" Margin="-1,0,-144,0" VerticalAlignment="Top" Width="445" Height="50" Grid.Row="1"/>
-            <Button x:Name="button_Copy1" Command="{Binding Path=LogOut, Mode=TwoWay}" FontSize="25" Content="Log out" HorizontalAlignment="Left" Margin="1329,0,-1434,0" VerticalAlignment="Top" Width="405" Height="50" Grid.Row="1"/>
-            <TextBlock x:Name="textBlock" VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Left" Margin="-1,0,-1194,0" TextWrapping="Wrap" Text="Welcome" Width="1495" Height="50"/>
-            <Button x:Name="button_Copy2" Command="{Binding Profil, Mode=TwoWay}" FontSize="25" Content="View profile" HorizontalAlignment="Left" Margin="889,0,-1029,0" VerticalAlignment="Top" Width="440" Height="50" Grid.Row="1"/>
+            <StackPanel  Grid.Row="5"  Orientation="Horizontal" DataContext="{Binding SelectedItem, ElementName=RoomsList}" Margin="0,0,-1139,-190">
+                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="0,0,10,-185" Width="460">
+                    <TextBlock Text="Details" FontWeight="Bold" FontSize="25"/>
+                    <TextBlock  FontWeight="Bold" Text="-------------------------" FontSize="25"/>
+                    <TextBlock Text="Reservation ID: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Rezervacija_id}"/>
+                    <TextBlock Text="Room number: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Soba.Broj}"/>
+                    <TextBlock Text="Guest: " Foreground="Blue"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Gost.Ime}"/>
+                        <TextBlock Text="{Binding Gost.Prezime}"/>
+                    </StackPanel>
+                    <TextBlock Text="Check in date: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Check_in}"/>
+                    <TextBlock Text="Check out date: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Check_out}"/>
+                    <TextBlock Text="Parking: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Parking}"/>
+                    <TextBlock Text="Pool: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Bazen}"/>
+                    <TextBlock Text="Number of nights: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Br_noci}"/>
+                    <TextBlock Text="Number of children: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Br_djece}"/>
+                    <TextBlock Text="Number of adults: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Br_odraslih}"/>
+                    <TextBlock Text="Board type: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Smjestaj}"/>
+                    <TextBlock Text="Total price: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Cijena}"/>
+                </StackPanel>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="875" VerticalAlignment="Top"  Source="{Binding Soba.Slika, Converter={StaticResource thePictureConverter}}" Width="968"/>
+            </StackPanel>
+            <Button VerticalAlignment="Center" Command="{Binding Path=Cekiraj, Mode=TwoWay}" BorderBrush="Black" FontSize="30" Height="50" Margin="865,0,-725,0" Width="160" Grid.Row="1">Check In</Button>
+            <Button VerticalAlignment="Center" Command="{Binding Path=Odcekiraj, Mode=TwoWay}" BorderBrush="Black" FontSize="30" Height="50" Margin="1025,0,-895,0" Width="170" Grid.Row="1">Check Out</Button>
+            <Button VerticalAlignment="Center" Command="{Binding Path=PrikaziCekirane, Mode=TwoWay}" BorderBrush="Black" FontSize="30" Height="50" Margin="415,0,-565,0" Width="450" Grid.Row="1">Show Checked Out Reservations</Button>
+            <Button Command="{Binding Path=PrikaziOdcekirane, Mode=TwoWay}" Grid.Row="1" FontSize="30" Height="50" Width="416" Background="LightGray" BorderBrush="Black" Name="BtnAddRoom" Margin="-1,0,-115,0">Show Checked In Reservations</Button>
+            <Button Command="{Binding Path=Profil, Mode=TwoWay}" FontSize="30" Height="50" Width="243" Background="LightGray" BorderBrush="Black" Name="btnProfil" Margin="1195,0,-1138,0" Grid.Row="1">View Your Profile</Button>
+            <Button VerticalAlignment="Center" Command="{Binding Path=LogOut, Mode=TwoWay}" BorderBrush="Black" FontSize="30" Height="50" Margin="1270,0,-1139,0" Width="169" Content="Log Out"/>
         </Grid>
     </ScrollViewer>
 </Page>

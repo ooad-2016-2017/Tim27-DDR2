@@ -57,7 +57,7 @@ namespace DDR2.ViewModel
         }
         public void izadji(object parametar)
         {
-            Parent.NavigationService.GoBack();
+            NavigationService.Navigate(typeof(Prijava));
         }
         public void neociscene(object p)
         {
