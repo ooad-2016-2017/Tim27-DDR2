@@ -70,7 +70,7 @@ namespace DDR2.ViewModel
                         }
                         else if (korisnik is Gost)
                         {
-                            NavigationService.Navigate(typeof(GuestPanel));
+                            NavigationService.Navigate(typeof(GuestPanel), new GuestPanelVM(this));
                         }
                         else
                         {
@@ -79,7 +79,7 @@ namespace DDR2.ViewModel
                             {
                                 if (korisnik.Username == Username && korisnik.Password != Password)
                                 {
-                                    var dialog = new MessageDialog("Incorrect password.\nPlease try again." + korisnik.Password+" "+Password);
+                                    var dialog = new MessageDialog("Incorrect password.\nPlease try again." + " "+korisnik.Password+" "+Password);
                                     Password = "";
                                     dialog.Title = "Error";
                                     await dialog.ShowAsync();

@@ -20,15 +20,14 @@
         <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Naslov, Mode=TwoWay}" FontSize="50
                    " VerticalAlignment="Top" Height="60" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
         <StackPanel Grid.Row="1" VerticalAlignment="Stretch">
-            <Button Name="btnRez" Command="{Binding Path=Rezervacije, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="70" HorizontalAlignment="Stretch">Reservations</Button>
-            <Button Name="btnStaff" Command="{Binding Path=Osoblje, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="70" HorizontalAlignment="Stretch">Staff</Button>
-            <Button Name="btnRooms" Command="{Binding Path=Sobe, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="70" HorizontalAlignment="Stretch">Rooms</Button>
-            <Button Name="btnGuests" Command="{Binding Path=Gosti, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="70" HorizontalAlignment="Stretch">Guests</Button>
-            <Button Name="btnStatistics" Command="{Binding Path=Statistike, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="70" HorizontalAlignment="Stretch">Statistics</Button>
-            <Button Name="btnMonthly" Command="{Binding Path=Izvjestaj, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="70" HorizontalAlignment="Stretch">Monthly Report</Button>
-            <Button Name="btnProfile" Command="{Binding Path=Profil, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="70" HorizontalAlignment="Stretch">View Your Profile</Button>
-            <Button Name="btnLog" Command="{Binding Path=LogOut, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="70" HorizontalAlignment="Stretch">Log Out</Button>
+            <Button Name="btnRez" Command="{Binding Path=Rezervacije, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="80" HorizontalAlignment="Stretch">Reservations</Button>
+            <Button Name="btnStaff" Command="{Binding Path=Osoblje, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="80" HorizontalAlignment="Stretch">Staff</Button>
+            <Button Name="btnRooms" Command="{Binding Path=Sobe, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="80" HorizontalAlignment="Stretch">Rooms</Button>
+            <Button Name="btnGuests" Command="{Binding Path=Gosti, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="80" HorizontalAlignment="Stretch">Guests</Button>
+            <Button Name="btnMonthly" Command="{Binding Path=Izvjestaj, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="80" HorizontalAlignment="Stretch">Monthly Report</Button>
+            <Button Name="btnProfile" Command="{Binding Path=Profil, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="80" HorizontalAlignment="Stretch">View Your Profile</Button>
+            <Button Name="btnLog" Command="{Binding Path=LogOut, Mode=TwoWay}" BorderBrush="Gray" Background="White" FontSize="30" Height="80" HorizontalAlignment="Stretch">Log Out</Button>
         </StackPanel>
-        <CalendarView Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></CalendarView>
+        <CalendarView Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0.333,0,0,10"></CalendarView>
     </Grid>
 </Page>

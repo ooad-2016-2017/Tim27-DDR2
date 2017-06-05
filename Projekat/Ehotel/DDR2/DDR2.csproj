@@ -133,6 +133,7 @@
     <Compile Include="ViewModel\AdminReservationsVM.cs" />
     <Compile Include="ViewModel\EditGuestVM.cs" />
     <Compile Include="ViewModel\EditRoomVM.cs" />
+    <Compile Include="ViewModel\GuestPanelVM.cs" />
     <Compile Include="ViewModel\GuestsVM.cs" />
     <Compile Include="ViewModel\LogInVM.cs" />
     <Compile Include="ViewModel\MainViewModelBase.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="ViewModel\NewRoomVM.cs" />
     <Compile Include="ViewModel\NumericUpDownVM.cs" />
     <Compile Include="ViewModel\ReceptionVM.cs" />
+    <Compile Include="ViewModel\RoomCleaningVM.cs" />
     <Compile Include="ViewModel\RoomsVM.cs" />
     <Compile Include="ViewModel\ViewProfileVM.cs" />
     <Compile Include="View\AddStuff.xaml.cs">
@@ -176,8 +178,8 @@
     <Compile Include="View\numericUpDown.xaml.cs">
       <DependentUpon>numericUpDown.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ReservationInfo.xaml.cs">
-      <DependentUpon>ReservationInfo.xaml</DependentUpon>
+    <Compile Include="View\EditReservation.xaml.cs">
+      <DependentUpon>EditReservation.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GuestPanel.xaml.cs">
       <DependentUpon>GuestPanel.xaml</DependentUpon>
@@ -209,11 +211,8 @@
     <Compile Include="View\Staff.xaml.cs">
       <DependentUpon>Staff.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\StaffDetails.xaml.cs">
-      <DependentUpon>StaffDetails.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Statistics.xaml.cs">
-      <DependentUpon>Statistics.xaml</DependentUpon>
+    <Compile Include="View\EditStaff.xaml.cs">
+      <DependentUpon>EditStaff.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewProfile.xaml.cs">
       <DependentUpon>ViewProfile.xaml</DependentUpon>
@@ -289,7 +288,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ReservationInfo.xaml">
+    <Page Include="View\EditReservation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -333,11 +332,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\StaffDetails.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Statistics.xaml">
+    <Page Include="View\EditStaff.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

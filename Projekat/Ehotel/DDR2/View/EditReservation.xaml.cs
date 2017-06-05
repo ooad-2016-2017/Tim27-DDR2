@@ -20,9 +20,9 @@ namespace DDR2.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class StaffDetails : Page
+    public sealed partial class EditReservation : Page
     {
-        public StaffDetails()
+        public EditReservation()
         {
             this.InitializeComponent();
         }

@@ -1,10 +1,12 @@
-﻿using System;
+﻿using DDR2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,42 +27,13 @@ namespace DDR2.View
         public GuestPanel()
         {
             this.InitializeComponent();
+            NavigationCacheMode = NavigationCacheMode.Required;
         }
-
-        private void btnNewRez_Click(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.Frame.Navigate(typeof(NewReservation), e);
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
+            DataContext = (GuestPanelVM)e.Parameter;
         }
-
-        private void btnCancelRez_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnShowRez_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(GuestReservation), e);
-        }
-
-        private void btnShowMap_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(ShowMap), e);
-        }
-
-        private void btnViewProfile_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(ViewProfile), e);
-        }
-
-        private void btnChangeRez_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnExit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Prijava), e);
-        }
-
     }
 }

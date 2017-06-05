@@ -6,8 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Width="1185" Height="505">
-    
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,10">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
@@ -18,7 +18,7 @@
         <TextBox x:Name="txtLname" Text="{Binding Ime, Mode=TwoWay}" Height="40" Width="368" HorizontalAlignment="Right" Margin="0,65,-250,-55"/>
         <TextBox x:Name="txtAddress" Text="{Binding Prezime, Mode=TwoWay}" Height="40" Width="368" HorizontalAlignment="Left" Margin="182,130,-250,-120"/>
         <TextBlock FontSize="20" Height="40" Width="142" HorizontalAlignment="Left" Margin="615,65,-457,-55">Country</TextBlock>
-        <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="613,130,-455,-120">City</TextBlock>
+        <TextBlock FontSize="20" Width="142" HorizontalAlignment="Left" Margin="613,136,-455,-120">City</TextBlock>
         <TextBox Name="txtMobile" Text="{Binding Telefon, Mode=TwoWay}" Margin="182,338,-250,-328" Height="40"></TextBox>
         <TextBlock FontSize="20" Width="100" Height="40" HorizontalAlignment="Left" Margin="613,268,-413,-258">Gender</TextBlock>
         <TextBlock FontSize="20" Height="40" Width="100" HorizontalAlignment="Left" Margin="613,334,-413,-324">Birth date</TextBlock>
@@ -35,6 +35,6 @@
         <TextBlock FontSize="20" Width="150" HorizontalAlignment="Left" Margin="10,65,0,-55"><Run Text="First name"/></TextBlock>
         <TextBlock FontSize="20"  Height="40" Width="142" HorizontalAlignment="Left" Margin="615,204,-457,-194"><Run Text="Address"/></TextBlock>
         <TextBox x:Name="txtCity_Copy" Text="{Binding Adresa, Mode=TwoWay}" Margin="785,204,-853,-194" Height="40"/>
-        <Button x:Name="button_Copy" Command="{Binding Path=Save, Mode=TwoWay}" Content="Save Changes" Background="LightGreen" FontSize="30" HorizontalAlignment="Left" Margin="37,419,-250,-431" VerticalAlignment="Top" Height="62" Width="513"/>
+        <Button x:Name="button_Copy" Command="{Binding Path=Save, Mode=TwoWay}" Content="Save Changes" Background="LightGreen" FontSize="25" HorizontalAlignment="Left" Margin="787,409,-853,-435" VerticalAlignment="Top" Height="50" Width="366"/>
     </Grid>
 </Page>

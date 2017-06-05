@@ -32,8 +32,6 @@ namespace DDR2.View
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
-        
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DataContext = new GuestsVM();

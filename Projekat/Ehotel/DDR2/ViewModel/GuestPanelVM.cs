@@ -10,55 +10,43 @@ using System.Windows.Input;
 
 namespace DDR2.ViewModel
 {
-    class AdminPanelVM : MainViewModelBase
+    class GuestPanelVM : MainViewModelBase
     {
         public string Naslov { get; set; } = "Welcome to eHotel Entrada";
         public LogInVM Parent { get; set; }
         public ICommand Rezervacije { get; set; }
-        public ICommand Osoblje { get; set; }
-        public ICommand Sobe { get; set; }
-        public ICommand Gosti { get; set; }
-        public ICommand Izvjestaj { get; set; }
+        public ICommand NovaRezervacija { get; set; }
+        public ICommand Mapa { get; set; }
         public ICommand Profil { get; set; }
         public ICommand LogOut { get; set; }
         public INavigationService NavigationService { get; set; }
 
-        public AdminPanelVM(LogInVM parent)
+        public GuestPanelVM(LogInVM parent)
         {
             Parent = parent;
             Naslov = KreirajNaslov();
             NavigationService = new NavigationService();
             Rezervacije = new RelayCommand<object>(Rez, parametar => true);
-            Osoblje = new RelayCommand<object>(Osob, parametar => true);
-            Sobe = new RelayCommand<object>(Soba, parametar => true);
-            Gosti = new RelayCommand<object>(Gost, parametar => true);
-            Izvjestaj = new RelayCommand<object>(Izv, parametar => true);
+            NovaRezervacija = new RelayCommand<object>(novarez, parametar => true);
+            Mapa = new RelayCommand<object>(mapa, parametar => true);
             Profil = new RelayCommand<object>(Prof, parametar => true);
             LogOut = new RelayCommand<object>(Izadji, parametar => true);
         }
-        public void Osob(object parametar)
+        public void novarez(object parametar)
         {
-            NavigationService.Navigate(typeof(Staff));//ovde kasnije dodati drugi parametar tima StaffVM ako bude potrebno proslijediti podatke
+            NavigationService.Navigate(typeof(NewReservation)); 
         }
-        public void Izv(object parametar)
+        public void mapa(object parametar)
         {
-            NavigationService.Navigate(typeof(MonthlyReport));
+            NavigationService.Navigate(typeof(ShowMap));
         }
         public void Prof(object parametar)
         {
-            NavigationService.Navigate(typeof(ViewProfile),new ViewProfileVM(this));
+            NavigationService.Navigate(typeof(ViewProfile), new ViewProfileVM(this));
         }
         public void Rez(object parametar)
         {
-            NavigationService.Navigate(typeof(AdminReservations));
-        }
-        public void Soba(object parametar)
-        {
-            NavigationService.Navigate(typeof(Rooms));
-        }
-        public void Gost(object parametar)
-        {
-            NavigationService.Navigate(typeof(Guests));
+            NavigationService.Navigate(typeof(GuestReservation));
         }
         public void Izadji(object parametar)
         {
@@ -68,7 +56,7 @@ namespace DDR2.ViewModel
         public string KreirajNaslov()
         {
             string naziv = Naslov;
-            using (var db=new HotelDbContext())
+            using (var db = new HotelDbContext())
             {
                 var korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == Parent.Username && kor.Password == Parent.Password);
                 naziv += ", " + korisnik.Ime + " " + korisnik.Prezime;
