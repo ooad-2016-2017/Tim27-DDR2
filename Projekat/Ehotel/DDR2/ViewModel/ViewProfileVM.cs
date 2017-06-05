@@ -71,6 +71,16 @@ namespace DDR2.ViewModel
             SavePassword = new RelayCommand<object>(PromjenaPass, parametar => true);
             SaveEverythingElse = new RelayCommand<object>(PromjenaOstalo, parametar => true);
         }
+        public ViewProfileVM(RoomCleaningVM parent)
+        {
+            NavigationService = new NavigationService();
+            SobaricaParent = parent;
+            ProslijediPoruku();
+            Drzave = NewAccountVM.PopuniDrzave(Drzave);
+            InicijalizirajPodatke();
+            SavePassword = new RelayCommand<object>(PromjenaPass, parametar => true);
+            SaveEverythingElse = new RelayCommand<object>(PromjenaOstalo, parametar => true);
+        }
         public void InicijalizirajPodatke()
         {
             using (var db = new HotelDbContext())
@@ -83,9 +93,9 @@ namespace DDR2.ViewModel
                     korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == RecepcionarParent.Parent.Username && kor.Password == RecepcionarParent.Parent.Password);
                 else if(GostParent!=null)
                     korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == GostParent.Parent.Username && kor.Password == GostParent.Parent.Password);
-               /* else if(SobaricaParent!=null)
+                else if(SobaricaParent!=null)
                     korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == SobaricaParent.Parent.Username && kor.Password == SobaricaParent.Parent.Password);
-               */
+               
                 Ime = korisnik.Ime;
                 Prezime = korisnik.Prezime;
                 Adresa = korisnik.Adresa;
@@ -112,9 +122,9 @@ namespace DDR2.ViewModel
                     korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == RecepcionarParent.Parent.Username && kor.Password == RecepcionarParent.Parent.Password);
                 else if (GostParent != null)
                     korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == GostParent.Parent.Username && kor.Password == GostParent.Parent.Password);
-                /* else if(SobaricaParent!=null)
+                 else if(SobaricaParent!=null)
                      korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == SobaricaParent.Parent.Username && kor.Password == SobaricaParent.Parent.Password);
-                */
+                
                 korisnik.Ime = Ime;
                 korisnik.Prezime = Prezime;
                 korisnik.Adresa = Adresa;
@@ -154,9 +164,9 @@ namespace DDR2.ViewModel
                     korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == RecepcionarParent.Parent.Username && kor.Password == RecepcionarParent.Parent.Password);
                 else if (GostParent != null)
                     korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == GostParent.Parent.Username && kor.Password == GostParent.Parent.Password);
-                /* else if(SobaricaParent!=null)
+                 else if(SobaricaParent!=null)
                      korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == SobaricaParent.Parent.Username && kor.Password == SobaricaParent.Parent.Password);
-                */
+                
                 if (korisnik.Password != CurrentPassword)
                 {
                     var dialog = new MessageDialog("Incorrect password!\nPlease, re-enter your password.");
@@ -197,9 +207,9 @@ namespace DDR2.ViewModel
                     korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == RecepcionarParent.Parent.Username && kor.Password == RecepcionarParent.Parent.Password);
                 else if (GostParent != null)
                     korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == GostParent.Parent.Username && kor.Password == GostParent.Parent.Password);
-                /* else if(SobaricaParent!=null)
+                else if(SobaricaParent!=null)
                      korisnik = db.Korisnici.FirstOrDefault(kor => kor.Username == SobaricaParent.Parent.Username && kor.Password == SobaricaParent.Parent.Password);
-                */
+               
                 WelcomePoruka += " " + korisnik.Ime + " " + korisnik.Prezime;
             }
         }

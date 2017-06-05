@@ -62,7 +62,7 @@ namespace DDR2.ViewModel
                         }
                         else if (korisnik is Sobarica)
                         {
-                            NavigationService.Navigate(typeof(RoomCleaning));
+                            NavigationService.Navigate(typeof(RoomCleaning), new RoomCleaningVM(this));
                         }
                         else if (korisnik is Recepcionar)
                         {
