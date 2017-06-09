@@ -34,7 +34,7 @@ namespace DDR2.ViewModel
         }
         public void novarez(object parametar)
         {
-            NavigationService.Navigate(typeof(NewReservation)); 
+            NavigationService.Navigate(typeof(NewReservation), new NewReservationVM(this)); 
         }
         public void mapa(object parametar)
         {

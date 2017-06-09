@@ -146,6 +146,7 @@
     <Compile Include="ViewModel\MainViewModelBase.cs" />
     <Compile Include="ViewModel\NewAccountVM.cs" />
     <Compile Include="ViewModel\NewGuestVM.cs" />
+    <Compile Include="ViewModel\NewReservationVM.cs" />
     <Compile Include="ViewModel\NewRoomVM.cs" />
     <Compile Include="ViewModel\NumericUpDownVM.cs" />
     <Compile Include="ViewModel\PaymentVM.cs" />

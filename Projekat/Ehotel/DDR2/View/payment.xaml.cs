@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDR2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,15 +27,17 @@ namespace DDR2.View
         public payment()
         {
             this.InitializeComponent();
+            NavigationCacheMode = NavigationCacheMode.Required;
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
 
-        private void btnConfirm_Click(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
+            DataContext = (PaymentVM)e.Parameter;
         }
+
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         {
             if (Frame.CanGoBack)

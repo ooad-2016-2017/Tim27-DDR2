@@ -10,10 +10,6 @@
     xmlns:enumconverter="using:DDR2.Helper"
     mc:Ignorable="d" Width="1205" Height="565">
 
-    <Page.DataContext>
-        <ViewModel:AddStuffVM x:Name="stuff"></ViewModel:AddStuffVM>
-    </Page.DataContext>
-
     <Page.Resources>
         <converter:DateConverter x:Key="theDateConverter"></converter:DateConverter>
         <enumconverter:EnumToBoolConverter x:Key="genderConvert"></enumconverter:EnumToBoolConverter>

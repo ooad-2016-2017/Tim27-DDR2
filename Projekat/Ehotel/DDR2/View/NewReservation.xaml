@@ -5,22 +5,26 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Height="770" Width="1440">
+    mc:Ignorable="d" Height="625" Width="1320"
+    xmlns:converter="using:DDR2.Helper">
 
-    <ScrollViewer HorizontalAlignment="Left" Height="807" Margin="10,10,0,0" VerticalAlignment="Top" Width="1420" ViewChanged="ScrollViewer_ViewChanged">
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1230" Height="571" RenderTransformOrigin="0.522,0.502">
+    <Page.Resources>
+        <converter:DateConverter x:Key="theDateConverter"></converter:DateConverter>
+    </Page.Resources>
+
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1300" Height="1620">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Grid HorizontalAlignment="Left" Height="1196" VerticalAlignment="Top" Width="1218" Grid.RowSpan="2" Margin="0,0,0,-637">
+            <Grid HorizontalAlignment="Left" Height="615" VerticalAlignment="Top" Width="1260" Grid.RowSpan="2" Margin="30,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0*"/>
                     <RowDefinition Height="0*"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Grid HorizontalAlignment="Left" Height="486" Margin="0,42,0,0" VerticalAlignment="Top" Width="1175" Grid.Row="2">
+                <Grid HorizontalAlignment="Left" Height="563" Margin="0,42,0,0" VerticalAlignment="Top" Width="1250" Grid.Row="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0*"/>
                         <RowDefinition/>
@@ -30,74 +34,59 @@
                         <ColumnDefinition Width="483*"/>
                         <ColumnDefinition Width="73*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="36,-106,0,0" FontWeight="Bold" TextWrapping="Wrap" Text="Reservation details" VerticalAlignment="Top" Height="65" Width="566" FontSize="40"/>
-                    <ComboBox x:Name="boardType" HorizontalAlignment="Left" Margin="262,-10,0,0" VerticalAlignment="Top" Width="308" Height="53" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch" SelectionChanged="comboBox_SelectionChanged" FontSize="22" BorderBrush="{ThemeResource AppBarButtonForeground}" FontWeight="Light" Grid.RowSpan="2">
-                        <ComboBoxItem Content="Half board" FontWeight="Normal" FontStyle="Normal"/>
-                        <ComboBoxItem Content="Full board" FontStyle="Normal" FontWeight="Normal"/>
-                    </ComboBox>
-                    <ComboBox x:Name="roomType" HorizontalAlignment="Left" Margin="262,75,0,0" VerticalAlignment="Top" Width="308" Height="53" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch" SelectionChanged="comboBox_SelectionChanged" FontSize="22" BorderBrush="{ThemeResource AppBarButtonForeground}" FontWeight="Light" Grid.RowSpan="2">
-                        <ComboBoxItem Content="Single" FontWeight="Normal" FontStyle="Normal"/>
-                        <ComboBoxItem Content="Double" FontWeight="Normal" FontStyle="Normal"/>
-                        <ComboBoxItem Content="Tripple" FontWeight="Normal" FontStyle="Normal"/>
-                        <ComboBoxItem Content="Family" FontWeight="Normal" FontStyle="Normal"/>
-                    </ComboBox>
-                    <local:numericUpDown Margin="253,151,108,288" Grid.RowSpan="2" Grid.Column="1" Loaded="numericUpDown_Loaded_2"/>
-                    <local:numericUpDown Margin="253,63,108,376" Grid.RowSpan="2" Grid.Column="1" Loaded="numericUpDown_Loaded_1"/>
-                    <local:numericUpDown Margin="253,-17,108,459" Grid.RowSpan="2" Grid.Column="1" Loaded="numericUpDown_Loaded"/>
-                    <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="36,0,0,0" TextWrapping="Wrap" Text="Board:" VerticalAlignment="Top" Height="52" Width="138" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" RenderTransformOrigin="0.471,-0.003" Grid.RowSpan="2"/>
-                    <TextBlock x:Name="textBlock2_Copy" HorizontalAlignment="Left" Margin="36,76,0,0" TextWrapping="Wrap" Text="Room:" VerticalAlignment="Top" Height="52" Width="138" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" RenderTransformOrigin="0.471,-1.208" Grid.RowSpan="2"/>
-                    <TextBlock x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="19.333,308,0,0" TextWrapping="Wrap" Text="Parking:" VerticalAlignment="Top" Height="52" Width="138" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" Grid.RowSpan="2" RenderTransformOrigin="4.58,4.692" Grid.Column="1"/>
-                    <TextBlock x:Name="textBlock2_Copy2" HorizontalAlignment="Left" Margin="19,-10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="262" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" Grid.Column="1" Grid.RowSpan="2">
+                    <ComboBox x:Name="boardType" HorizontalAlignment="Left" Margin="262,-10,0,0" VerticalAlignment="Top" Width="308" Height="53" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch" FontSize="22" BorderBrush="{ThemeResource AppBarButtonForeground}" FontWeight="Light" Grid.RowSpan="2"
+                              ItemsSource="{Binding TipoviSmjestaja, Mode=TwoWay}"
+                              SelectedValue="{Binding TipSmjestaja, Mode=TwoWay}"/>
+                    <ComboBox x:Name="roomType" HorizontalAlignment="Left" Margin="262,95,0,0" VerticalAlignment="Top" Width="308" Height="53" BorderThickness="3,2" Header="" HorizontalContentAlignment="Stretch" FontSize="22" BorderBrush="{ThemeResource AppBarButtonForeground}" FontWeight="Light" Grid.RowSpan="2"
+                              ItemsSource="{Binding TipoviSobe, Mode=TwoWay}"
+                              SelectedValue="{Binding TipSobe, Mode=TwoWay}"/>
+                    <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="36,0,0,0" TextWrapping="Wrap" Text="Board:" VerticalAlignment="Top" Height="52" Width="138" FontSize="30" FontWeight="Medium" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="textBlock2_Copy" HorizontalAlignment="Left" Margin="36,106,0,0" TextWrapping="Wrap" Text="Room:" VerticalAlignment="Top" Height="52" Width="138" FontSize="30" FontWeight="Medium" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="19.333,308,0,0" TextWrapping="Wrap" Text="Parking:" VerticalAlignment="Top" Height="52" Width="138" FontSize="30" FontWeight="Medium" Grid.RowSpan="2" Grid.Column="1"/>
+                    <TextBlock x:Name="textBlock2_Copy2" HorizontalAlignment="Left" Margin="19,-10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="262" FontSize="30" FontWeight="Medium" Grid.Column="1" Grid.RowSpan="2">
                     <Run Text="No. of adults"/>
                     <Run Text=":"/>
                     </TextBlock>
-                    <TextBlock x:Name="textBlock2_Copy3" HorizontalAlignment="Left" Margin="19,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="262" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" Grid.Column="1" Grid.RowSpan="2">
+                    <TextBlock x:Name="textBlock2_Copy3" HorizontalAlignment="Left" Margin="19,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="262" FontSize="30" FontWeight="Medium" Grid.Column="1" Grid.RowSpan="2">
                     <Run Text="No. of "/>
                     <Run Text="children"/>
                     <Run Text=":"/>
                     </TextBlock>
-                    <TextBlock x:Name="textBlock2_Copy4" HorizontalAlignment="Left" Margin="19,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="262" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" Grid.Column="1" Grid.RowSpan="2" RenderTransformOrigin="0.525,0.526">
+                    <TextBlock x:Name="textBlock2_Copy4" HorizontalAlignment="Left" Margin="19,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="262" FontSize="30" FontWeight="Medium" Grid.Column="1" Grid.RowSpan="2" RenderTransformOrigin="0.525,0.526">
                     <Run Text="No. of "/>
                     <Run Text="nights"/>
                     <Run Text=":"/>
                     </TextBlock>
-                    <SplitView HorizontalAlignment="Left" Height="546" Margin="378,768,-326,-130" VerticalAlignment="Top" Width="504" BorderThickness="3" Grid.Column="1" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Grid.ColumnSpan="2" Grid.RowSpan="2">
-                        <SplitView.Pane>
-                            <Grid/>
-                        </SplitView.Pane>
-                        <Grid HorizontalAlignment="Left" Height="275" VerticalAlignment="Top" Width="576" BorderThickness="2" Margin="-974,-802,0,0" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}"/>
-                    </SplitView>
-                    <TextBlock x:Name="textBlock2_Copy8" HorizontalAlignment="Left" Margin="36,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="233" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" Grid.RowSpan="2">
+                    <TextBlock x:Name="textBlock2_Copy8" HorizontalAlignment="Left" Margin="36,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="233" FontSize="30" FontWeight="Medium" Grid.RowSpan="2">
                     <Run Text="Check-"/>
                     <Run Text="out"/>
                     <Run Text=" date:"/>
                     </TextBlock>
-                    <DatePicker HorizontalAlignment="Left" Margin="274,179,0,0" VerticalAlignment="Top" Height="34" Width="296" Grid.RowSpan="2"/>
-                    <DatePicker HorizontalAlignment="Left" Margin="274,261,0,0" VerticalAlignment="Top" Height="52" Width="296" Grid.RowSpan="2" RenderTransformOrigin="1.105,0.426"/>
-                    <TextBlock x:Name="txtTotal" HorizontalAlignment="Left" Margin="36,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="184" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="40" FontWeight="Medium" Grid.RowSpan="2" Text="TOTAL:"/>
-                    <TextBox x:Name="ispisTotalaTxt" HorizontalAlignment="Left" Margin="274,340,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="296" IsReadOnly="True"/>
-
-
+                    <DatePicker HorizontalAlignment="Left" Margin="274,219,0,0" VerticalAlignment="Top" Height="34" Width="296" Grid.RowSpan="2"
+                               Date="{Binding CheckIn, Mode=TwoWay, Converter={StaticResource theDateConverter}}"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="274,331,0,0" VerticalAlignment="Top" Height="52" Width="296" Grid.RowSpan="2"
+                                Date="{Binding CheckOut, Mode=TwoWay, Converter={StaticResource theDateConverter}}"/>
+                    <TextBlock x:Name="txtTotal" HorizontalAlignment="Left" Margin="36,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="184" FontSize="40" FontWeight="Medium" Grid.RowSpan="2" Text="TOTAL:"/>
+                    <TextBox x:Name="ispisTotalaTxt" Text="{Binding Total, Mode=TwoWay}" HorizontalAlignment="Left" Margin="274,410,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="296" IsReadOnly="True"/>
+                    <TextBlock x:Name="textBlock2_Copy5" HorizontalAlignment="Left" Margin="19.333,229,0,0" TextWrapping="Wrap" Text="Pool:" VerticalAlignment="Top" Height="52" Width="138" FontSize="30" FontWeight="Medium" Grid.RowSpan="2" Grid.Column="1"/>
                 </Grid>
-                <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch" Margin="0,-128,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="55" FontSize="40" TextAlignment="Center" Foreground="#FF292626" SelectionChanged="textBlock_SelectionChanged">
-                <Run Foreground="#FF837C7C" FontWeight="Bold" Text="Welcome to eHotel Entrada"/>
-                </TextBlock>
-                <Grid HorizontalAlignment="Left" Height="518" VerticalAlignment="Top" Width="594" BorderThickness="2" Margin="614,10,0,0" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Grid.Row="2">
-
-                    <TextBlock x:Name="textBlock2_Copy6" HorizontalAlignment="Left" Margin="10,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="178" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium">
+                <TextBlock x:Name="textBlock2_Copy6" HorizontalAlignment="Left" Margin="10,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="178" FontSize="30" FontWeight="Medium">
                         <Run Text=" "/>
                         <Run Text="Pool:"/>
-                    </TextBlock>
-                </Grid>
-                <TextBlock x:Name="textBlock2_Copy7" HorizontalAlignment="Left" Margin="40,220,0,0" TextWrapping="Wrap" Text="Check-in date:" VerticalAlignment="Top" Height="52" Width="230" SelectionChanged="textBlock2_SelectionChanged_1" FontSize="30" FontWeight="Medium" Grid.Row="2"/>
+                </TextBlock>
+                <TextBlock x:Name="textBlock2_Copy7" HorizontalAlignment="Left" Margin="40,260,0,0" TextWrapping="Wrap" Text="Check-in date:" VerticalAlignment="Top" Height="52" Width="230" FontSize="30" FontWeight="Medium" Grid.Row="2"/>
             </Grid>
             <DatePicker HorizontalAlignment="Left" Margin="1525,483,-492,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-            <Button x:Name="btnsearchRooms" Content="Search available rooms" Background="#FF53BD53" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="30,459,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="420" Click="btnsearchRooms_Click"/>
-            <ToggleSwitch x:Name="poolSwitch" HorizontalAlignment="Left" Margin="885,282,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="60" Width="205" FontSize="20">
+            <ToggleSwitch x:Name="poolSwitch" HorizontalAlignment="Left" Margin="965,282,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="60" Width="205" FontSize="20"
+                          IsOn="{Binding ImaLiBazen, Mode=TwoWay}">
             </ToggleSwitch>
-            <ToggleSwitch x:Name="poolSwitch_Copy" HorizontalAlignment="Left" Margin="885,347,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="60" Width="205" FontSize="20"/>
-            <Button x:Name="button_Copy" Content="Next" Background="#FF64B7D1" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="485,459,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="110" Click="button_Click"/>
+            <ToggleSwitch x:Name="poolSwitch_Copy" HorizontalAlignment="Left" Margin="965,347,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="60" Width="205" FontSize="20"
+                          IsOn="{Binding ImaLiParking, Mode=TwoWay}"/>
+            <Button x:Name="button_Copy" Command="{Binding Path=Naredno, Mode=TwoWay}" Content="Next" Background="#FF64B7D1" BorderBrush="Black" FontSize="25" HorizontalAlignment="Left" Margin="965,439,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="205"/>
+            <TextBox x:Name="textBox" Text="{Binding Odrasli, Mode=TwoWay}" HorizontalAlignment="Left" Margin="965,30,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="205">
+            </TextBox>
+            <TextBox x:Name="textBox_Copy" Text="{Binding Djeca, Mode=TwoWay}" HorizontalAlignment="Left" Margin="965,115,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="205"/>
+            <TextBox x:Name="textBox_Copy1" Text="{Binding Noci, Mode=TwoWay}" HorizontalAlignment="Left" Margin="965,197,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="205"/>
+            <Button x:Name="button" FontSize="25" Command="{Binding Path=Cijena, Mode=TwoWay}" Content="Show Price" BorderBrush="Black" HorizontalAlignment="Left" Margin="660,439,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="63" Width="260"/>
         </Grid>
-
-    </ScrollViewer>
 </Page>

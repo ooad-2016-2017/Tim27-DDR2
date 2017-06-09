@@ -5,8 +5,13 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Height="400" Width="900">
+    mc:Ignorable="d" Height="400" Width="900"
+    xmlns:converter="using:DDR2.Helper">
 
+    <Page.Resources>
+        <converter:DateConverter x:Key="theDateConverter"></converter:DateConverter>
+    </Page.Resources>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center" Height="Auto" Width="825" Margin="75,0,0,95">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
@@ -18,19 +23,16 @@
             <ColumnDefinition Width="150"></ColumnDefinition>
             <ColumnDefinition Width="300"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ComboBox Grid.Column="0" Grid.Row="0" PlaceholderText="Select a payment info" Height="40" FontSize="20" Width="250" VerticalAlignment="Center">
-            <ComboBoxItem>Credit Card</ComboBoxItem>
-            <ComboBoxItem>Debit Card</ComboBoxItem>
-            <ComboBoxItem>Master Card</ComboBoxItem>
-            <ComboBoxItem>VISA</ComboBoxItem>
-            <ComboBoxItem>PayPal</ComboBoxItem>
-        </ComboBox>
+        <ComboBox Grid.Column="0" Grid.Row="0" PlaceholderText="Select a payment info" Height="40" FontSize="20" Width="250" VerticalAlignment="Center"
+                  ItemsSource="{Binding TipoviPlacanja, Mode=TwoWay}"
+                  SelectedValue="{Binding TipPlacanja, Mode=TwoWay}"/>
         <TextBlock Grid.Column="1" Grid.Row="0" Height="30" VerticalAlignment="Center" FontSize="20">Expires:</TextBlock>
-        <DatePicker Grid.Column="2" DayVisible="False"></DatePicker>
-        <TextBox Grid.Column="0" Grid.Row="1" PlaceholderText="Card number" FontSize="20" Height="40" Width="250" HorizontalAlignment="Left"></TextBox>
+        <DatePicker Grid.Column="2" DayVisible="False"  
+                    Date="{Binding DatumIsteka, Mode=TwoWay, Converter={StaticResource theDateConverter}}"></DatePicker>
+        <TextBox Grid.Column="0" Grid.Row="1" Text="{Binding Broj, Mode=TwoWay}" PlaceholderText="Card number" FontSize="20" Height="40" Width="250" HorizontalAlignment="Left"></TextBox>
         <TextBlock Grid.Column="1" Grid.Row="1" Height="40" VerticalAlignment="Center" FontSize="20" >Security Code:</TextBlock>
-        <TextBox Grid.Column="2" Grid.Row="1" Height="40" Width="300" HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Column="0" Grid.Row="2" PlaceholderText="Name on card" Height="40" FontSize="20" Width="250" HorizontalAlignment="Left"></TextBox>
-        <Button Grid.Column="2" Grid.Row="2" Height="43" Name="btnConfirm" Click="btnConfirm_Click" FontSize="20" Background="LightGreen" BorderBrush="Black" Margin="0,30,0,27" HorizontalAlignment="Stretch">Corfirm</Button>
+        <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding SigKod, Mode=TwoWay}" Height="40" Width="300" HorizontalAlignment="Left"></TextBox>
+        <TextBox Grid.Column="0" Grid.Row="2" Text="{Binding Ime, Mode=TwoWay}" PlaceholderText="Name on card" Height="40" FontSize="20" Width="250" HorizontalAlignment="Left"></TextBox>
+        <Button Grid.Column="2" Grid.Row="2" Command="{Binding Path=Potvrdi, Mode=TwoWay}" Height="43" Name="btnConfirm" FontSize="20" Background="LightGreen" BorderBrush="Black" Margin="0,30,0,27" HorizontalAlignment="Stretch">Corfirm</Button>
     </Grid>
 </Page>
