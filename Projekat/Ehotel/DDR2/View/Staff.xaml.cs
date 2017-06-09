@@ -1,4 +1,5 @@
 ﻿using DDR2.HotelBaza.Models;
+using DDR2.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,35 +28,22 @@ namespace DDR2.View
         public Staff()
         {
             this.InitializeComponent();
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
 
-        private void btnAddStuff_Click(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.Frame.Navigate(typeof(AddStuff), e);
+            DataContext = new StaffVM();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         {
-
-        }
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            using (var db = new HotelDbContext())
+            if (Frame.CanGoBack)
             {
-                StaffListView.ItemsSource = db.Uposlenici.OrderBy(c => c.Plata).ToList();
-            }
-        }
-
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
-        {
-            //Dobavljanje objekta iz liste koji je korišten da se popuni red u listview 
-            DependencyObject dep = (DependencyObject)e.OriginalSource;
-            while ((dep != null) && !(dep is ListViewItem)) {
-                dep = VisualTreeHelper.GetParent(dep);
-            }
-            if (dep == null) return;
-            using (var db = new HotelDbContext()) {
-                StaffListView.ItemsSource = db.Uposlenici.OrderBy(c => c.Plata).ToList();
+                Frame.GoBack();
+                e.Handled = true;
             }
         }
     }

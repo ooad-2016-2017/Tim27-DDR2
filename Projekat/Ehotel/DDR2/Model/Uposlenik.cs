@@ -11,6 +11,7 @@ namespace DDR2.Model
         string jmbg;
         double plata;
         DateTime dat_zaposlenja;
+        
 
         public string Jmbg
         {
@@ -55,7 +56,7 @@ namespace DDR2.Model
         {
         }
 
-        public Uposlenik(string jmb, double plata, DateTime zap, string us, string pass, string ime, string prezime, string adresa, string drzava, string email, string grad, string telefon, DateTime dat_rodjenja, gender spol) : base(us, pass, ime, prezime, adresa, drzava, email, grad, telefon, dat_rodjenja, spol)
+        public Uposlenik(string jmb, double plata, DateTime zap,  string us, string pass, string ime, string prezime, string adresa, string drzava, string email, string grad, string telefon, DateTime dat_rodjenja, gender spol) : base(us, pass, ime, prezime, adresa, drzava, email, grad, telefon, dat_rodjenja, spol)
         {
             Jmbg = jmb;
             Plata = plata;

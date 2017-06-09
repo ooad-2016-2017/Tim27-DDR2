@@ -5,60 +5,138 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Width="1269" Height="924"
-    Loaded="Page_Loaded">
+    mc:Ignorable="d" Width="1268.833" Height="1609"
+    xmlns:converter="using:DDR2.Helper">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,169,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <TextBox PlaceholderText="Search staff" FontSize="25" Margin="0,0,-808,0"/>
-        <Button HorizontalAlignment="Right" Background="LightGreen" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" Click="Button_Click">Search</Button>
-        <Button Grid.Row="1" FontSize="25" Height="50" Width="1270" Background="LightGray" BorderBrush="Black" Name="btnAddStuff" Click="btnAddStuff_Click" Margin="0,0,-970,0">Add Stuff</Button>
-        <TextBlock Text="Staff" FontSize="40" VerticalAlignment="Center" Grid.Row="2" Margin="0,16,-970,-29" Height="63"/>
-        <Grid Margin="0,79,-970,-75" Grid.Row="2">
+
+    <Page.Resources>
+        <DataTemplate x:Key="UposlenikTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Ime}" VerticalAlignment="Center" Grid.Column="0" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Prezime}" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Telefon}" VerticalAlignment="Center" Grid.Column="2" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Posao}" VerticalAlignment="Center" Grid.Column="3" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding DatumZaposlenja}" VerticalAlignment="Center" Grid.Column="4" HorizontalAlignment="Left"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="4">
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+    </Page.Resources>
+
+
+
+
+    <ScrollViewer VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" Margin="0,0,-0.333,719">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,169,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="700"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="300"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="0">First Name</TextBlock>
-            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Job</TextBlock>
-            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="4">Hire Date</TextBlock>
-            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Last Name</TextBlock>
-            <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">Phone Number</TextBlock>
+
+            <TextBox PlaceholderText="Search staff" FontSize="25" Margin="0,0,-808,0"/>
+            <Button Command="{Binding Path=Search, Mode=TwoWay}" HorizontalAlignment="Right" Background="LightGreen" BorderBrush="Black" FontSize="25" Margin="0,0,-970,0" Width="162" Height="50" >Search</Button>
+            <TextBlock Text="Staff" FontSize="40" VerticalAlignment="Center" Grid.Row="2" Margin="0,16,-970,-29" Height="63"/>
+
+
+
+            <ListView Margin="-1,0,-970,9.667" Grid.Row="3"
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      ScrollViewer.VerticalScrollMode="Enabled"
+                      x:Name="GuestsList"
+                      ItemsSource="{Binding UposleniciListe, Mode=TwoWay}"
+                      ItemTemplate="{StaticResource UposlenikTemplate}"
+                      Background="White"
+                      SelectedItem="{Binding Selektovan, Mode=TwoWay}"
+                      Grid.RowSpan="2">
+
+                <ListView.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="0">First name</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Last name</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">Phone number</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Job</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="4">Hire date</TextBlock>
+                            </Grid>
+                            <ItemsPresenter Margin="0,33,0,0" Grid.RowSpan="2"/>
+                        </Grid>
+                    </ControlTemplate>
+                </ListView.Template>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+
+            <StackPanel  Grid.Row="5"  Orientation="Horizontal" DataContext="{Binding SelectedItem, ElementName=StaffList}" Margin="0,0,-969,-190">
+                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="0,0,10,-185" Width="1270">
+                    <TextBlock Text="Details" FontWeight="Bold" FontSize="25"/>
+                    <TextBlock  FontWeight="Bold" Text="-------------------------" FontSize="25"/>
+                    <TextBlock Text="First name: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Ime}"/>
+                    <TextBlock Text="Last name: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Prezime}"/>
+                    <TextBlock Text="City: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Grad}"/>
+                    <TextBlock Text="Country: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Drzava}"/>
+                    <TextBlock Text="Address: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Adresa}"/>
+                    <TextBlock Text="E-mail: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Email}"/>
+                    <TextBlock Text="Posao: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Posao}"/>
+                    <TextBlock Text="Date of birth: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding DatumRodjenja}"/>
+                    <TextBlock Text="Gender: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Spol}"/>
+                    <TextBlock Text="Salary: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding Plata}"/>
+                    <TextBlock Text="Hire date: " Foreground="Blue"/>
+                    <TextBlock Text="{Binding DatumZaposlenja}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Button VerticalAlignment="Center" Command="{Binding Path=Edituj, Mode=TwoWay}" BorderBrush="Black" FontSize="30" Height="50" Margin="580,0,-635,0" Width="355" Grid.Row="1">Edit</Button>
+            <Button VerticalAlignment="Center" Command="{Binding Path=Brisi, Mode=TwoWay}" BorderBrush="Black" FontSize="30" Height="50" Margin="935,0,-969,0" Width="334" Grid.Row="1">Delete</Button>
+            <Button Command="{Binding Path=Add, Mode=TwoWay}" Grid.Row="1" FontSize="30" Height="50" Width="581" Background="LightGray" BorderBrush="Black" Name="BtnAddGuest" Margin="-1,0,-280,0">Add Staff</Button>
+
         </Grid>
-        <ListView Margin="0,125,-970,-774" Grid.Row="2"
-            x:Name="StaffListView"
-            IsItemClickEnabled="True">
-
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Ime}" Width="300" FontSize="25"/>
-                        <TextBlock Text="{Binding Prezime}" Width="300" FontSize="25"/>
-                        <TextBlock Text="{Binding Telefon}" Width="300" FontSize="25"/>
-                        <TextBlock Text="{Binding Posao}" Width="300" FontSize="25"/>
-                        <TextBlock Text="{Binding Datum_zaposlenja}" Width="300" FontSize="25"/>
-                        <Button FontSize="25" Width="200">Edit</Button>
-                        <Button  Name="btnDelete"  FontSize="25" Width="200" Click="btnDelete_Click">Delete</Button>
-                        <Button FontSize="25" Width="200">Details</Button>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                </Style>
-            </ListView.ItemContainerStyle>
-        </ListView>
-    </Grid>
+    </ScrollViewer>
 </Page>

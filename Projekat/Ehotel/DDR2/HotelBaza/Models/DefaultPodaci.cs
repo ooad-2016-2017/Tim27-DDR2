@@ -144,7 +144,7 @@ namespace DDR2.HotelBaza.Models
             }
             if (!context.Korisnici.Any())
             {
-                Recepcionar r = new Recepcionar("150999445454", 1200, new DateTime(2013, 12, 12), "loki", "loki", "berina", "smajovic", "neka", "nka", "dka", "enka", "2154876", new DateTime(1996, 09, 15), gender.Female);
+                Recepcionar r = new Recepcionar("150999445454", 1200, new DateTime(2013, 12, 12),"loki", "loki", "berina", "smajovic", "neka", "nka", "dka", "enka", "2154876", new DateTime(1996, 09, 15), gender.Female);
                 context.Korisnici.Add(r);
 
                 context.Korisnici.AddRange(

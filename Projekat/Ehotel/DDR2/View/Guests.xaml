@@ -108,7 +108,7 @@
                     <TextBlock Text="{Binding Telefon}"/>
                     <TextBlock Text="Country: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Drzava}"/>
-                    <TextBlock Text="City " Foreground="Blue"/>
+                    <TextBlock Text="City: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Grad}"/>
                     <TextBlock Text="Address: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Adresa}"/>

@@ -139,6 +139,7 @@
     <Compile Include="ViewModel\AdminReservationsVM.cs" />
     <Compile Include="ViewModel\EditGuestVM.cs" />
     <Compile Include="ViewModel\EditRoomVM.cs" />
+    <Compile Include="ViewModel\EditStaffVM.cs" />
     <Compile Include="ViewModel\GuestPanelVM.cs" />
     <Compile Include="ViewModel\GuestsVM.cs" />
     <Compile Include="ViewModel\LogInVM.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="ViewModel\RoomCleaningVM.cs" />
     <Compile Include="ViewModel\RoomsVM.cs" />
     <Compile Include="ViewModel\ShowMapViewModel.cs" />
+    <Compile Include="ViewModel\StaffVM.cs" />
     <Compile Include="ViewModel\ViewProfileVM.cs" />
     <Compile Include="View\AddStuff.xaml.cs">
       <DependentUpon>AddStuff.xaml</DependentUpon>
