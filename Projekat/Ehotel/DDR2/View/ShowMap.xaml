@@ -5,11 +5,30 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
     mc:Ignorable="d">
-
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10,0,10,210">
         <Grid HorizontalAlignment="Left" Height="1790" Margin="0,0,0,-1280" VerticalAlignment="Top" Width="1260">
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
             
+            <TextBlock Text="{Binding Lokacija}" />
+            <TextBlock Text="{Binding Adresa}" Grid.Row="1"/>
+            <!--Bez oneway binding ne radi, ne zaboraviti ukljuciti maps gore-->
+            <maps:MapControl x:Name="mapa" Grid.Row="3" Center="{Binding TrenutnaLokacija, Mode=OneWay}" />
+
+
         </Grid>
     </Grid>
 </Page>
+
+
