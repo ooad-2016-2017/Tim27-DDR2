@@ -9,13 +9,33 @@ using DDR2.Model;
 namespace DDR2.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    [Migration("20170529135359_FinalMigration")]
+    [Migration("20170609163130_FinalMigration")]
     partial class FinalMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
+
+            modelBuilder.Entity("DDR2.Model.Kartica", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Broj");
+
+                    b.Property<DateTime>("DatumIsteka");
+
+                    b.Property<string>("Ime");
+
+                    b.Property<string>("Kod");
+
+                    b.Property<int>("TipKartice");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Kartice");
+                });
 
             modelBuilder.Entity("DDR2.Model.Korisnik", b =>
                 {
@@ -141,6 +161,9 @@ namespace DDR2.Migrations
                 {
                     b.HasBaseType("DDR2.Model.Korisnik");
 
+                    b.Property<int?>("KreditnaKarticaId");
+
+                    b.HasIndex("KreditnaKarticaId");
 
                     b.ToTable("Gost");
 
@@ -191,6 +214,13 @@ namespace DDR2.Migrations
                     b.HasOne("DDR2.Model.Soba", "Soba")
                         .WithMany()
                         .HasForeignKey("SobaId");
+                });
+
+            modelBuilder.Entity("DDR2.Model.Gost", b =>
+                {
+                    b.HasOne("DDR2.Model.Kartica", "KreditnaKartica")
+                        .WithMany()
+                        .HasForeignKey("KreditnaKarticaId");
                 });
         }
     }

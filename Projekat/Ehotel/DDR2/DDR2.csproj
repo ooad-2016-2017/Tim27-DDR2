@@ -95,22 +95,21 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Helper\DateConverter.cs" />
-    <Compile Include="Migrations\Helper\Encryptor.cs" />
-    <Compile Include="Migrations\Helper\EnumToBoolConverter.cs" />
-    <Compile Include="Migrations\Helper\INavigationService.cs" />
-    <Compile Include="Migrations\Helper\NavigationService.cs" />
-    <Compile Include="Migrations\Helper\PictureConverter.cs" />
-    <Compile Include="Migrations\Helper\RelayCommand.cs" />
+    <Compile Include="Helper\DateConverter.cs" />
+    <Compile Include="Helper\Encryptor.cs" />
+    <Compile Include="Helper\EnumToBoolConverter.cs" />
+    <Compile Include="Helper\INavigationService.cs" />
+    <Compile Include="Helper\NavigationService.cs" />
+    <Compile Include="Helper\PictureConverter.cs" />
+    <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="HotelBaza\Models\DefaultPodaci.cs" />
     <Compile Include="HotelBaza\Models\HotelDbContext.cs" />
-    <Compile Include="HotelBaza\Views\PictureConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20170529135359_FinalMigration.cs" />
-    <Compile Include="Migrations\20170529135359_FinalMigration.designer.cs">
-      <DependentUpon>20170529135359_FinalMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20170609163130_FinalMigration.cs" />
+    <Compile Include="Migrations\20170609163130_FinalMigration.designer.cs">
+      <DependentUpon>20170609163130_FinalMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\HotelDbContextModelSnapshot.cs" />
     <Compile Include="Model\Admin.cs" />

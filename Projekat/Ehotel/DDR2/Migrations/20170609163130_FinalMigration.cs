@@ -9,30 +9,20 @@ namespace DDR2.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Korisnici",
+                name: "Kartice",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Adresa = table.Column<string>(nullable: true),
-                    Dat_rodjenja = table.Column<DateTime>(nullable: false),
-                    Discriminator = table.Column<string>(nullable: false),
-                    Drzava = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    Grad = table.Column<string>(nullable: true),
+                    Broj = table.Column<string>(nullable: true),
+                    DatumIsteka = table.Column<DateTime>(nullable: false),
                     Ime = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true),
-                    Prezime = table.Column<string>(nullable: true),
-                    Spol_osobe = table.Column<int>(nullable: false),
-                    Telefon = table.Column<string>(nullable: true),
-                    Username = table.Column<string>(nullable: true),
-                    Dat_zaposlenja = table.Column<DateTime>(nullable: true),
-                    Jmbg = table.Column<string>(nullable: true),
-                    Plata = table.Column<double>(nullable: true)
+                    Kod = table.Column<string>(nullable: true),
+                    TipKartice = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Korisnici", x => x.Id);
+                    table.PrimaryKey("PK_Kartice", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -55,6 +45,40 @@ namespace DDR2.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Sobe", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Korisnici",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Adresa = table.Column<string>(nullable: true),
+                    Dat_rodjenja = table.Column<DateTime>(nullable: false),
+                    Discriminator = table.Column<string>(nullable: false),
+                    Drzava = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Grad = table.Column<string>(nullable: true),
+                    Ime = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true),
+                    Prezime = table.Column<string>(nullable: true),
+                    Spol_osobe = table.Column<int>(nullable: false),
+                    Telefon = table.Column<string>(nullable: true),
+                    Username = table.Column<string>(nullable: true),
+                    KreditnaKarticaId = table.Column<int>(nullable: true),
+                    Dat_zaposlenja = table.Column<DateTime>(nullable: true),
+                    Jmbg = table.Column<string>(nullable: true),
+                    Plata = table.Column<double>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Korisnici", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Korisnici_Kartice_KreditnaKarticaId",
+                        column: x => x.KreditnaKarticaId,
+                        principalTable: "Kartice",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -96,6 +120,11 @@ namespace DDR2.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Korisnici_KreditnaKarticaId",
+                table: "Korisnici",
+                column: "KreditnaKarticaId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Rezervacije_GostId",
                 table: "Rezervacije",
                 column: "GostId");
@@ -116,6 +145,9 @@ namespace DDR2.Migrations
 
             migrationBuilder.DropTable(
                 name: "Sobe");
+
+            migrationBuilder.DropTable(
+                name: "Kartice");
         }
     }
 }

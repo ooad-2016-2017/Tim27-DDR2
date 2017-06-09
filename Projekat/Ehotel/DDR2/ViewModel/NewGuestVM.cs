@@ -41,7 +41,7 @@ namespace DDR2.ViewModel
 
         public async void dodaj(object p)
         {
-            Gost nova = new Gost(Username, Password, Ime, Prezime, Adresa, Drzava, Email, Grad, Telefon, Dat_rodjenja,spol );
+            Gost nova = new Gost(Username, Password, Ime, Prezime, Adresa, Drzava, Email, Grad, Telefon, Dat_rodjenja,spol, new Kartica());
             
             using (var db = new HotelDbContext())
             {

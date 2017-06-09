@@ -55,7 +55,7 @@ namespace DDR2.ViewModel
 
         public async void KreirajAccount(object param)
         {
-            NoviGost = new Gost(Username, Password, Ime, Prezime, Adresa, Drzava, Email, Grad, Telefon, DatumRodjenja, Spol);
+            NoviGost = new Gost(Username, Password, Ime, Prezime, Adresa, Drzava, Email, Grad, Telefon, DatumRodjenja, Spol, new Kartica());
             using (var db = new HotelDbContext())
             {
                 db.Gosti.Add(NoviGost);

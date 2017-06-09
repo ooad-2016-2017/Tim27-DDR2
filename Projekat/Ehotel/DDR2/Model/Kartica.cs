@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,13 +9,15 @@ namespace DDR2.Model
 {
     public class Kartica
     {
-        //dodati id za bazu i ubaciti u korisnika
-        string Kod { get; set; }
-        string Ime { get; set; }
-        string Broj { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        public string Kod { get; set; }
+        public string Ime { get; set; }
+        public string Broj { get; set; }
         public enum Tip { PayPal, VISA, Credit, Master, Debit};
-        Tip TipKartice { get; set; }
-        DateTime DatumIsteka { get; set; }
+        public Tip TipKartice { get; set; }
+        public DateTime DatumIsteka { get; set; }
 
         public Kartica()
         {

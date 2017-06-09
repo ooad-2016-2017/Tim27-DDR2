@@ -20,10 +20,11 @@ namespace DDR2.HotelBaza.Models
         public DbSet<Sobarica> Sobarice { get; set; }
         public DbSet<Korisnik> Korisnici { get; set; }
         public DbSet<Uposlenik> Uposlenici { get; set; }
+        public DbSet<Kartica> Kartice { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string databaseFilePath = "KonacnaBaza.db";
+            string databaseFilePath = "FinalDataBase.db";
             try
             {
                 databaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, databaseFilePath);

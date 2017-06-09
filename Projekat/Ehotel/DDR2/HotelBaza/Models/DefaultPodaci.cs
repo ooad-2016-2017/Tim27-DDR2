@@ -13,6 +13,7 @@ namespace DDR2.HotelBaza.Models
 {
     class DefaultPodaci
     {
+        public static Kartica k;
         public static void Initialize(HotelDbContext context)
         {
             if (!context.Sobe.Any())
@@ -32,7 +33,11 @@ namespace DDR2.HotelBaza.Models
                 }
                 );
             }
-
+            if (!context.Kartice.Any())
+            {
+                k = new Kartica("13vhsjdff", "ddr2", "236432727162", Kartica.Tip.VISA, new DateTime(2020, 10, 22));
+                context.Add(k);
+            }
             if (!context.Rezervacije.Any())
             {
                 context.Rezervacije.AddRange(
@@ -47,6 +52,7 @@ namespace DDR2.HotelBaza.Models
                         Adresa = "bla bal",
                         Email = "hahaha",
                         Telefon = "020202",
+                        KreditnaKartica=k,
                         Username = "username",
                         Password = "pass",
                         Dat_rodjenja = new DateTime(2013, 12, 12),
@@ -168,6 +174,7 @@ namespace DDR2.HotelBaza.Models
                     Adresa = "bla bal",
                     Email = "hahaha",
                     Telefon = "020202",
+                    KreditnaKartica=k,
                     Username = "djani",
                     Password = "djani",
                     Dat_rodjenja = new DateTime(2013, 12, 12),
