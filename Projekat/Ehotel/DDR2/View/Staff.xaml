@@ -5,7 +5,7 @@
     xmlns:local="using:DDR2.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Width="1268.833" Height="1609"
+    mc:Ignorable="d" Width="1302.667" Height="1651"
     xmlns:converter="using:DDR2.Helper">
 
 
@@ -39,7 +39,7 @@
 
 
     <ScrollViewer VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" Margin="0,0,-0.333,719">
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,169,0">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="1651" Width="1293">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
@@ -59,7 +59,7 @@
 
 
 
-            <ListView Margin="-1,0,-970,9.667" Grid.Row="3"
+            <ListView Margin="-1,0,-970,218" Grid.Row="3"
             ScrollViewer.VerticalScrollBarVisibility="Auto"
                       ScrollViewer.HorizontalScrollBarVisibility="Auto"
                       ScrollViewer.VerticalScrollMode="Enabled"
@@ -107,7 +107,7 @@
             <StackPanel  Grid.Row="5"  Orientation="Horizontal" DataContext="{Binding SelectedItem, ElementName=StaffList}" Margin="0,0,-969,-190">
                 <StackPanel RenderTransformOrigin="0.5,0.5" Margin="0,0,10,-185" Width="1270">
                     <TextBlock Text="Details" FontWeight="Bold" FontSize="25"/>
-                    <TextBlock  FontWeight="Bold" Text="-------------------------" FontSize="25"/>
+                    <TextBlock  FontWeight="Bold" Text="-------------------------" FontSize="25" />
                     <TextBlock Text="First name: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Ime}"/>
                     <TextBlock Text="Last name: " Foreground="Blue"/>
