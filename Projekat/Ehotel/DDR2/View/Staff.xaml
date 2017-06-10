@@ -26,8 +26,8 @@
                 <TextBlock Text="{Binding Ime}" VerticalAlignment="Center" Grid.Column="0" HorizontalAlignment="Left"/>
                 <TextBlock Text="{Binding Prezime}" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left"/>
                 <TextBlock Text="{Binding Telefon}" VerticalAlignment="Center" Grid.Column="2" HorizontalAlignment="Left"/>
-                <TextBlock Text="{Binding Posao}" VerticalAlignment="Center" Grid.Column="3" HorizontalAlignment="Left"/>
-                <TextBlock Text="{Binding DatumZaposlenja}" VerticalAlignment="Center" Grid.Column="4" HorizontalAlignment="Left"/>
+                
+                <TextBlock Text="{Binding DatumZaposlenja}" VerticalAlignment="Center" Grid.Column="3" HorizontalAlignment="Left"/>
                 <StackPanel Orientation="Horizontal" Grid.Column="4">
                 </StackPanel>
             </Grid>
@@ -63,7 +63,7 @@
             ScrollViewer.VerticalScrollBarVisibility="Auto"
                       ScrollViewer.HorizontalScrollBarVisibility="Auto"
                       ScrollViewer.VerticalScrollMode="Enabled"
-                      x:Name="GuestsList"
+                      x:Name="StaffList"
                       ItemsSource="{Binding UposleniciListe, Mode=TwoWay}"
                       ItemTemplate="{StaticResource UposlenikTemplate}"
                       Background="White"
@@ -89,8 +89,8 @@
                                 <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="0">First name</TextBlock>
                                 <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="1">Last name</TextBlock>
                                 <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="2">Phone number</TextBlock>
-                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Job</TextBlock>
-                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="4">Hire date</TextBlock>
+                                
+                                <TextBlock HorizontalAlignment="Left" FontSize="25" Grid.Column="3">Hire date</TextBlock>
                             </Grid>
                             <ItemsPresenter Margin="0,33,0,0" Grid.RowSpan="2"/>
                         </Grid>
@@ -120,10 +120,6 @@
                     <TextBlock Text="{Binding Adresa}"/>
                     <TextBlock Text="E-mail: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Email}"/>
-                    <TextBlock Text="Posao: " Foreground="Blue"/>
-                    <TextBlock Text="{Binding Posao}"/>
-                    <TextBlock Text="Date of birth: " Foreground="Blue"/>
-                    <TextBlock Text="{Binding DatumRodjenja}"/>
                     <TextBlock Text="Gender: " Foreground="Blue"/>
                     <TextBlock Text="{Binding Spol}"/>
                     <TextBlock Text="Salary: " Foreground="Blue"/>
