@@ -40,6 +40,10 @@ namespace DDR2.ViewModel
                 Kartica k = new Kartica(SigKod, Ime, Broj, tip, DatumIsteka);
                 Rezervacija r = new Rezervacija(gost, "A345gdh", Parent.ImaLiParking, Parent.ImaLiBazen, Convert.ToDouble(Parent.Total), Parent.tip, Parent.djeca, Parent.odrasli, Parent.djeca, Parent.SobaIznajmljena.Broj, Parent.CheckIn, Parent.CheckOut, false, false);
                 gost.KreditnaKartica = k;
+                if (gost.Lista_rezervacija==null)
+                {
+                    gost.Lista_rezervacija = new List<Rezervacija>();
+                }
                 gost.Lista_rezervacija.Add(r);
                 db.Rezervacije.Add(r);
                 db.SaveChanges();

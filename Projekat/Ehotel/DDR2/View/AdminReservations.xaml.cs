@@ -34,7 +34,7 @@ namespace DDR2.View
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DataContext = (AdminReservationsVM)e.Parameter;
+            DataContext = new AdminReservationsVM();/*(AdminReservationsVM)e.Parameter;*/
         }
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)

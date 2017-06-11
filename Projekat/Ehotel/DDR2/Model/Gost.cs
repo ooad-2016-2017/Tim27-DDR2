@@ -33,6 +33,8 @@ namespace DDR2.Model
             {
                 lista_rezervacija = value;
             }
+            
         }
+        
     }
 }
